@@ -421,6 +421,8 @@ body.inactive {
 }
 
 .main-container .container-3 .footer-row .footer-right-col .contact {
+  -webkit-transform: translateY(-0.8em);
+          transform: translateY(-0.8em);
   width: 100%;
 }
 
