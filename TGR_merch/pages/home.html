@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/css/home_style.css" />
+    <link rel="stylesheet" href="../styles/css/aos.css" />
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+
+    <title>Teletigers #tgrwin</title>
+</head>
+
+<body class="inactive" id="bg">
+    <section class="background">
+        <h1 class="bg-title">#TGRWIN</h1>
+    </section>
+    <section class="bg-1"></section>
+    <section class="bg-2"></section>
+
+    <section class="main-container">
+        <section class="container-1" id="cont1">
+            <div class="header-container" data-aos="fade-in">
+                <div class="header_logo">
+                    <a href="#"><img src="../styles/images/LOGO_TELETIGERS 3.png" class="tgr_logo"><img
+                            src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
+                </div>
+                <ul class="header-opt">
+                    <li><a href="">home</a></li>
+                    <li><a href="">products</a></li>
+                    <li><a href="">services</a></li>
+                    <li><a href="">categories</a></li>
+                    <li><a href="">tracking</a></li>
+                    <li><a href="">FAQs</a></li>
+                </ul>
+            </div>
+            //TODO: add carousel here
+        </section>
+        <section class="container-2" id="cont2">
+
+        </section>
+        <section class="container-3" id="cont3">
+            <div class="text">
+                powered by <img src="css/images/acadarena.png" alt="founder" />
+            </div>
+            <div class="contact" id="contact">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/TeletigersEsports"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text">all rights reserved 2021</div>
+        </section>
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="../styles/js/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 2000,
+        delay: 2000,
+    });
+    window.onload = function () {
+        $(".bg-1, .bg-2, .bg-title").addClass("active");
+    };
+
+    window.onunload = function () {
+        window.scrollTo(0, 0);
+    };
+    window.setTimeout(function () {
+        $(".bg-1, .bg-2, .main-container").addClass("finished");
+    }, 2250);
+    window.setTimeout(function () {
+        $("body").removeClass("inactive");
+    }, 2800);
+
+    var container = document.getElementById("bg");
+    window.onmousemove = function (e) {
+        var x = - e.clientX / 5;
+        var y = - e.clientY / 5;
+        container.style.backgroundPositionX = x + 'px';
+        container.style.backgroundPositionY = y + 'px';
+    }
+</script>
+
+</html>
