@@ -12,7 +12,7 @@
     <title>Teletigers #tgrwin</title>
 </head>
 
-<body class="inactive" id="bg">
+<body class="inactive">
     <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
@@ -48,6 +48,10 @@
                     </div>
                 </div>
                 <div class="footer-right-col">
+                    <div class="footer-logo"><a href="#"><img src="../styles/images/logo_transparent.png"
+                                class="tgr_logo">
+                            <h1 class="text_logo">TELETIGERS</h1>
+                        </a></div>
                     <div class="contact" id="contact">
                         <ul>
                             <li>
@@ -96,7 +100,7 @@
         $("body").removeClass("inactive");
     }, 2800);
 
-    var container = document.getElementById("bg");
+    var container = document.getElementById("cont2");
     window.onmousemove = function (e) {
         var x = - e.clientX / 5;
         var y = - e.clientY / 5;

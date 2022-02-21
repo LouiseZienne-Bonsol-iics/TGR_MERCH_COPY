@@ -287,6 +287,8 @@ body.inactive {
           flex-direction: row;
   background: #0a0a0a;
   gap: 4.8em;
+  background: url("../images/bg_pattern.png");
+  background-attachment: fixed;
 }
 
 .main-container .container-3 {
@@ -318,12 +320,80 @@ body.inactive {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2em 7em;
+}
+
+.main-container .container-3 .footer-row .footer-right-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3em;
+  width: 50%;
+}
+
+.main-container .container-3 .footer-row .footer-right-col .footer-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .container-3 .footer-row .footer-right-col .footer-logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  width: 50%;
+}
+
+.main-container .container-3 .footer-row .footer-right-col .footer-logo a .tgr_logo {
+  width: 30%;
+}
+
+.main-container .container-3 .footer-row .footer-right-col .footer-logo a .text_logo {
+  -webkit-transform: translateX(-0.3em);
+          transform: translateX(-0.3em);
+  font-family: 'Teko', sans-serif;
+  font-size: 3em;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: #838383;
+  cursor: default;
 }
 
 .main-container .container-3 .footer-row .footer-right-col .text {
