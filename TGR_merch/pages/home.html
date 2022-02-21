@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/css/home_style.css" />
     <link rel="stylesheet" href="../styles/css/aos.css" />
+    <link rel="stylesheet" href="../styles/css/carousel_style.css" />
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
 
     <title>Teletigers #tgrwin</title>
@@ -35,7 +36,39 @@
                     <li><a href="">FAQs</a></li>
                 </ul>
             </div>
-            //TODO: add carousel here
+            
+            <!--CAROUSEL-->
+            <div class="carousel-container">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1"> 
+                    <input type="radio" name="radio-btn" id="radio2"> 
+                    <input type="radio" name="radio-btn" id="radio3"> 
+                    
+                    <div class="slide first">
+                        <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/261104170_301327675332140_7261958803018090655_n.png?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=ONvzyqO6cjoAX8_Zo_0&_nc_ht=scontent.fmnl13-2.fna&oh=00_AT9aNaknsBiiKzmlM5Rott5BPm_jUtUypjDAj6EL56k-1g&oe=62177FAD">
+                    </div>
+                    <div class="slide">
+                        <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t1.6435-9/178533784_147239790740930_7949319409254555594_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=19026a&_nc_ohc=-59Gp-DIxCoAX_WFd_f&_nc_ht=scontent.fmnl25-4.fna&oh=00_AT_s2-mi8X6rgrK8SIo5CkVOyer8SFTr8Z7uKNjB8v3-Uw&oe=6239B655">
+                    </div>
+                    <div class="slide">
+                        <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t1.6435-9/174642662_144735827657993_8924780824239815375_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=19026a&_nc_ohc=cvDqioPEy0sAX-Xr30S&_nc_ht=scontent.fmnl25-4.fna&oh=00_AT-5bDAGqZiVF9Sgmcmh9Qr1YTJP_niRy-5ggvfcSWaPYw&oe=62377FBD">
+                    </div>
+
+                    <div class="carousel-nav-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                    </div>
+
+                </div>
+                <div class="carousel-nav-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+            </div>
+
+
         </section>
         <section class="container-2" id="cont2">
 
@@ -108,6 +141,17 @@
         container.style.backgroundPositionX = x + 'px';
         container.style.backgroundPositionY = y + 'px';
     }
+
+    //Carousel auto-slider
+    var counter = 1;
+    setInterval(function(){
+        document.getElementById('radio' + counter).checked = true;
+        counter++;
+        if(counter > 3){
+            counter = 1;
+        }
+    }, 3000);
+
 </script>
 
 </html>
