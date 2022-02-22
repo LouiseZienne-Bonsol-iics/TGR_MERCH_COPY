@@ -742,4 +742,10 @@ body.inactive {
   font-weight: 100;
   font-size: 0.8em;
   color: #ffffff;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.main-container .container-3 .footer-row .footer-left-col .text-row .info-tab h2:hover {
+  color: #dda408;
 }
