@@ -562,6 +562,7 @@ body.inactive {
 
 .main-container .container-2 .cont-restrict .featured .products .product-tile .product-title {
   font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.2em;
   font-size: 1em;
   color: #ebebeb;
 }
@@ -569,6 +570,7 @@ body.inactive {
 .main-container .container-2 .cont-restrict .featured .products .product-tile .product-price {
   margin-top: 0.8em;
   font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.1em;
   font-size: 1em;
   color: #e4af00;
 }
