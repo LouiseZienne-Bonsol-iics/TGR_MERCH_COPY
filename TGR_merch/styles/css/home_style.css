@@ -672,4 +672,74 @@ body.inactive {
           box-shadow: 0 0 15px #ff0000;
   text-shadow: 0 0 15px #ff0000;
 }
-/*# sourceMappingURL=home_style.css.map */
+
+.main-container .container-3 .footer-row .footer-left-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3em;
+  width: 70%;
+}
+
+.main-container .container-3 .footer-row .footer-left-col .text-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 3em;
+}
+
+.main-container .container-3 .footer-row .footer-left-col .text-row .info-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1em;
+}
+
+.main-container .container-3 .footer-row .footer-left-col .text-row .info-tab a {
+  text-decoration: none;
+}
+
+.main-container .container-3 .footer-row .footer-left-col .text-row .info-tab h1 {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 1.5em;
+  font-weight: 200;
+  color: #a8a8a8;
+}
+
+.main-container .container-3 .footer-row .footer-left-col .text-row .info-tab h2 {
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.1em;
+  font-weight: 100;
+  font-size: 0.8em;
+  color: #ffffff;
+}
