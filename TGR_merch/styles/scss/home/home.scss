@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cambay:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Antonio:wght@100&family=Montserrat:wght@100&family=Red+Hat+Display&family=Roboto+Mono:ital,wght@0,100;1,100&display=swap');
 /* 
 font-family: 'Jost', sans-serif;
@@ -14,6 +15,7 @@ font-family: 'Alegreya Sans SC', sans-serif;
 font-family: "Teko", sans-serif;
 font-family: 'Bebas Neue', cursive;
 font-family: 'Cambay', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
 
 */
 
@@ -292,53 +294,115 @@ body {
 		align-items: center;
 		flex-direction: column;
 		background: #444444;
-		.categories-row {
-			height: 20vh;
-			width: 100%;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			gap: 2em;
-			.cat-tab {
-				height: 15em;
-				width: 27em;
-				box-sizing: border-box;
-				overflow: hidden;
+		padding: 0 0 3em 0;
+		.cont-restrict {
+			min-height: 100vh;
+			width: 85%;
+			.categories-row {
+				height: 20vh;
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				gap: 2em;
+				.cat-tab {
+					height: 15em;
+					width: 27em;
+					box-sizing: border-box;
+					overflow: hidden;
 
-				.cat-text {
-					height: 100%;
+					.cat-text {
+						height: 100%;
+						width: 100%;
+						position: sticky;
+						bottom: 0;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						text-decoration: none;
+
+						h1 {
+							font-family: 'Cambay', sans-serif;
+							font-size: 2.6em;
+							font-style: italic;
+							color: #e0e0e0;
+							line-height: 1.2em;
+						}
+						h3 {
+							font-family: 'Red Hat Display', sans-serif;
+							font-size: 1.4em;
+							color: #e0e0e0;
+							font-weight: 100;
+							letter-spacing: 0.05em;
+						}
+					}
+					img {
+						height: 100%;
+						width: 100%;
+						transition: transform 0.5s ease;
+					}
+					&:hover img {
+						transform: scale(1.15);
+					}
+				}
+			}
+			.featured {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: flex-start;
+				margin-top: 6em;
+				.feat-header {
+					font-family: 'Red Hat Display', sans-serif;
+					color: #ebebeb;
+					letter-spacing: 0.1em;
+					font-size: 1.7em;
+				}
+				hr {
+					margin-top: 1.7em;
+					width: 8%;
+					height: 0.08em;
+					border: #ecaf2b solid 2px;
+					background: #ecaf2b;
+				}
+				.products {
 					width: 100%;
-					position: sticky;
-					bottom: 0;
+					height: 100%;
 					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					text-decoration: none;
-
-					h1 {
-						font-family: 'Cambay', sans-serif;
-						font-size: 3em;
-						font-style: italic;
-						color: #e0e0e0;
-						line-height: 1.2em;
+					flex-flow: row wrap;
+					justify-content: space-around;
+					.product-tile {
+						margin-top: 3em;
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: flex-start;
+						width: 17em;
+						height: 25em;
+						border: #004ce4 solid 3px;
+						.product-img-container {
+							width: 100%;
+							height: 80%;
+							border: #9649dd solid 3px;
+							img {
+								height: 100%;
+								object-fit: cover;
+							}
+						}
+						.product-title {
+							font-family: 'Source Sans Pro', sans-serif;
+							font-size: 1em;
+							color: #ebebeb;
+						}
+						.product-price {
+							margin-top: 0.8em;
+							font-family: 'Source Sans Pro', sans-serif;
+							font-size: 1em;
+							color: #e4af00;
+						}
 					}
-					h3 {
-						font-family: 'Red Hat Display', sans-serif;
-						font-size: 1.4em;
-						color: #e0e0e0;
-						font-weight: 100;
-						letter-spacing: 0.05em;
-					}
-				}
-				img {
-					height: 100%;
-					width: 100%;
-					transition: transform 0.5s ease;
-				}
-				&:hover img {
-					transform: scale(1.15);
 				}
 			}
 		}

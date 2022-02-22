@@ -48,7 +48,7 @@
             </div>
 
             <!--CAROUSEL-->
-            <div class="carousel-container">
+            <div class="carousel-container" data-aos="fade-in">
                 <div class="slides">
                     <input type="radio" name="radio-btn" id="radio1">
                     <input type="radio" name="radio-btn" id="radio2">
@@ -82,27 +82,45 @@
         </section>
         <!-- container 2 -->
         <section class="container-2" id="cont2">
-            <div class="categories-row">
-                <div class="cat-tab"><img src="../styles/images/mini_banner_1.png" alt="">
-                    <a href="" class="cat-text">
-                        <h1>[[CATEGORY]]</h1>
-                        <h3>SHOP NOW</h3>
-                    </a>
+            <div class="cont-restrict">
+                <div class="categories-row">
+                    <div class="cat-tab"><img src="../styles/images/mini_banner_1.png" alt="">
+                        <a href="" class="cat-text">
+                            <h1>[[CATEGORY]]</h1>
+                            <h3>SHOP NOW</h3>
+                        </a>
+                    </div>
+                    <div class="cat-tab"><img src="../styles/images/mini_banner_2.png" alt="">
+                        <a href="" class="cat-text">
+                            <h1>[[CATEGORY]]</h1>
+                            <h3>SHOP NOW</h3>
+                        </a>
+                    </div>
+                    <div class="cat-tab"><img src="../styles/images/mini_banner_3.png" alt="">
+                        <a href="" class="cat-text">
+                            <h1>[[CATEGORY]]</h1>
+                            <h3>SHOP NOW</h3>
+                        </a>
+                    </div>
                 </div>
-                <div class="cat-tab"><img src="../styles/images/mini_banner_2.png" alt="">
-                    <a href="" class="cat-text">
-                        <h1>[[CATEGORY]]</h1>
-                        <h3>SHOP NOW</h3>
-                    </a>
-                </div>
-                <div class="cat-tab"><img src="../styles/images/mini_banner_3.png" alt="">
-                    <a href="" class="cat-text">
-                        <h1>[[CATEGORY]]</h1>
-                        <h3>SHOP NOW</h3>
-                    </a>
+                <div class="featured">
+                    <h1 class="feat-header">Featured Products</h1>
+                    <hr>
+                    <div class="products">
+                        <!-- product-tile should automatically be generated per unique item -->
+                        <div class="product-tile">
+                            <a href="" class="product-img-container"><img src="../styles/images/hmgoepprod.png"
+                                    alt=""></a>
+                            <div class="product-title">
+                                <h1>Lorem, ipsum dolor.</h1>
+                            </div>
+                            <div class="product-price">
+                                <h3>Lorem, ipsum dolor.</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </section>
         <!-- container 3 -->
         <section class="container-3" id="cont3">
@@ -180,8 +198,8 @@
 <script src="../styles/js/aos.js"></script>
 <script>
     AOS.init({
-        duration: 2000,
-        delay: 2000,
+        duration: 1000,
+        delay: 1650,
     });
     window.onload = function () {
         $(".bg-1, .bg-2, .bg-title").addClass("active");
