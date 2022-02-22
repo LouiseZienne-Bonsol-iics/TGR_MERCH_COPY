@@ -299,6 +299,11 @@ body.inactive {
 .main-container .container-1 .header-container .header_logo {
   height: 95%;
   width: 35%;
+  z-index: 999;
+  background-color: #000000;
+}
+
+.main-container .container-1 .header-container .header_logo a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,11 +317,9 @@ body.inactive {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 999;
-  background-color: #000000;
 }
 
-.main-container .container-1 .header-container .header_logo .tgr_logo {
+.main-container .container-1 .header-container .header_logo a .tgr_logo {
   margin-left: 2em;
   cursor: default;
   width: 25%;
@@ -325,9 +328,7 @@ body.inactive {
   transition: 0.6s;
 }
 
-.main-container .container-1 .header-container .header_logo .text_logo {
-  -webkit-transform: translateY(-1.7em);
-          transform: translateY(-1.7em);
+.main-container .container-1 .header-container .header_logo a .text_logo {
   width: 35%;
 }
 
@@ -408,6 +409,9 @@ body.inactive {
       -ms-flex-direction: row;
           flex-direction: row;
   background: #2b2b2b;
+  background: url("../images/footer_banner.png") center center;
+  background-size: 100%;
+  background-attachment: fixed;
 }
 
 .main-container .container-3 .footer-row {

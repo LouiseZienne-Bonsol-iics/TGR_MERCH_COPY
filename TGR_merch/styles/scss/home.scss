@@ -234,22 +234,23 @@ body {
 			.header_logo {
 				height: 95%;
 				width: 35%;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
 				z-index: 999;
 				background-color: #000000;
-				.tgr_logo {
-					margin-left: 2em;
-					cursor: default;
-					width: 25%;
-					color: #fb2274;
-					transition: 0.6s;
-				}
-				.text_logo {
-					transform: translateY(-1.7em);
-					width: 35%;
+				a {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					.tgr_logo {
+						margin-left: 2em;
+						cursor: default;
+						width: 25%;
+						color: #fb2274;
+						transition: 0.6s;
+					}
+					.text_logo {
+						width: 35%;
+					}
 				}
 			}
 			.header-opt {
@@ -298,6 +299,9 @@ body {
 		align-items: center;
 		flex-direction: row;
 		background: #2b2b2b;
+		background: url("../images/footer_banner.png")center center;
+		background-size: 100%;
+		background-attachment: fixed;
 		.footer-row {
 			height: 100%;
 			width: 100%;
@@ -306,6 +310,7 @@ body {
 			justify-content: space-between;
 			align-items: center;
 			padding: 2em 7em;
+
 			.footer-right-col {
 				display: flex;
 				flex-direction: column;
