@@ -260,7 +260,7 @@ body.inactive {
 }
 
 .main-container .container-1 {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
