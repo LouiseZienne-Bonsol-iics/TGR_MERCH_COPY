@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/css/home_style.css" />
+    <link rel="stylesheet" href="../styles/css/aos.css" />
+    <link rel="stylesheet" href="../styles/css/cart_style.css" />
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+
+    <title>Cart Page</title>
+</head>
+
+<body class="inactive">
+    <section class="background">
+        <h1 class="bg-title">#TGRWIN</h1>
+    </section>
+    <section class="bg-1"></section>
+    <section class="bg-2"></section>
+
+    <section class="main-container">
+        <!-- container 1 -->
+        <section class="container-1" id="cont1">
+            <div class="header-container" data-aos="fade-in">
+                <div class="header_logo">
+                    <a href="#"><img src="../styles/images/LOGO_TELETIGERS 3.png" class="tgr_logo"><img
+                            src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
+                </div>
+                <ul class="header-opt">
+                    <li><a href="">home</a></li>
+                    <li><a href="">products</a></li>
+                    <li><a href="">services</a></li>
+                    <li><a href="">categories</a></li>
+                    <li><a href="">tracking</a></li>
+                    <li><a href="">FAQs</a></li>
+                </ul>
+
+                <div class="header-icons-container">
+                    <form class="search-form" action="">
+                        <input class="search-input" type="search" placeholder="Search here ...">
+                        <i class="fa fa-search"></i>
+                    </form>
+                    <img src="../styles/images/shopping-bag.png" class="bag-icon" />
+                </div>
+            </div>
+
+            <!--empty container-->
+            <section class="temp-container">
+                <center>
+                    <h1 class="temp-text">CART PAGE</h1>
+                </center>
+            </section>
+
+        </section>
+        <!-- container 3 -->
+        <section class="container-3" id="cont3">
+            <div class="footer-row">
+                <div class="footer-left-col">
+                    <div class="text-row">
+                        <div class="info-tab">
+                            <h1>Information</h1>
+                            <a href="">
+                                <h2>About Teletigers</h2>
+                            </a>
+                            <a href="">
+                                <h2>Teletigers website</h2>
+                            </a>
+                            <a href="">
+                                <h2>FAQs</h2>
+                            </a>
+                        </div>
+                        <div class="info-tab">
+                            <h1>Customer Services</h1>
+                            <a href="">
+                                <h2>Return Policy</h2>
+                            </a>
+                            <a href="">
+                                <h2>Accessibility</h2>
+                            </a>
+                            <a href="">
+                                <h2>Terms and Conditions</h2>
+                            </a>
+                        </div>
+                        <div class="info-tab">
+                            <h1>Affiliates</h1>
+                            <a href="">
+                                <h2>[[affiliates logo here]]</h2>
+                            </a>
+                            <a href="">
+                                <h2>[[affiliates logo here]]</h2>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-right-col">
+                    <div class="footer-logo"><a href="#"><img src="../styles/images/LOGO_TELETIGERS 3.png"
+                                class="tgr_logo">
+                            <h1 class="text_logo">TELETIGERS</h1>
+                        </a></div>
+                    <div class="contact" id="contact">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/TeletigersEsports"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitch"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text">all rights reserved 2021</div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="../styles/js/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        delay: 1650,
+    });
+    window.onload = function () {
+        $(".bg-1, .bg-2, .bg-title").addClass("active");
+    };
+
+    window.onunload = function () {
+        window.scrollTo(0, 0);
+    };
+    window.setTimeout(function () {
+        $(".bg-1, .bg-2, .main-container").addClass("finished");
+    }, 2250);
+    window.setTimeout(function () {
+        $("body").removeClass("inactive");
+    }, 2800);
+
+    // var container = document.getElementById("cont2");
+    // window.onmousemove = function (e) {
+    //     var x = - e.clientX / 5;
+    //     var y = - e.clientY / 5;
+    //     container.style.backgroundPositionX = x + 'px';
+    //     container.style.backgroundPositionY = y + 'px';
+    // }
+</script>
+
+</html>
