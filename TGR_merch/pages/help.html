@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/css/home_style.css" />
     <link rel="stylesheet" href="../styles/css/aos.css" />
     <link rel="stylesheet" href="../styles/css/help_style.css" />
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
 
     <title>Help Page</title>
@@ -22,7 +23,7 @@
 
     <section class="main-container">
         <!-- container 1 -->
-        <section class="container-1" id="cont1">
+        <section class="container-1" id="cont1" style="height: min-content;">
             <div class="header-container" data-aos="fade-in">
                 <div class="header_logo">
                     <a href="#"><img src="../styles/images/LOGO_TELETIGERS 3.png" class="tgr_logo"><img
@@ -46,14 +47,119 @@
                 </div>
             </div>
 
-            <!--empty container-->
-            <section class="temp-container">
-                <center>
-                    <h1 class="temp-text">HELP PAGE</h1>
-                </center>
-            </section>
-
         </section>
+
+        <!--help container-->
+        <section class="help-container-2">
+            <section class="help-container">
+                <div class="help-search-container">
+                    <div class="wrapper">
+                        <div class="heading-text">Help</div>
+                        <div class="searchBar">
+                            <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search"
+                                value="" />
+                            <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="#666666"
+                                        d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border-color: #747474;">
+
+                <div class="faq-container">
+                    <div class="sidebar">
+                        <!-- <h1>Customer Services</h1> -->
+                        <a href="">
+                            <h2>Home</h2>
+                        </a>
+                        <a href="">
+                            <h2>Contact Us</h2>
+                        </a>
+                        <a href="">
+                            <h2>Order Status</h2>
+                        </a>
+                        <a href="">
+                            <h2>Shipping Information</h2>
+                        </a>
+                        <a href="">
+                            <h2>Size Guide</h2>
+                        </a>
+                        <a href="">
+                            <h2>Payment and Prices</h2>
+                        </a>
+                        <a href="">
+                            <h2>Terms and Conditions</h2>
+                        </a>
+                    </div>
+
+                    <div class="faq-main">
+                        <div class="heading-text">Frequently Asked Questions</div>
+
+                        <div class="container">
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <button id="accordion-button-1" aria-expanded="false"><span
+                                            class="accordion-title">Registration</span><span class="icon" aria-hidden="true"></span></button>
+                                    <div class="accordion-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae
+                                            et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button id="accordion-button-2" aria-expanded="false"><span
+                                            class="accordion-title">Ordering</span><span class="icon"
+                                            aria-hidden="true"></span></button>
+                                    <div class="accordion-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae
+                                            et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button id="accordion-button-3" aria-expanded="false"><span
+                                            class="accordion-title">Returns</span><span
+                                            class="icon" aria-hidden="true"></span></button>
+                                    <div class="accordion-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae
+                                            et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button id="accordion-button-4" aria-expanded="false"><span
+                                            class="accordion-title">Shipping</span><span
+                                            class="icon" aria-hidden="true"></span></button>
+                                    <div class="accordion-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae
+                                            et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button id="accordion-button-5" aria-expanded="false"><span
+                                            class="accordion-title">Order Status</span><span class="icon"
+                                            aria-hidden="true"></span></button>
+                                    <div class="accordion-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae
+                                            et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </section>
+        </section>
+
         <!-- container 3 -->
         <section class="container-3" id="cont3">
             <div class="footer-row">
@@ -148,13 +254,24 @@
         $("body").removeClass("inactive");
     }, 2800);
 
-    // var container = document.getElementById("cont2");
-    // window.onmousemove = function (e) {
-    //     var x = - e.clientX / 5;
-    //     var y = - e.clientY / 5;
-    //     container.style.backgroundPositionX = x + 'px';
-    //     container.style.backgroundPositionY = y + 'px';
-    // }
+    //Dropdown-start
+    const items = document.querySelectorAll(".accordion button");
+
+    function toggleAccordion() {
+        const itemToggle = this.getAttribute('aria-expanded');
+
+        for (i = 0; i < items.length; i++) {
+            items[i].setAttribute('aria-expanded', 'false');
+        }
+
+        if (itemToggle == 'false') {
+            this.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+    //Dropdown-end
+
 </script>
 
 </html>
