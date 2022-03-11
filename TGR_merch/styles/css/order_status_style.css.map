@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,KAAK,EAAE,IAAI;CACd;;AAED,AAAA,UAAU,CAAA;EACF,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,GAAG;EACd,WAAW,EAAE,kBAAkB;CACtC",
     "sources": [
-        "../scss/home/order_status.scss"
+        "../scss/order_status.scss"
     ],
     "names": [],
     "file": "order_status_style.css"

@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,KAAK,EAAE,IAAI;CACd;;AAED,AAAA,UAAU,CAAA;EACF,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,GAAG;EACd,WAAW,EAAE,kBAAkB;CACtC",
     "sources": [
-        "../scss/home/checkout.scss"
+        "../scss/checkout.scss"
     ],
     "names": [],
     "file": "checkout_style.css"

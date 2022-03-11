@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,KAAK,EAAE,IAAI;CACd;;AAED,AAAA,UAAU,CAAA;EACF,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,GAAG;EACd,WAAW,EAAE,kBAAkB;CACtC",
     "sources": [
-        "../scss/home/product_info.scss"
+        "../scss/product_info.scss"
     ],
     "names": [],
     "file": "product_info_style.css"
