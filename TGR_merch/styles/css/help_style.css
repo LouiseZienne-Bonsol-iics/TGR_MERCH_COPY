@@ -1,6 +1,6 @@
 .help-container-2 {
-  background: url("../images/bg-teletigers-text.png") center center;
-  background-size: 100%;
+  background: url("../images/bg-teletigers-text.png") no-repeat center;
+  background-size: cover;
   background-attachment: fixed;
   width: 100%;
   min-height: 100vh;
@@ -228,4 +228,3 @@
   letter-spacing: 0.1em;
   margin-bottom: 0.3em;
 }
-/*# sourceMappingURL=help_style.css.map */
