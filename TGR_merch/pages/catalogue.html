@@ -52,50 +52,47 @@
         <section class="cata-container">
             <section class="container-2" id="cont2">
                 <div class="cont-restrict">
-                    <div class="featured">
-                        <h1 class="feat-header">Featured Products</h1>
-                        <hr>
-                        <div class="sort-filters">
 
-                            <div class="sort-filters__select-wrapper">
-                                <select class="sort-filters__filter-active" aria-label="Sorting alphabetically">
-                                    <option value="">Alphabetically</option>
-            
-                                </select>
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li style="color: white;">Products</li>
+                      </ul>
+
+                    <div class="all-products">
+                        <h1 class="prod-header">All Products</h1>
+                        <hr>
+                        <div class="sort-container">
+                            <h5 style="color: white;">Sort By</h5>
+                            <div class="dropdown">
+                                <input type="checkbox" id="my-dropdown1" value="" name="my-checkbox1">
+                                <label for="my-dropdown1" data-toggle="dropdown">
+                                    Name
+                                </label>
+                                <ul>
+                                    <li><a href="#">A to Z</a></li>
+                                    <li><a href="#">Z to A</a></li>
+                                </ul>
                             </div>
-            
-                            <div class="sort-filters__select-wrapper">
-                                <select>
-                                    <option value="">Filter by recipient</option>
-            
-                                </select>
+                            <div class="dropdown">
+                                <input type="checkbox" id="my-dropdown2" value="" name="my-checkbox2">
+                                <label for="my-dropdown2" data-toggle="dropdown">
+                                    Date
+                                </label>
+                                <ul>
+                                    <li><a href="#">Newest</a></li>
+                                    <li><a href="#">Oldest</a></li>
+                                </ul>
                             </div>
-            
-                            <div class="sort-filters__select-wrapper">
-                                <select class="sort-filters__filter-active"
-                                    aria-label="Filtering by: Include charity or company nos.">
-                                    <option value="">Filter by data feature</option>
-            
-                                    <option selected value="Include charity or company nos.">Include charity or company nos.
-                                    </option>
-            
-                                </select>
+                            <div class="dropdown">
+                                <input type="checkbox" id="my-dropdown3" value="" name="my-checkbox3">
+                                <label for="my-dropdown3" data-toggle="dropdown">
+                                    Price
+                                </label>
+                                <ul>
+                                    <li><a href="#">Ascending</a></li>
+                                    <li><a href="#">Descending</a></li>
+                                </ul>
                             </div>
-            
-                            <div class="sort-filters__select-wrapper">
-                                <select>
-                                    <option value="">Filter by data file</option>
-            
-                                </select>
-                            </div>
-            
-                            <div class="sort-filters__select-wrapper">
-                                <select>
-                                    <option value="">Filter by data file</option>
-            
-                                </select>
-                            </div>
-            
                         </div>
 
                         <div class="products">
@@ -183,10 +180,25 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
+                    <div class="pagination">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">&raquo;</a>
+                      </div>
+
                 </div>
             </section>
+
+          
+
         </section>
-        
+
+      
+
         <!-- FOOTER -->
         <section class="main-footer-container">
             <div class="footer-row">
@@ -281,13 +293,24 @@
         $("body").removeClass("inactive");
     }, 2800);
 
-    // var container = document.getElementById("cont2");
-    // window.onmousemove = function (e) {
-    //     var x = - e.clientX / 5;
-    //     var y = - e.clientY / 5;
-    //     container.style.backgroundPositionX = x + 'px';
-    //     container.style.backgroundPositionY = y + 'px';
-    // }
+    var nav = document.querySelector('.sort-container');
+    nav.addEventListener('toggle', function (event) {
+
+        // Only run if the dropdown is open
+        if (!event.target.open) return;
+
+        // Get all other open dropdowns and close them
+        var dropdowns = nav.querySelectorAll('.dropdown[open]');
+        Array.prototype.forEach.call(dropdowns, function (dropdown) {
+            if (dropdown === event.target) return;
+            dropdown.removeAttribute('open');
+        });
+
+    }, true);
+
+    var count = $('.products').children().length;
+
+    $('#result').text(count);
 </script>
 
 </html>

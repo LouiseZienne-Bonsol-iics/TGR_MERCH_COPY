@@ -1,3 +1,19 @@
+html * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #262626;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: sans-serif;
+	padding: 5rem;
+}
+
 .cata-container {
 	min-height: 100vh;
 	width: 100%;
@@ -6,7 +22,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: #444444;
-    padding: 2em 0 5em 0;
+	padding: 2em 0 5em 0;
 	&.finished {
 		z-index: 900;
 	}
@@ -49,14 +65,14 @@
 						text-decoration: none;
 
 						h1 {
-							font-family: 'Cambay', sans-serif;
+							font-family: "Cambay", sans-serif;
 							font-size: 2.6em;
 							font-style: italic;
 							color: #e0e0e0;
 							line-height: 1.2em;
 						}
 						h3 {
-							font-family: 'Red Hat Display', sans-serif;
+							font-family: "Red Hat Display", sans-serif;
 							font-size: 1.4em;
 							color: #e0e0e0;
 							font-weight: 100;
@@ -73,14 +89,16 @@
 					}
 				}
 			}
-			.featured {
+			.all-products {
+				counter-reset: product-tile;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
 				align-items: flex-start;
-				margin-top: 6em;
-				.feat-header {
-					font-family: 'Red Hat Display', sans-serif;
+				margin-top: 3em;
+				padding-bottom: 3em;
+				.prod-header {
+					font-family: "Red Hat Display", sans-serif;
 					color: #ebebeb;
 					letter-spacing: 0.1em;
 					font-size: 1.7em;
@@ -99,6 +117,7 @@
 					flex-flow: row wrap;
 					justify-content: space-around;
 					.product-tile {
+						counter-increment: product-tile; //counts the instance of product-tile class
 						margin-top: 3em;
 						display: flex;
 						flex-direction: column;
@@ -117,14 +136,14 @@
 							}
 						}
 						.product-title {
-							font-family: 'Source Sans Pro', sans-serif;
+							font-family: "Source Sans Pro", sans-serif;
 							letter-spacing: 0.2em;
 							font-size: 1em;
 							color: #ebebeb;
 						}
 						.product-price {
 							margin-top: 0.8em;
-							font-family: 'Source Sans Pro', sans-serif;
+							font-family: "Source Sans Pro", sans-serif;
 							letter-spacing: 0.1em;
 							font-size: 1em;
 							color: #e4af00;
@@ -132,6 +151,201 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+.sort-container {
+	width: 100%;
+	margin-top: 2.5em;
+	padding: 13px 20px;
+	background-color: #282828;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	column-gap: 1em;
+
+	//dropdown for sorting
+	.dropdown {
+		position: relative;
+		display: inline-block;
+
+		> input[type="checkbox"] {
+			position: absolute;
+			left: -100vw;
+			&:checked {
+				~ {
+					ul {
+						left: 0;
+					}
+				}
+			}
+		}
+		> label {
+			display: inline-block;
+			padding: 2px 27px;
+			color: #333;
+			line-height: 1.5em;
+			text-decoration: none;
+			border: 1px solid #8c8c8c;
+			background-color: white;
+			cursor: pointer;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			&:hover {
+				border-color: #333;
+			}
+			&:after {
+				content: "\f107";
+				font-family: FontAwesome;
+				display: inline-block;
+				margin-left: 6px;
+			}
+		}
+		> a[role="button"] {
+			display: inline-block;
+			padding: 6px 15px;
+			color: #333;
+			line-height: 1.5em;
+			text-decoration: none;
+			border: 1px solid #8c8c8c;
+			cursor: pointer;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			&:hover {
+				border-color: #333;
+			}
+			&:focus {
+				border-color: #333;
+			}
+			&:after {
+				content: "\f107";
+				font-family: FontAwesome;
+				display: inline-block;
+				margin-left: 6px;
+			}
+		}
+		> ul {
+			position: absolute;
+			z-index: 999;
+			display: block;
+			left: -100vw;
+			top: calc(1.5em + 14px);
+			border: 1px solid #8c8c8c;
+			background: #fff;
+			padding: 6px 0;
+			margin: 0;
+			list-style: none;
+			width: 100%;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+			-moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+			box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+			a {
+				display: block;
+				padding: 6px 15px;
+				text-decoration: none;
+				color: #333;
+				&:hover {
+					background: #ececec;
+				}
+				&:focus {
+					background: #ececec;
+				}
+			}
+			&:target {
+				left: 0;
+				~ {
+					a {
+						&:after {
+							content: "\f106";
+						}
+					}
+					a.close {
+						display: block;
+						position: absolute;
+						left: 0;
+						top: 0;
+						height: 100%;
+						width: 100%;
+						text-indent: -100vw;
+						z-index: 1000;
+					}
+				}
+			}
+		}
+		> [type="checkbox"] {
+			&:checked {
+				+ {
+					label {
+						&:after {
+							content: "\f106";
+						}
+					}
+				}
+			}
+		}
+		a.close {
+			display: none;
+		}
+	}
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	padding-top: 3em;
+	a {
+		color: #777777;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color 0.3s;
+		border: 1px solid #777777;
+		margin: 0 4px;
+		&:hover {
+			&:not(.active) {
+				color: #fec86e;
+				border: 1px solid #fec86e;
+			}
+		}
+	}
+	a.active {
+		color: #fec86e;
+		border: 1px solid #fec86e;
+	}
+
+	&:after {
+		font-family: "Roboto Mono", monospace;
+		content: "Showing " counter(product-tile) " of " counter(product-tile) " results ";
+		width: 100%;
+		display: flex;
+		justify-content: right;
+		color: white;
+	}
+}
+
+ul.breadcrumb {
+	margin-top: 7em;
+	list-style: none;
+	li {
+		display: inline;
+		a {
+			color: #bcbcbc;
+			text-decoration: none;
+		}
+	}
+	li + li {
+		&:before {
+			padding: 8px;
+			color: #bcbcbc;
+			content: "/\00a0";
 		}
 	}
 }
