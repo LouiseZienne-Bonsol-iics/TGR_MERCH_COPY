@@ -49,7 +49,6 @@ body.inactive {
 }
 
 .main-container .main-header-container {
-  height: 100vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -623,3 +622,4 @@ body.inactive {
 .main-container .main-footer-container .footer-row .footer-left-col .text-row .info-tab h2:hover {
   color: #dda408;
 }
+/*# sourceMappingURL=header_footer_style.css.map */
