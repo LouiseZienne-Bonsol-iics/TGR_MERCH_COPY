@@ -6,30 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/css/header_footer_style.css" />
-    <link rel="stylesheet" href="../styles/css/loading_screen_style.css" />
     <link rel="stylesheet" href="../styles/css/aos.css" />
+    <link rel="stylesheet" href="../styles/css/loading_screen_style.css">
     <link rel="stylesheet" href="../styles/css/checkout_style.css" />
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
 
     <title>Checkout Page</title>
 </head>
 
-<body class="inactive">
-    <section class="background">
-        <h1 class="bg-title">#TGRWIN</h1>
-    </section>
-    <section class="bg-1"></section>
-    <section class="bg-2"></section>
+<body>
 
     <section class="main-container">
-        <!-- HEADER -->
 
-
-        <!--empty container-->
+        <!--forms-container-->
         <section class="forms-container">
+            <div class="form-container">
+                <h1>Shipping</h1>
+                <p>Please enter your shipping details.</p>
+                <form class="form">
+                    <div class="fields fields--2">
+                        <label class="field">
+                            <span class="field__label" for="firstname">First name</span>
+                            <input class="field__input" type="text" id="firstname" value="John" />
+                        </label>
+                        <label class="field">
+                            <span class="field__label" for="lastname">Last name</span>
+                            <input class="field__input" type="text" id="lastname" value="Doe" />
+                        </label>
+                    </div>
+                    <div class="fields">
+                        <label class="field">
+                            <span class="field__label" for="country">Country</span>
+                            <select class="field__input" id="country">
+                                <option value=""></option>
+                                <option value="unitedstates">Philippines</option>
+                            </select>
+                        </label>
+                        <label class="field">
+                            <span class="field__label" for="address">Address</span>
+                            <input class="field__input" type="text" id="address" />
+                        </label>
+                    </div>
 
+                    <div class="fields fields--3">
+                        <label class="field">
+                            <span class="field__label" for="province">Province</span>
+                            <input class="field__input" type="text" id="province" />
+                            </select>
+                        </label>
+                        <label class="field">
+                            <span class="field__label" for="city">City</span>
+                            <input class="field__input" type="text" id="city" />
+                        </label>
+                        <label class="field">
+                            <span class="field__label" for="zipcode">Zip code</span>
+                            <input class="field__input" type="text" id="zipcode" />
+                        </label>
+                    </div>
+                    <div class="courier">
+                        <h1>Delivery method</h1>
+                        <p>Please choose/enter your desired delivery method</p>
+                        <div class="fields">
+                            <label class="field">
+                                <span class="field__label" for="courier">Courier</span>
+                                <input class="field__input" type="text" id="courier" list="courier-list">
+                                <datalist id="courier-list">
+                                    <option value="J&T Express"></option>
+                                    <option value="Grab"></option>
+                                    <option value="Lalamove"></option>
+                                </datalist>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="payment">
+                        <h1>Payment Information</h1>
+                        <fieldset>
+
+                        </fieldset>
+                    </div>
+                    <div class="buttons">
+                        <a href="#" class="button btn-1">Return to cart</a>
+                        <input type="submit" class="button btn-2" value="Place order"></input>
+                    </div>
+                </form>
+
+            </div>
         </section>
-
+        <section class="orders-container"></section>
     </section>
 
 
@@ -42,19 +106,10 @@
         duration: 1000,
         delay: 1650,
     });
-    window.onload = function () {
-        $(".bg-1, .bg-2, .bg-title").addClass("active");
-    };
 
     window.onunload = function () {
         window.scrollTo(0, 0);
     };
-    window.setTimeout(function () {
-        $(".bg-1, .bg-2, .main-container").addClass("finished");
-    }, 2250);
-    window.setTimeout(function () {
-        $("body").removeClass("inactive");
-    }, 2800);
 
     // var container = document.getElementById("cont2");
     // window.onmousemove = function (e) {

@@ -1,10 +1,199 @@
-.temp-container {
-  width: 100%;
+@import url("https://rsms.me/inter/inter.css");
+:root {
+  --color-gray: #737888;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
 }
 
-.temp-text {
-  color: white;
-  font-size: 5em;
-  font-family: Tahoma, sans-serif;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
-/*# sourceMappingURL=checkout_style.css.map */
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  overflow-y: hidden;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-height: 100vh;
+  background-color: #fec86e;
+}
+
+.main-container .forms-container {
+  background-color: #333;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: scroll;
+  max-height: 100vh;
+  padding: 2vw 0;
+  width: 65%;
+}
+
+.main-container .forms-container h1 {
+  margin-bottom: 1em;
+}
+
+.main-container .forms-container p {
+  color: var(--color-gray);
+  margin-bottom: 1em;
+}
+
+.main-container .forms-container .form-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.main-container .forms-container .form-container .form {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.main-container .forms-container .form-container .form :focus-visible {
+  background-color: #333;
+}
+
+.main-container .forms-container .form-container .form .fields {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.main-container .forms-container .form-container .form .fields .field {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: .5em;
+  border-radius: .25em;
+}
+
+.main-container .forms-container .form-container .form .fields .field .field__label {
+  color: var(--color-gray);
+  font-size: 0.6em;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25em;
+}
+
+.main-container .forms-container .form-container .form .fields .field .field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1em;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background-color: transparent;
+}
+
+.main-container .forms-container .form-container .form .fields :focus-within {
+  border-color: #000;
+}
+
+.main-container .forms-container .form-container .form .fields--2 {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.main-container .forms-container .form-container .form .fields--3 {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main-container .forms-container .form-container .form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 2em;
+}
+
+.main-container .forms-container .form-container .form .buttons .button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  width: 30%;
+  padding: 1em;
+  border-radius: 0.25em;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.main-container .forms-container .form-container .form .buttons .btn-1 {
+  background-color: transparent;
+  color: #fec86e;
+  border: #fec86e solid 2px;
+}
+
+.main-container .forms-container .form-container .form .buttons .btn-2 {
+  background-color: #fec86e;
+  color: #000000;
+  border: #fec86e solid 2px;
+}
+
+.main-container .forms-container .form-container .form fieldset {
+  height: 30vh;
+  margin-bottom: 3vh;
+}
+
+.main-container .orders-container {
+  width: 35%;
+  max-height: 100vh;
+  background-color: #fec86e;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #00000000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #00000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00000000;
+}
