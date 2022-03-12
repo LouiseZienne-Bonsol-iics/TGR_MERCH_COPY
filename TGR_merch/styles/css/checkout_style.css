@@ -49,7 +49,8 @@ body {
 }
 
 .main-container .forms-container h1 {
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
+  color: #fec86e;
 }
 
 .main-container .forms-container p {
@@ -105,7 +106,6 @@ body {
   margin: 0;
   border: 0;
   outline: 0;
-  font-weight: bold;
   font-size: 1em;
   width: 100%;
   -webkit-appearance: none;
@@ -115,7 +115,7 @@ body {
 }
 
 .main-container .forms-container .form-container .form .fields :focus-within {
-  border-color: #000;
+  border-color: #cc9a11;
 }
 
 .main-container .forms-container .form-container .form .fields--2 {
@@ -177,10 +177,165 @@ body {
   margin-bottom: 3vh;
 }
 
+.main-container .forms-container .logo {
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .forms-container .logo .tgr-logo {
+  height: 8em;
+}
+
+.main-container .forms-container .logo .tgr-text {
+  height: 3em;
+}
+
 .main-container .orders-container {
-  width: 35%;
+  width: 30%;
   max-height: 100vh;
   background-color: #fec86e;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 4vw 4vw 4vw 0;
+  margin-left: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .orders-container .product-cont {
+  padding: 0.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-container .orders-container .product-cont .prod-img {
+  height: 6em;
+  width: 6em;
+  overflow: hidden;
+}
+
+.main-container .orders-container .product-cont .prod-img img {
+  height: 6em;
+}
+
+.main-container .orders-container .product-cont .prod-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .orders-container .product-cont .prod-name h1 {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.main-container .orders-container .product-cont .prod-price h1 {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.main-container .orders-container .costs-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  height: 10vh;
+  padding: 0.7em;
+}
+
+.main-container .orders-container .costs-cont .sub-tot,
+.main-container .orders-container .costs-cont .ship-fee {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-container .orders-container .costs-cont .sub-tot h1,
+.main-container .orders-container .costs-cont .ship-fee h1 {
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.main-container .orders-container .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 00.7em;
+  width: 100%;
+  height: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-transform: uppercase;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .orders-container .total h2 {
+  font-size: 1.5em;
+}
+
+.main-container .orders-container .total h1 {
+  font-size: 2em;
+}
+
+.main-container .orders-container hr {
+  background-color: #222222;
+  border: #222222 solid 1px;
+  width: 105%;
+  margin: 0.7em 0;
 }
 
 ::-webkit-scrollbar-track {

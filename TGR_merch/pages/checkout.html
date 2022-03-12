@@ -20,6 +20,10 @@
 
         <!--forms-container-->
         <section class="forms-container">
+            <div class="logo">
+                <img class="tgr-logo" src="../styles/images/LOGO_TELETIGERS 2.png" alt="">
+                <img class="tgr-text" src="../styles/images/Teletigers Text.png" alt="">
+            </div>
             <div class="form-container">
                 <h1>Shipping</h1>
                 <p>Please enter your shipping details.</p>
@@ -27,11 +31,11 @@
                     <div class="fields fields--2">
                         <label class="field">
                             <span class="field__label" for="firstname">First name</span>
-                            <input class="field__input" type="text" id="firstname" value="John" />
+                            <input class="field__input" type="text" id="firstname" />
                         </label>
                         <label class="field">
                             <span class="field__label" for="lastname">Last name</span>
-                            <input class="field__input" type="text" id="lastname" value="Doe" />
+                            <input class="field__input" type="text" id="lastname" />
                         </label>
                     </div>
                     <div class="fields">
@@ -93,7 +97,36 @@
 
             </div>
         </section>
-        <section class="orders-container"></section>
+        <section class="orders-container">
+            <div class="product-cont">
+                <div class="prod-img"><img src="../styles/images/mini_banner_3.png" alt=""></div>
+                <div class="prod-name">
+                    <h1>a very long product name</h1>
+                    <h1>[[quantity]]</h1>
+                </div>
+                <div class="prod-price">
+                    <h1>php [[price]]</h1>
+                </div>
+            </div>
+            <hr>
+            <div class="costs-cont">
+                <div class="sub-tot">
+                    <h1>Subtotal</h1>
+                    <h1>php [[price]]</h1>
+                </div>
+                <div class="ship-fee">
+                    <h1>Shipping fee</h1>
+                    <h1>php [[price]]</h1>
+                </div>
+            </div>
+            <hr>
+            <div class="total-cont">
+                <div class="total">
+                    <h2>total</h2>
+                    <h1>php [[price]]</h1>
+                </div>
+            </div>
+        </section>
     </section>
 
 
