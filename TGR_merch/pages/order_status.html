@@ -48,11 +48,138 @@
                 </div>
             </div>
 
-            <!--empty container-->
-            <section class="temp-container">
-                <center>
-                    <h1 class="temp-text">ORDER STATUS PAGE</h1>
-                </center>
+            <section class="order-stat-container">
+                <section class="sub-container" id="subcont">
+                    <div class="cont-restrict">
+
+                        <ul class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li style="color: white;">Order Tracking</li>
+                        </ul>
+
+                        <!-- Order Tracking Search Bar -->
+                        <div class="order-tracking-cont">
+                            <div class="page-heading-labels">
+                                <h1 class="order-headers">Order Status Tracking</h1>
+                                <hr>
+                            </div>
+                            <form class="form-inline">
+                                <input type="search" id="tracking-search" placeholder="Please enter your Order Number." autocomplete="off">
+                                <div class="buttons">
+                                    <input type="submit" class="button btn-2" value="Search"></input>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="order-summary-cont">
+                            <div class="page-heading-labels">
+                                <h1 class="order-headers">Order Summary</h1>
+                                <hr>
+                            </div>
+                            <br>
+
+                            <div class="order-table">
+                                <div class="column-labels">
+                                    <label class="product-image">PRODUCT</label>
+                                    <label class="product-details">Product</label>
+                                    <label class="product-price">PRICE</label>
+                                    <label class="product-quantity">QUANTITY</label>
+                                    <label class="product-line-price">TOTAL</label>
+                                </div>
+
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
+                                        <p class="product-description">LARGE</p>
+                                    </div>
+                                    <div class="product-price">12.99</div>
+                                    <div class="product-quantity">1</div>
+                                    <div class="product-line-price">25.98</div>
+                                </div>
+
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img
+                                            src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
+                                        <p class="product-description">MEDIUM</p>
+                                    </div>
+                                    <div class="product-price">45.99</div>
+                                    <div class="product-quantity">2</div>
+                                    <div class="product-line-price">45.99</div>
+                                </div>
+
+                                <div class="totals">
+                                    <div class="totals-item">
+                                        <label>SUBTOTAL: </label>
+                                        <div class="totals-value" id="order-subtotal">71.97</div>
+                                    </div>
+                                    <div class="totals-item">
+                                        <label>SHIPPING FEE: </label>
+                                        <div class="totals-value" id="shipping-fee">150.00</div>
+                                    </div>
+                                    <div class="totals-item">
+                                        <label>TOTAL: </label>
+                                        <div class="totals-value" id="order-total">71.97</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Details -->
+                        <div class="order-details-cont">
+                            <div class="page-heading-labels">
+                                <h1 class="order-headers">Order Details</h1>
+                                <hr>
+                            </div>
+
+                            <div class="customer-cont">
+                                <div class="customer-item">
+                                    <label>Customer Name: </label>
+                                    <div class="customer-value" id="customer-name">Juan Dela Cruz</div>
+                                </div>
+                                <div class="customer-item">
+                                    <label>Contact Number: </label>
+                                    <div class="customer-value" id="contact-number">09876543***</div>
+                                </div>
+                                <div class="customer-item">
+                                    <label>Email Address: </label>
+                                    <div class="customer-value" id="email-address">juan.de****@gmail.com</div>
+                                </div>
+                                <div class="customer-item">
+                                    <label>Delivery Option: </label>
+                                    <div class="customer-value" id="delivery-option">J&T Express</div>
+                                </div>
+                            </div>
+
+                            <div class="order-table">
+                                <div class="column-labels">
+                                    <label class="order-no">ORDER NO.</label>
+                                    <label class="order-date">ORDER PLACING DATE</label>
+                                    <label class="order-payment-stat">PAYMENT STATUS</label>
+                                    <label class="order-waybill-no">WAYBILL NO.</label>
+                                    <label class="order-delivery-stat">DELIVERY STATUS</label>
+                                </div>
+
+                                <div class="orders">
+                                    <div class="order-no">20211013021454181</div>
+                                    <div class="order-date">2021-10-13 10:14AM</div>
+                                    <div class="order-payment-stat">PAID</div>
+                                    <div class="order-waybill-no">210-163001</div>
+                                    <div class="order-delivery-stat">SHIPPED</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
             </section>
 
         </section>
