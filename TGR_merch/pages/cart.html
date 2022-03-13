@@ -57,7 +57,7 @@
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a></li>
                         <li style="color: white;">Cart</li>
-                      </ul>
+                    </ul>
 
                     <div class="shopping-cart-label">
                         <h1 class="cart-header">Shopping Cart</h1>
@@ -67,81 +67,90 @@
                     <div class="shopping-cart">
 
                         <div class="column-labels">
-                          <label class="product-image">PRODUCT</label>
-                          <label class="product-details">Product</label>
-                          <label class="product-price">PRICE</label>
-                          <label class="product-quantity">QUANTITY</label>
-                          <label class="product-removal">Remove</label>
-                          <label class="product-line-price">TOTAL</label>
+                            <label class="product-image">PRODUCT</label>
+                            <label class="product-details">Product</label>
+                            <label class="product-price">PRICE</label>
+                            <label class="product-quantity">QUANTITY</label>
+                            <label class="product-line-price">TOTAL</label>
                         </div>
-                      
+
                         <div class="product">
-                          <div class="product-image">
-                            <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
-                          </div>
-                          <div class="product-details">
-                            <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
-                            <p class="product-description">LARGE</p>
-                          </div>
-                          <div class="product-price">12.99</div>
-                          <div class="product-quantity">
-                            <input type="number" value="2" min="1">
-                          </div>
-                          <div class="product-removal">
-                            <button class="remove-product">
-                              Remove
-                            </button>
-                          </div>
-                          <div class="product-line-price">25.98</div>
-                        </div>
-                      
-                        <div class="product">
-                          <div class="product-image">
-                            <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-                          </div>
-                          <div class="product-details">
-                            <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
-                            <p class="product-description">MEDIUM</p>
-                          </div>
-                          <div class="product-price">45.99</div>
-                          <div class="product-quantity">
-                            <input type="number" value="1" min="1">
-                          </div>
-                          <div class="product-removal">
-                            <button class="remove-product">
-                              Remove
-                            </button>
-                          </div>
-                          <div class="product-line-price">45.99</div>
-                        </div>
-                      
-                        <div class="totals">
-                          <div class="totals-item">
-                            <label>Subtotal</label>
-                            <div class="totals-value" id="cart-subtotal">71.97</div>
-                          </div>
-                          <div class="totals-item">
-                            <label>Tax (5%)</label>
-                            <div class="totals-value" id="cart-tax">3.60</div>
-                          </div>
-                          <div class="totals-item">
-                            <label>Shipping</label>
-                            <div class="totals-value" id="cart-shipping">15.00</div>
-                          </div>
-                          <div class="totals-item totals-item-total">
-                            <label>Grand Total</label>
-                            <div class="totals-value" id="cart-total">90.57</div>
-                          </div>
-                        </div>
-                            
-                            <!-- <button class="checkout">Checkout</button> -->
-                            <div class="buttons">
-                                <a href="#" class="button btn-1">Continue Shopping</a>
-                                <input type="submit" class="button btn-2" value="Proceed to Checkout"></input>
+                            <div class="product-image">
+                                <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
                             </div>
-                      
-                      </div>
+                            <div class="product-details">
+                                <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
+                                <p class="product-description">LARGE</p>
+                            </div>
+                            <div class="product-price">12.99</div>
+                            <div class="product-quantity">
+                                <span class="stepper">
+                                    <button>–</button>
+                                    <input type="number" id="stepper1" value="1" min="1" max="100" step="1">
+                                    <button>+</button>
+                                </span>
+                                <div class="product-removal">
+                                    <button class="remove-product">
+                                        Remove Item
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="product-line-price">25.98</div>
+                        </div>
+
+                        <div class="product">
+                            <div class="product-image">
+                                <img
+                                    src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
+                            </div>
+                            <div class="product-details">
+                                <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
+                                <p class="product-description">MEDIUM</p>
+                            </div>
+                            <div class="product-price">45.99</div>
+                            <div class="product-quantity">
+                                <span class="stepper">
+                                    <button>–</button>
+                                    <input type="number" id="stepper2" value="1" min="1" max="100" step="1">
+                                    <button>+</button>
+                                </span>
+                                <div class="product-removal">
+                                    <button class="remove-product">
+                                        Remove Item
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-line-price">45.99</div>
+                        </div>
+
+                        <div class="bottom-container">
+                            <div class="notes-container">
+                                <form>
+                                    <div class="title-text">
+                                        Special Instructions
+                                    </div> <br />
+                                    <textarea rows = "6" cols = "75" name = "description" placeholder="Enter notes here..."></textarea>
+                                 </form>
+                            </div>
+
+                            <div class="total-buttons-container">
+                                <div class="totals">
+                                    <div class="totals-item">
+                                        <label>SUBTOTAL: </label>
+                                        <div class="totals-value" id="cart-subtotal">71.97</div>
+                                    </div>
+                                    <p class="shipping-info">Shipping fee will be calculated at checkout.</p>
+                                </div>
+                                <div class="buttons">
+                                    <a href="#" class="button btn-1">Continue Shopping</a>
+                                    <input type="submit" class="button btn-2" value="Proceed to Checkout"></input>
+                                </div>
+                            </div>
+                        </div>
                     
+                    </div>
+
 
                 </div>
             </section>
@@ -243,130 +252,38 @@
     }, 2800);
 
     //Cart Codes below
-    /* Set values + misc */
-    var promoCode;
-    var promoPrice;
-    var fadeTime = 300;
-
-    /* Assign actions */
-    $('.quantity input').change(function () {
-        updateQuantity(this);
-    });
-
-    $('.remove button').click(function () {
-        removeItem(this);
-    });
-
-    $(document).ready(function () {
-        updateSumItems();
-    });
-
-    $('.promo-code-cta').click(function () {
-
-        promoCode = $('#promo-code').val();
-
-        if (promoCode == '10off' || promoCode == '10OFF') {
-            //If promoPrice has no value, set it as 10 for the 10OFF promocode
-            if (!promoPrice) {
-                promoPrice = 10;
-            } else if (promoCode) {
-                promoPrice = promoPrice * 1;
+    /*Quantity Spinner Updater*/
+    var inc = document.getElementsByClassName("stepper");
+    for (i = 0; i < inc.length; i++) {
+        var incI = inc[i].querySelector("input"),
+            id = incI.getAttribute("id"),
+            min = incI.getAttribute("min"),
+            max = incI.getAttribute("max"),
+            step = incI.getAttribute("step");
+        document
+            .getElementById(id)
+            .previousElementSibling.setAttribute(
+                "onclick",
+                "stepperInput('" + id + "', -" + step + ", " + min + ")"
+            );
+        document
+            .getElementById(id)
+            .nextElementSibling.setAttribute(
+                "onclick",
+                "stepperInput('" + id + "', " + step + ", " + max + ")"
+            );
+    }
+    function stepperInput(id, s, m) {
+        var el = document.getElementById(id);
+        if (s > 0) {
+            if (parseInt(el.value) < m) {
+                el.value = parseInt(el.value) + s;
             }
-        } else if (promoCode != '') {
-            alert("Invalid Promo Code");
-            promoPrice = 0;
-        }
-        //If there is a promoPrice that has been set (it means there is a valid promoCode input) show promo
-        if (promoPrice) {
-            $('.summary-promo').removeClass('hide');
-            $('.promo-value').text(promoPrice.toFixed(2));
-            recalculateCart(true);
-        }
-    });
-
-    /* Recalculate cart */
-    function recalculateCart(onlyTotal) {
-        var subtotal = 0;
-
-        /* Sum up row totals */
-        $('.basket-product').each(function () {
-            subtotal += parseFloat($(this).children('.subtotal').text());
-        });
-
-        /* Calculate totals */
-        var total = subtotal;
-
-        //If there is a valid promoCode, and subtotal < 10 subtract from total
-        var promoPrice = parseFloat($('.promo-value').text());
-        if (promoPrice) {
-            if (subtotal >= 10) {
-                total -= promoPrice;
-            } else {
-                alert('Order must be more than £10 for Promo code to apply.');
-                $('.summary-promo').addClass('hide');
-            }
-        }
-
-        /*If switch for update only total, update only total display*/
-        if (onlyTotal) {
-            /* Update total display */
-            $('.total-value').fadeOut(fadeTime, function () {
-                $('#basket-total').html(total.toFixed(2));
-                $('.total-value').fadeIn(fadeTime);
-            });
         } else {
-            /* Update summary display. */
-            $('.final-value').fadeOut(fadeTime, function () {
-                $('#basket-subtotal').html(subtotal.toFixed(2));
-                $('#basket-total').html(total.toFixed(2));
-                if (total == 0) {
-                    $('.checkout-cta').fadeOut(fadeTime);
-                } else {
-                    $('.checkout-cta').fadeIn(fadeTime);
-                }
-                $('.final-value').fadeIn(fadeTime);
-            });
+            if (parseInt(el.value) > m) {
+                el.value = parseInt(el.value) + s;
+            }
         }
-    }
-
-    /* Update quantity */
-    function updateQuantity(quantityInput) {
-        /* Calculate line price */
-        var productRow = $(quantityInput).parent().parent();
-        var price = parseFloat(productRow.children('.price').text());
-        var quantity = $(quantityInput).val();
-        var linePrice = price * quantity;
-
-        /* Update line price display and recalc cart totals */
-        productRow.children('.subtotal').each(function () {
-            $(this).fadeOut(fadeTime, function () {
-                $(this).text(linePrice.toFixed(2));
-                recalculateCart();
-                $(this).fadeIn(fadeTime);
-            });
-        });
-
-        productRow.find('.item-quantity').text(quantity);
-        updateSumItems();
-    }
-
-    function updateSumItems() {
-        var sumItems = 0;
-        $('.quantity input').each(function () {
-            sumItems += parseInt($(this).val());
-        });
-        $('.total-items').text(sumItems);
-    }
-
-    /* Remove item from cart */
-    function removeItem(removeButton) {
-        /* Remove row from DOM and recalc cart total */
-        var productRow = $(removeButton).parent().parent();
-        productRow.slideUp(fadeTime, function () {
-            productRow.remove();
-            recalculateCart();
-            updateSumItems();
-        });
     }
 </script>
 

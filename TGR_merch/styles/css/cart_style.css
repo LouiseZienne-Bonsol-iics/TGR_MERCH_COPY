@@ -5,6 +5,18 @@ html * {
           box-sizing: border-box;
 }
 
+textarea {
+  resize: none;
+}
+
+.title-text {
+  font-size: 1em;
+  font-family: "Red Hat Display", sans-serif;
+  color: #ebebeb;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3em;
+}
+
 ul.breadcrumb {
   margin-top: 7em;
   list-style: none;
@@ -107,11 +119,59 @@ ul.breadcrumb li + li:before {
   background: #ecaf2b;
 }
 
+/*Quantity Number Spinner*/
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  height: auto;
+}
+
+.stepper {
+  border: 1px solid #ecaf2b;
+  overflow: visible;
+  height: 2.1em;
+  padding: 1px;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+.stepper input {
+  width: 3em;
+  height: 100%;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 1em;
+}
+
+.stepper button {
+  width: 1.4em;
+  font-weight: 300;
+  height: 100%;
+  line-height: 0.1em;
+  font-size: 1.4em;
+  padding: 0.2em !important;
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+
+.stepper button:hover {
+  cursor: pointer;
+}
+
 /* Global settings */
 /* Global "table" column settings */
 .product-image {
   float: left;
-  width: 20%;
+  width: 18%;
 }
 
 .product-details {
@@ -120,23 +180,28 @@ ul.breadcrumb li + li:before {
 }
 
 .product-price {
-  float: left;
-  width: 12%;
+  display: inline-block;
+  text-align: center;
+  margin-right: -10px;
+  width: 15%;
 }
 
 .product-quantity {
-  float: left;
-  width: 10%;
-}
-
-.product-removal {
-  float: left;
-  width: 9%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-right: -10px;
+  width: 20%;
 }
 
 .product-line-price {
-  float: left;
-  width: 12%;
+  display: inline-block;
+  width: 10%;
   text-align: right;
 }
 
@@ -175,12 +240,12 @@ ul.breadcrumb li + li:before {
 .product .product-price:before,
 .product .product-line-price:before,
 .totals-value:before {
-  content: "PHP";
+  content: "PHP ";
 }
 
 /* Body/Header stuff */
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Mono", monospace;
   font-weight: 100;
 }
 
@@ -189,7 +254,7 @@ h1 {
 }
 
 label {
-  color: #aaa;
+  color: #fff;
 }
 
 .shopping-cart {
@@ -207,8 +272,7 @@ label {
   border-bottom: 1px solid #ecaf2b;
 }
 
-.column-labels .product-details,
-.column-labels .product-removal {
+.column-labels .product-details {
   text-indent: -9999px;
 }
 
@@ -241,27 +305,29 @@ label {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-top: 4.5em;
+  margin-top: 4em;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .product .product-details .product-title {
   margin-right: 20px;
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  font-family: "Red Hat Display", sans-serif;
 }
 
 .product .product-details .product-description {
   margin: 5px 20px 5px 0;
   line-height: 1.4em;
+  font-family: "Roboto Mono", monospace;
 }
 
 .product .product-price {
-  margin-top: 4.5em;
+  margin-top: 4em;
+  font-family: "Roboto Mono", monospace;
 }
 
 .product .product-quantity {
-  margin-top: 4.5em;
+  margin-top: 4em;
 }
 
 .product .product-quantity input {
@@ -269,30 +335,34 @@ label {
 }
 
 .product .remove-product {
-  margin-top: 6.1em;
+  margin-top: 0.5em;
   border: 0;
-  padding: 4px 8px;
-  background-color: #c66;
+  background-color: transparent;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 14px;
   color: #fff;
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
-  font-size: 12px;
-  border-radius: 3px;
 }
 
 .product .remove-product:hover {
-  background-color: #a44;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .product .product-line-price {
-  margin-top: 4.5em;
+  margin-top: 4em;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 /* Totals section */
 .totals {
+  padding-top: 1.5em;
   width: 100%;
 }
 
 .totals .totals-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   float: right;
   clear: both;
   width: 100%;
@@ -300,25 +370,35 @@ label {
 }
 
 .totals .totals-item label {
-  float: left;
-  clear: both;
-  width: 90%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 100%;
   text-align: right;
+  font-size: 18px;
 }
 
 .totals .totals-item .totals-value {
+  font-size: 32px;
+  font-family: "Red Hat Display", sans-serif;
+  color: #fff;
   float: right;
-  width: 10%;
+  width: 45%;
   text-align: right;
 }
 
 .totals .totals-item-total {
-  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.totals .shipping-info {
+  color: #fff;
+  text-align: right;
+  font-family: "Roboto Mono", monospace;
 }
 
 .buttons {
   width: 100%;
-  margin-top: 12%;
+  margin-top: 3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,7 +421,7 @@ label {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  width: 20%;
+  width: 40%;
   padding: 1em;
   border-radius: 0.25em;
   border: 0;
@@ -361,19 +441,21 @@ label {
   border: #fec86e solid 2px;
 }
 
-.checkout {
-  float: right;
-  border: 0;
-  margin-top: 20px;
-  padding: 6px 25px;
-  background-color: #6b6;
-  color: #fff;
-  font-size: 25px;
-  border-radius: 3px;
+.bottom-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
-.checkout:hover {
-  background-color: #494;
+.bottom-container .notes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 /* Make adjustments for tablet */
