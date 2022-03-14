@@ -13,6 +13,10 @@ ul.breadcrumb {
         a {
             color: #bcbcbc;
             text-decoration: none;
+
+            &:hover{
+				text-decoration: underline;
+			}
         }
     }
     li + li {

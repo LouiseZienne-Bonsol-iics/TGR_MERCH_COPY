@@ -6,7 +6,8 @@ html * {
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
+  min-height: 120px;
 }
 
 .title-text {
@@ -30,6 +31,10 @@ ul.breadcrumb li {
 ul.breadcrumb li a {
   color: #bcbcbc;
   text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  text-decoration: underline;
 }
 
 ul.breadcrumb li + li:before {

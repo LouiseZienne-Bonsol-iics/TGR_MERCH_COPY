@@ -129,7 +129,7 @@ font-family: 'Source Sans Pro', sans-serif;
 						justify-content: flex-start;
 						align-items: flex-start;
 						width: 17em;
-						height: 25em;
+						height: 21em;
 						border: #004ce4 solid 3px; //remove border color when deploying
 						.product-img-container {
 							width: 100%;
@@ -145,6 +145,7 @@ font-family: 'Source Sans Pro', sans-serif;
 							letter-spacing: 0.2em;
 							font-size: 1em;
 							color: #ebebeb;
+							//margin-top: 0.5em;
 						}
 						.product-price {
 							margin-top: 0.8em;

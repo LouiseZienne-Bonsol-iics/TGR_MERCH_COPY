@@ -124,7 +124,7 @@ body {
 						justify-content: flex-start;
 						align-items: flex-start;
 						width: 17em;
-						height: 25em;
+						height: 21em;
 						border: #004ce4 solid 3px; //remove border color when deploying
 						.product-img-container {
 							width: 100%;
@@ -339,6 +339,9 @@ ul.breadcrumb {
 		a {
 			color: #bcbcbc;
 			text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 	li + li {

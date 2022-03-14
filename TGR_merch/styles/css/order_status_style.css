@@ -20,6 +20,10 @@ ul.breadcrumb li a {
   text-decoration: none;
 }
 
+ul.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
 ul.breadcrumb li + li:before {
   padding: 8px;
   color: #bcbcbc;
