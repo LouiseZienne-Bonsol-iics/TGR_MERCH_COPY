@@ -1,6 +1,6 @@
 @import url("https://rsms.me/inter/inter.css");
 :root {
-  --color-gray: #737888;
+  --color-gray: #b0b4c4;
   --color-lighter-gray: #e3e5ed;
   --color-light-gray: #f7f7fa;
 }
@@ -112,6 +112,7 @@ body {
   -moz-appearance: none;
        appearance: none;
   background-color: transparent;
+  color: white;
 }
 
 .main-container .forms-container .form-container .form .fields :focus-within {
