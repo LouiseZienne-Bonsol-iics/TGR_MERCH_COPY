@@ -1,7 +1,7 @@
 package checker;
 
 //Context Listener
-import ContextListeners.*;
+//import ContextListeners.*;
 
 // Errors
 import Errors.*;
@@ -29,8 +29,8 @@ public class checkerLogin extends HttpServlet
     private static String userDB;
     private static String passDB;
     
-    private static String key_1;
-    private static String key_2;
+    //private static String key_1;
+    //private static String key_2;
     
     @Override
     public void init(ServletConfig config) throws ServletException 
@@ -72,35 +72,17 @@ public class checkerLogin extends HttpServlet
             e.printStackTrace();
         } 
         
-        key_1 = config.getInitParameter("key_1");
-        key_2 = config.getInitParameter("key_2");
+        //key_1 = config.getInitParameter("key_1");
+        //key_2 = config.getInitParameter("key_2");
 
     }
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
         //None here
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
@@ -108,14 +90,6 @@ public class checkerLogin extends HttpServlet
         //None here
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
@@ -148,16 +122,16 @@ public class checkerLogin extends HttpServlet
             }
             
             //First Key
-            Security.key(key_2);
-            passwordDB = Security.decrypt(passwordDB);
+            //Security.key(key_2);
+            //passwordDB = Security.decrypt(passwordDB);
             
             //Second Key
-            Security.key(key_1);
-            passwordDB = Security.decrypt(passwordDB);
+            //Security.key(key_1);
+            //passwordDB = Security.decrypt(passwordDB);
             
             
             //Set key to null
-            Security.key("");
+            //Security.key("");
             
 
 
@@ -178,9 +152,9 @@ public class checkerLogin extends HttpServlet
 
                     //Session
                     HttpSession session = request.getSession();
-                    session.setAttribute("userSes", username);
-                    session.setAttribute("passSes", password);
-                    session.setAttribute("RoleSes", role);
+                    //session.setAttribute("userSes", username);
+                    //session.setAttribute("passSes", password);
+                    //session.setAttribute("RoleSes", role);
 
                     //ServletContextListener Code
                     UserContextListener UseConList = new UserContextListener();

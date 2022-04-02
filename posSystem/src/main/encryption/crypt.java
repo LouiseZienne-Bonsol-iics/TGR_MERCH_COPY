@@ -13,8 +13,7 @@ public class crypt
         key = TheKey.getBytes();
     }
 
-    // Sir Decamora's CyptoCode
-    public static String encrypt(String strToEncrypt) 
+    public static String encrypt(String strToEncrypt)
     {
         String encryptedString = null;
         try
