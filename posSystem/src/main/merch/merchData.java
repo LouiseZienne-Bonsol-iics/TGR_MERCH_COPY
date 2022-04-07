@@ -1,4 +1,4 @@
-package 
+package merch;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
