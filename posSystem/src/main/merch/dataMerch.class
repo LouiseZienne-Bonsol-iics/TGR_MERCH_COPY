@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface dataMerch extends JpaRepository<Merch, Integer> {
+public interface dataMerch extends JpaRepository<merchData, Integer> {
 
-    List<Merch> findByTitleContainingOrContentContaining(String text, String textAgain);    
+    List<merchData> findByTitleContainingOrContentContaining(String text, String textAgain);    
 }
