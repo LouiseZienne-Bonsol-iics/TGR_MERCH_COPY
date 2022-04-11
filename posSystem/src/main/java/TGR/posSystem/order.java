@@ -1,14 +1,21 @@
-package posSystem.src.main.merch;
+package TGR.posSystem;
+//package posSystem.src.main.merch;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
-public class tgr_merch {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//package TGR.posSystem;
+
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+
+//import javax.persistence.*;
+
+//@Entity
+public class order 
+{
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String OrderID;
     private String LastName;
@@ -17,7 +24,7 @@ public class tgr_merch {
     private float MerchPrice;
     private String OrderStatus;
 
-    public tgr_merch(int id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) {
+    public order(int id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) {
         this.setId(id);
         this.setOrderID(OrderID);
         this.setLastName(LastName);
@@ -27,7 +34,7 @@ public class tgr_merch {
         this.setOrderStatus(OrderStatus);
     }
 
-    public tgr_merch() {  }
+    public order() {  }
 
 
     public int getId() {
@@ -74,8 +81,8 @@ public class tgr_merch {
         return MerchPrice;
     }
 
-    public void setMerchPrice(String MerchPrice) {
-        this.MerchPrice = MerchPrice;
+    public void setMerchPrice(float merchPrice2) {
+        this.MerchPrice = merchPrice2;
     }
 
     public String getOrderStatus() {
@@ -89,6 +96,6 @@ public class tgr_merch {
     @Override
     public String toString() {
 
-        return "tgr_merch{" + "id=" + id + ", OrderID='" + OrderID + "' , LastName='" + LastName + "',FirstName= '" + FirstName + "', MerchType='" + MerchType + "', MerchPrice='" + MerchPrice + "', OrderStatus='" + OrderStatus + "'}";
+        return "order{" + "id=" + id + ", OrderID='" + OrderID + "' , LastName='" + LastName + "',FirstName= '" + FirstName + "', MerchType='" + MerchType + "', MerchPrice='" + MerchPrice + "', OrderStatus='" + OrderStatus + "'}";
     }
 }

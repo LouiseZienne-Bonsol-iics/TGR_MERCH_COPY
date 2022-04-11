@@ -9,22 +9,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+//import order;
+
+
 @SpringBootApplication
 public class PosSystemApplication implements CommandLineRunner{
-
-	private JdbcTemplate jdbcTemplate;
 	@Autowired
+	JdbcTemplate jdbcTemplate;
 	public static void main(String[] args) {
 		SpringApplication.run(PosSystemApplication.class, args);
 	}
 	@Override
 	public void run(String... args) throws Exception 
 	{
-		String sql = "SELECT * FROM tgr_merch";
+		String sql = "SELECT * FROM ORDERS";
          
-        List<tgr_merch> listtgr_merch = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(tgr_merch.class));
+        List<order> listorder = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(order.class));
 
-		for (tgr_merch merch : listtgr_merch)
+		for (order merch : listorder)
 		{
 			System.out.println(merch);
 		}
