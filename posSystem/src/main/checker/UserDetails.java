@@ -1,4 +1,4 @@
-package net.codejava;
+package posSystem.src.main.checker.security.WebSecurityConfig;
  
 import java.util.Collection;
  

@@ -1,4 +1,4 @@
-package net.codejava;
+package posSystem.src.main.checker.security.WebSecurityConfig;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
