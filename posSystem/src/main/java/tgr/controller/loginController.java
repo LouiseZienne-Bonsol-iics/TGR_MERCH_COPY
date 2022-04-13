@@ -31,15 +31,15 @@ public class loginController
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("user", new login());
-        return "log";
+        return "login";
     }
  
     @PostMapping("/login")
     //public String login(@ModelAttribute("user") login user ) {
-    public String login(@ModelAttribute login log, BindingResult result, Model model){
+    public String login(@ModelAttribute login login, BindingResult result, Model model){
     
 
-     login oauthUser = userService.login(log.getUsername(), log.getPassword());
+     login oauthUser = userService.login(login.getUsername(), login.getPassword());
     
  
      System.out.print(oauthUser);
