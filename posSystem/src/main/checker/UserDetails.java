@@ -1,15 +1,17 @@
-package posSystem.src.main.checker.security.WebSecurityConfig;
+package TGR.posSystem;
  
 import java.util.Collection;
  
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
  
-public class CustomUserDetails implements UserDetails 
+
+//Setters and Getters
+public class UserDetails implements UserDetails 
 {
     private User user;
      
-    public CustomUserDetails(User user) {
+    public UserDetails(User user) {
         this.user = user;
     }
  
@@ -29,8 +31,6 @@ public class CustomUserDetails implements UserDetails
     {
         return user.getPassword();
     }
- 
-
  
     @Override
     public String getRole() 

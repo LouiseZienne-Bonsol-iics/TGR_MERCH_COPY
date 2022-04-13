@@ -1,7 +1,10 @@
-package posSystem.src.main.checker.security.WebSecurityConfig;
+package TGR.posSystem;
  
 import org.springframework.data.jpa.repository.JpaRepository;
  
-public interface UserRepository extends JpaRepository<User, Long> {
- 
+//The Query
+public interface UserRepository extends JpaRepository<User, Long> 
+{
+    @Query("SELECT u FROM User u WHERE u.email = ?1")
+    public User findByEmail(String email);
 }
