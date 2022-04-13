@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,7 +37,7 @@ public class loginController
  
     @PostMapping("/login")
     //public String login(@ModelAttribute("user") login user ) {
-    public String login(@ModelAttribute login login, BindingResult result, Model model){
+    public String login(@RequestBody login login){
     
 
      login oauthUser = userService.login(login.getUsername(), login.getPassword());
