@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,16 +29,17 @@ public class loginController
  
                                   
     @GetMapping("/login")
-    public ModelAndView login() {
-     ModelAndView mav = new ModelAndView("login");
-        mav.addObject("user", new login());
-        return mav;
+    public String login(Model model) {
+        model.addAttribute("user", new login());
+        return "log";
     }
  
     @PostMapping("/login")
-    public String login(@ModelAttribute("user") login user ) {
+    //public String login(@ModelAttribute("user") login user ) {
+    public String login(@ModelAttribute login log, BindingResult result, Model model){
     
-     login oauthUser = userService.login(user.getUsername(), user.getPassword());
+
+     login oauthUser = userService.login(log.getUsername(), log.getPassword());
     
  
      System.out.print(oauthUser);
