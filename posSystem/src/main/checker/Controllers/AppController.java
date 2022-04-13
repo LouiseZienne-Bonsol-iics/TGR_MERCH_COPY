@@ -17,7 +17,7 @@ public class AppController
         return "index";
     }*/
 
-    @GetMapping("login")
+    @GetMapping("/login")
     public String login() 
     {
         return "login";

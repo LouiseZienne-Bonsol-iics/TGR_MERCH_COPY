@@ -1,4 +1,4 @@
-package TGR.posSystem;
+package TGR.posSystem.security;
  
 import javax.sql.DataSource;
  
@@ -47,17 +47,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception 
     {
         http.authorizeRequests()
-            //.csrf().disable()
-            //.antMatchers("/users").authenticated()
+            .csrf().disable()
+            .antMatchers("/users").authenticated()
             .anyRequest().authenticated() //.permitAll()
             .and()
             .formLogin()
-                .loginPage("/login").permitAll();
-                //.usernameParameter("email")
-                //.defaultSuccessUrl("/users")
-                //.permitAll()
-            //.and()
-            //.logout().logoutSuccessUrl("/").permitAll();
+                .loginPage("/login")//.permitAll();
+                .usernameParameter("email")
+                .defaultSuccessUrl("/users")
+                .permitAll()
+            .and()
+            .logout().logoutSuccessUrl("/").permitAll();
     }
      
      
