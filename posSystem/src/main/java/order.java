@@ -1,4 +1,3 @@
-package TGR.posSystem;
 //package posSystem.src.main.merch;
 
 

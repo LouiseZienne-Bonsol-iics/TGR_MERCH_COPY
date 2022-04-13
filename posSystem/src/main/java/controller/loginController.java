@@ -20,7 +20,8 @@ import service.loginService;
  
  
 @Controller
-public class loginController {
+public class loginController 
+{
 @Autowired
     private loginService userService;
  
