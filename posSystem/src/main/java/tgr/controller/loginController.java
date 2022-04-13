@@ -1,4 +1,4 @@
-package controller;
+package tgr.controller;
  
 import java.util.Objects;
  
@@ -14,20 +14,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
  
-import domain.login;
-import service.loginService;
+import tgr.domain.login;
+import tgr.service.loginService;
  
  
  
 @Controller
 public class loginController 
 {
-@Autowired
+    @Autowired
     private loginService userService;
  
                                   
     @GetMapping("/login")
-          
     public ModelAndView login() {
      ModelAndView mav = new ModelAndView("login");
         mav.addObject("user", new login());

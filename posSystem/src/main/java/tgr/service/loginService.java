@@ -1,9 +1,10 @@
-package service;
+package tgr.service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
  
-import domain.login;
-import repository.loginRepository;
+import tgr.domain.login;
+import tgr.repository.loginRepository;
  
  
  
