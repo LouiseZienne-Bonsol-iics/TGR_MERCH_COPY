@@ -46,7 +46,7 @@ public class loginController
      if(Objects.nonNull(oauthUser))
      {
   
-     return "redirect:/";
+     return "redirect:/index";
     
     
      } else {
