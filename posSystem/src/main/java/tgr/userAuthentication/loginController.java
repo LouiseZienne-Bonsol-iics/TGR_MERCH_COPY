@@ -1,4 +1,4 @@
-package tgr.controller;
+package tgr.userAuthentication;
  
 import java.util.Objects;
  
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
  
-import tgr.domain.login;
-import tgr.service.loginService;
+import tgr.userAuthentication.login;
+import tgr.userAuthentication.loginService;
  
  
  

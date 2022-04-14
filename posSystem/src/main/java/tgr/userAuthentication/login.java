@@ -1,4 +1,4 @@
-package tgr.domain;
+package tgr.userAuthentication;
  
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
