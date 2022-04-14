@@ -14,8 +14,8 @@ public class loginService {
 private loginRepository repo;
   
   public login login(String username, String password) {
-  login user = repo.findByUsernameAndPassword(username, password);
-   return user;
+  login login = repo.findByUsernameAndPassword(username, password);
+   return login;
   }
  
 }
