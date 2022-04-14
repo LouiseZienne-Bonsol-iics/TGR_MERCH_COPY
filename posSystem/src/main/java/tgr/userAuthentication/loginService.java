@@ -3,11 +3,6 @@ package tgr.userAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
  
-import tgr.userAuthentication.login;
-import tgr.userAuthentication.loginRepository;
- 
- 
- 
 @Service
 public class loginService {
 @Autowired

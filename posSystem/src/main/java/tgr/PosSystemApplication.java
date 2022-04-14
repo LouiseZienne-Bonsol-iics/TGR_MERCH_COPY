@@ -14,7 +14,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 
 @SpringBootApplication
-public class PosSystemApplication implements CommandLineRunner{
+public class PosSystemApplication implements CommandLineRunner
+{
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	public static void main(String[] args) {
