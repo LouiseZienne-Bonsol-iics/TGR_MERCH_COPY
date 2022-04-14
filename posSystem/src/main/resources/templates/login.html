@@ -1,10 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns:th=http://www.thymeleaf.org
-xmlns:shiro=http://www.pollix.at/thymeleaf/shiro>
+<!DOCTYPE html>
+<html xmlns:th=http://www.thymeleaf.org>
 <head>
-<meta charset="ISO-8859-1">
 <title>Insert title here</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
  
@@ -52,32 +50,10 @@ xmlns:shiro=http://www.pollix.at/thymeleaf/shiro>
                 <td align="center" valign="middle">
                 <table class="table-bordered" width="350" border="0" cellpadding="3"cellspacing="3" bgcolor="#ffffff">
         
-			        <form action="/" method="post">
-			  
-			           
-			                  <tr>
-                                    <td height="25" colspan="2" align="left" valign="middle" bgcolor="#ffffff" class="style2">
-                                        <div align="center">
-                                            <strong>User Login</strong>
-                                        </div>
-                                        
-                                    </td>
-                                </tr>
-
-			            <tr>
-			                <td>Username</td>
-			                <td>
-				             
-				                <input type="text" id="username" name="username" class="form-control" />
-			                </td>
-			            </tr>
-			            <tr>
-			                <td>Password</td>
-			                <td><input type="password" id="password" name="password" class="form-control" /></td>
-			            </tr>
-			            <tr>
-			            <td colspan="2"><button type="submit" class="btn btn-info" align="right">Login</button> </td>
-			            </tr>
+	            <form action="#" th:action="@{/login}" th:object="${login}" method="post">
+                            <p>Id: <input type="text" th:field="*{username}" /></p>
+                            <p>Message: <input type="password" th:field="*{password}" /></p>
+                            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 			        
 			    </form>
        </table>  
