@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../styles/css/products_style.css" />
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
 
-    <title>Catalogue Page</title>
+    <title>Coming Soon</title>
     <link rel="icon" type="image/x-icon" href="../styles/images/favicon.ico">
 </head>
 
@@ -45,7 +45,7 @@
                         <i class="fa fa-search"></i>
                     </form>
                     <a href="cart.html">
-                    <img src="../styles/images/shopping-bag.png" class="bag-icon" />
+                        <img src="../styles/images/shopping-bag.png" class="bag-icon" />
                     </a>
                 </div>
             </div>
@@ -55,111 +55,13 @@
         <section class="cata-container">
             <section class="container-2" id="cont2">
                 <div class="cont-restrict">
-
-                    <ul class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li style="color: white;">Products</li>
-                      </ul>
-
-                    <div class="all-products">
-                        <h1 class="prod-header">All Products</h1>
-                        <hr>
-                        <div class="sort-container">
-                            <h5 style="color: white;">Sort By</h5>
-                            <div class="dropdown">
-                                <input type="checkbox" id="my-dropdown1" value="" name="my-checkbox1">
-                                <label for="my-dropdown1" data-toggle="dropdown">
-                                    Name
-                                </label>
-                                <ul>
-                                    <li><a href="#">A to Z</a></li>
-                                    <li><a href="#">Z to A</a></li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                <input type="checkbox" id="my-dropdown2" value="" name="my-checkbox2">
-                                <label for="my-dropdown2" data-toggle="dropdown">
-                                    Date
-                                </label>
-                                <ul>
-                                    <li><a href="#">Newest</a></li>
-                                    <li><a href="#">Oldest</a></li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                <input type="checkbox" id="my-dropdown3" value="" name="my-checkbox3">
-                                <label for="my-dropdown3" data-toggle="dropdown">
-                                    Price
-                                </label>
-                                <ul>
-                                    <li><a href="#">Ascending</a></li>
-                                    <li><a href="#">Descending</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="products">
-                            <!-- product-tile should be automatically generated per unique item -->
-                            <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
-                                        alt=""></a>
-                                <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
-                                </div>
-                                <div class="product-price">
-                                    <h3>PHP 00.00</h3>
-                                </div>
-                            </div>
-                            <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
-                                        alt=""></a>
-                                <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
-                                </div>
-                                <div class="product-price">
-                                    <h3>PHP 00.00</h3>
-                                </div>
-                            </div>
-                            <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
-                                        alt=""></a>
-                                <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
-                                </div>
-                                <div class="product-price">
-                                    <h3>PHP 00.00</h3>
-                                </div>
-                            </div>
-                            <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
-                                        alt=""></a>
-                                <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
-                                </div>
-                                <div class="product-price">
-                                    <h3>PHP 00.00</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="pagination">
-                        <a href="#">&laquo;</a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">&raquo;</a>
-                      </div>
-
+                    <center>
+                        <h1 style="color: white; margin-top: 3em; font-size: 100px;">WIP PAGE</h1>
+                    </center>
                 </div>
             </section>
 
-          
-
         </section>
-
-      
 
         <!-- FOOTER -->
         <section class="main-footer-container">
@@ -233,7 +135,6 @@
         </section>
     </section>
 </body>
-
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="../styles/js/aos.js"></script>
 <script>
@@ -254,25 +155,5 @@
     window.setTimeout(function () {
         $("body").removeClass("inactive");
     }, 2800);
-
-    var nav = document.querySelector('.sort-container');
-    nav.addEventListener('toggle', function (event) {
-
-        // Only run if the dropdown is open
-        if (!event.target.open) return;
-
-        // Get all other open dropdowns and close them
-        var dropdowns = nav.querySelectorAll('.dropdown[open]');
-        Array.prototype.forEach.call(dropdowns, function (dropdown) {
-            if (dropdown === event.target) return;
-            dropdown.removeAttribute('open');
-        });
-
-    }, true);
-
-    var count = $('.products').children().length;
-
-    $('#result').text(count);
 </script>
-
 </html>
