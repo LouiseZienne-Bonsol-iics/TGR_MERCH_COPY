@@ -30,7 +30,7 @@ public class loginController
                                   
     @GetMapping("/login")
     public String login(Model model) {
-        model.addAttribute("user", new login());
+        model.addAttribute("login", new login());
         return "login";
     }
  
