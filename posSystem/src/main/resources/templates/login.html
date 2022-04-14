@@ -10,18 +10,18 @@ xmlns:shiro=http://www.pollix.at/thymeleaf/shiro>
 <body>
 
         
-			        <form action="#" th:action="@{/login}" th:object="${login}" method="post">
+			        <form action="/" method="post">
 
 			            <tr>
 			                <td>Username</td>
 			                <td>
 				             
-				                <input type="text" th:field="${username}" class="form-control" />
+				                <input type="text" id="username" name="username" class="form-control" />
 			                </td>
 			            </tr>
 			            <tr>
 			                <td>Password</td>
-			                <td><input type="password" th:field="${password}" class="form-control" /></td>
+			                <td><input type="password" id="password" name="password" class="form-control" /></td>
 			            </tr>
 			            
 			    </form>
