@@ -36,7 +36,7 @@ public class loginController
  
     @PostMapping("/login")
     //public String login(@ModelAttribute("user") login user ) {
-    public String login(@ModelAttribute login login, BindingResult result, Model model){
+    public String login(@ModelAttribute login login, Model model){
     
 
      login oauthUser = userService.login(login.getUsername(), login.getPassword());
