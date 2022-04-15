@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="../styles/css/header_footer_style.css" />
     <link rel="stylesheet" href="../styles/css/loading_screen_style.css" />
     <link rel="stylesheet" href="../styles/css/aos.css" />
-    <link rel="stylesheet" href="../styles/css/wip_style.css" />
+    <link rel="stylesheet" href="../styles/css/payment_proof_style.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,800" rel="stylesheet">
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
 
-    <title>Coming Soon</title>
+    <title>Upload Proof of Payment</title>
     <link rel="icon" type="image/x-icon" href="../styles/images/favicon.ico">
 </head>
 
@@ -52,30 +52,61 @@
 
         </section>
         <!--container 2 -->
-        <section class="wip-container">
+        <section class="payproof-container">
             <section class="container-2" id="cont2">
                 <div class="cont-restrict">
+                    <div class="page-heading-labels">
+                        <h1 class="order-headers">Thank you for ordering!</h1>
+                        <hr>
+                    </div>
                     <center>
-                        <div class="body-logo">
-                            <img class="body-logo-image" src="../styles/images/LOGO_TELETIGERS 3.png">
-                            <h1 class="body-logo-text">TELETIGERS</h1>
-                        </div>
-                        <div class="body-text">
-                            <h1>COMING SOON</h1>
-                        </div>
-                        <p class="sub-texts">
-                            We're preparing to launch 
-                            <span style="color: #FFAB00;">brand new services</span> 
-                            to offer very soon. This page is still under development. We are hoping for your understanding.
-                            <br><br>
-                            In the meantime, you can 
-                            <span style="color: #FFAB00;">explore</span>
-                             our store to check out our other products and merchandise.
+                        <p class="subheading-text">
+                            Your order #20211013021454181 has been received!
                         </p>
-                        <div class="buttons">
-                            <a href="home.html" class="button btn-1">Return to Home</a>
-                        </div>
                     </center>
+                    
+                    <div class="customer-cont">
+                        <div class="customer-item">
+                            <label>Order Placing Date:</label>
+                            <div class="customer-value" id="order-date">2021-10-13 10:14AM</div>
+                        </div>
+                        <div class="customer-item">
+                            <label>Order Number:</label>
+                            <div class="customer-value" id="order-no">20211013021454181</div>
+                        </div>
+                        <div class="customer-item">
+                            <label>Customer Name:</label>
+                            <div class="customer-value" id="customer-name">Juan Dela Cruz</div>
+                        </div>
+                    </div>
+
+                    <p class="body-text">
+                        In order to process your order, we would need to confirm your payment first. Kindly accomplish payment via selected payment method  
+                        <span style="font-weight: 900;">within 3 days</span> 
+                         upon your order placing date.
+                        <br><br>
+                        Please upload a clear 
+                        <span style="font-weight: 900;">JPEG or PNG image file (not more than 1MB)</span>
+                         of your proof of payment via link below. 
+                    </p>
+
+                    <form action="">
+                        <input type="file" class="file-upload" id="myFile" name="filename">
+                        <div class="buttons">
+                            <input type="submit" class="button btn-2" value="Upload Proof of Payment"></input>
+                        </div>
+                    </form>
+
+                    <hr>
+
+                    <p class="body-text">
+                        In case payment would be made on a later date, this page can still be accessed through the Order Tracking page. Take note of your order number for your reference. 
+                    </p>
+
+                    <div class="buttons">
+                        <a href="order_status.html" class="button btn-1">Check Order Status</a>
+                    </div>
+
                 </div>
             </section>
 

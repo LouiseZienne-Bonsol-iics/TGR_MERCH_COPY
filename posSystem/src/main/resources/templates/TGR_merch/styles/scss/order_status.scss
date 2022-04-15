@@ -371,31 +371,32 @@ $font-emphasis: "Red Hat Display", sans-serif;
         color: #fff;
         font-family: $font-emphasis;
     }
+}
 
-    .buttons {
-        width: 30%;
-        gap: 1em;
-        .button {
-            background-color: #000;
-            text-transform: uppercase;
-            font-size: 0.8em;
-            font-weight: 600;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-            width: 40%;
-            padding: 1em;
-            border-radius: 0.25em;
-            border: 0;
-            cursor: pointer;
-            outline: 0;
-        }
-        .btn-2 {
-            background-color: #fec86e;
-            color: #000000;
-            border: #fec86e solid 2px;
-        }
+.buttons {
+    width: 15%;
+    gap: 1em;
+    .button {
+        background-color: #000;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        width: 100%;
+        padding: 1em;
+        border-radius: 0.25em;
+        border: 0;
+        cursor: pointer;
+        outline: 0;
+    }
+    .btn-2 {
+        background-color: #fec86e;
+        color: #000000;
+        border: #fec86e solid 2px;
+        font-family: $font-emphasis;
     }
 }
 
