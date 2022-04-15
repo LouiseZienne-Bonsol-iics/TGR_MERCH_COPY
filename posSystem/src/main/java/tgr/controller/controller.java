@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class controller 
 {
-    @Autowired
-    private controller userService;
-
-    
     @GetMapping("/")
     public String index(Model model) 
     {
