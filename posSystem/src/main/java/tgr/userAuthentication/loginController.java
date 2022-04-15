@@ -19,14 +19,6 @@ public class loginController
 {
     @Autowired
     private loginService userService;
-
-    /*
-    @GetMapping("/")
-    public String index(Model model) 
-    {
-        return "index";
-    }*/
- 
                                   
     @GetMapping("/login")
     public String login(Model model) 

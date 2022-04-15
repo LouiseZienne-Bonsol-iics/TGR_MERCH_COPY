@@ -35,8 +35,6 @@ public class TemplateResolverConfiguration implements WebMvcConfigurer
         TemplateResolver.setCharacterEncoding("UTF-8");
         TemplateResolver.setOrder(1);
         TemplateResolver.setCheckExistence(true);
-            
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         return TemplateResolver;
     }
