@@ -466,12 +466,12 @@ label {
   font-family: "Red Hat Display", sans-serif;
 }
 
-.form-inline .buttons {
-  width: 30%;
+.buttons {
+  width: 15%;
   gap: 1em;
 }
 
-.form-inline .buttons .button {
+.buttons .button {
   background-color: #000;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -480,7 +480,7 @@ label {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  width: 40%;
+  width: 100%;
   padding: 1em;
   border-radius: 0.25em;
   border: 0;
@@ -488,10 +488,11 @@ label {
   outline: 0;
 }
 
-.form-inline .buttons .btn-2 {
+.buttons .btn-2 {
   background-color: #fec86e;
   color: #000000;
   border: #fec86e solid 2px;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 @media (max-width: 800px) {

@@ -1,0 +1,116 @@
+$font-default: "Roboto Mono", monospace;
+$font-emphasis: "Red Hat Display", sans-serif;
+
+.wip-container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #444444;
+	&.finished {
+		z-index: 900;
+	}
+
+	.container-2 {
+		min-height: 100vh;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		background: #444444;
+		padding: 0 0 0 0;
+        background: url("../images/footer_banner.png");
+        background-size: 100%;
+		background-attachment: fixed;
+        padding-top: 6em;
+		.cont-restrict {
+            padding-top: 7em;
+			min-height: 100vh;
+            width: 100%;
+            background:  radial-gradient(transparent, black 100%, black);
+        }
+    }
+}
+
+.body-logo{
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+    .body-logo-image {
+        width: 100px;
+        padding: 0.25em;
+      }
+    .body-logo-text {
+        transform: translateX(-0.3em);
+		font-family: 'Teko', sans-serif;
+		font-size: 4em;
+		font-style: italic;
+		letter-spacing: 0.05em;
+		color: #838383;
+		cursor: default;
+      }
+}
+
+.body-text{
+    h1 {
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 8em;
+        background: linear-gradient(to right, #FF6D00 0%, #FFAB00 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 5px;
+    }
+}
+
+.sub-texts{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.7em;
+    color: #fff;
+    width: 50%;
+    padding-top: 2em;    
+}
+
+.buttons {
+    width: 100%;
+    margin-top: 3em;
+    font-family: $font-default;
+    .button {
+        background-color: #000;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        padding: 1em;
+        border-radius: 0.25em;
+        border: 0;
+        cursor: pointer;
+        outline: 0;
+    }
+    .btn-1 {
+        background-color: transparent;
+        color: #fec86e;
+        border: #fec86e solid 2px;
+        width: 15em;
+        &:hover {
+			&:not(.active) {
+				color: #000000;
+				background-color: #fec86e;
+			}
+		}
+    }
+}

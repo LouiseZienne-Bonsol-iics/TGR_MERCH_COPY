@@ -15,7 +15,7 @@ public class TemplateResolverConfiguration implements WebMvcConfigurer
     public ClassLoaderTemplateResolver firstTemplateResolver() 
     {
         ClassLoaderTemplateResolver TemplateResolver = new ClassLoaderTemplateResolver();
-        TemplateResolver.setPrefix("templates/");
+        TemplateResolver.setPrefix("/TGR_merch/");
         TemplateResolver.setSuffix(".html");
         TemplateResolver.setTemplateMode(TemplateMode.HTML);
         TemplateResolver.setCharacterEncoding("UTF-8");
