@@ -7,17 +7,24 @@ import javax.persistence.*;
 public class dbControl {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name="id")
+    private int id;
+    @Column(name="orderid")
     private String OrderID;
+    @Column(name="lastname")
     private String LastName;
+    @Column(name="firstname")
     private String FirstName;
+    @Column(name="merchtype")
     private String MerchType;
+    @Column(name="merchprice")
     private float MerchPrice;
+    @Column(name="orderstatus")
     private String OrderStatus;
 
     public dbControl(){}
     
-    public dbControl(Long id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) 
+    public dbControl(int id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) 
     {
         this.id = id;
         this.LastName = LastName;
@@ -27,10 +34,10 @@ public class dbControl {
         this.OrderStatus = OrderStatus;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getOrderID() {

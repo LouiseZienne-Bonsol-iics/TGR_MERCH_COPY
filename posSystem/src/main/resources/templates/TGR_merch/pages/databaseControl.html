@@ -66,20 +66,22 @@
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
                 <tr>
-                    <th>User ID</th>
-                    <th>E-mail</th>
-                    <th>First Name</th>
+                    <th>Order ID</th>
                     <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Merch Type</th>
+                    <th>Merch Price</th>
+                    <th>Order Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="user: ${dbControl}">
+                <tr th:each="user: ${dbList}">
                     <td th:text="*{dbControl.OrderID}">Order ID</td>
                     <td th:text="*{dbControl.LastName}">Last Name</td>
                     <td th:text="*{dbControl.FirstName}">First Name</td>
                     <td th:text="*{dbControl.MerchType}">Merch Type</td>
                     <td th:text="*{dbControl.MerchPrice}">Merch Price</td>
-                    <td th:text="*{dbControl.OrderStatus}">OrderStatus</td>
+                    <td th:text="*{dbControl.OrderStatus}">Order Status</td>
                 </tr>
             </tbody>
         </table>
