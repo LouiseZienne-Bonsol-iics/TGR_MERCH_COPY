@@ -23,6 +23,8 @@ public class loginController
 {
     @Autowired
     private loginService userService;
+    @Autowired
+    private dbRepository dbRepository;
                                   
     @GetMapping("/login")
     public String login(Model model) 
@@ -31,15 +33,14 @@ public class loginController
         return "login";
     }
 
-    @Autowired
-    private dbRepository dbRepo;
+    
 
     @GetMapping("/databaseControl")
     public String databaseControl(Model model) 
     {
-        List<dbControl> databaseControl = dbRepo.findAll();
-        model.addAttribute("databaseControl", databaseControl);
-        return "databaseControl";
+        for(dbControl dbControl : dbRepository.findAll())
+        model.addAttribute("dbControl", dbControl);
+        return "dbControl";
     }
 
 

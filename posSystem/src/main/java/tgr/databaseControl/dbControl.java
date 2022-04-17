@@ -8,11 +8,17 @@ public class dbControl {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String OrderID;
+    @Column
     private String LastName;
+    @Column
     private String FirstName;
+    @Column
     private String MerchType;
+    @Column
     private float MerchPrice;
+    @Column
     private String OrderStatus;
 
     public dbControl(){}
