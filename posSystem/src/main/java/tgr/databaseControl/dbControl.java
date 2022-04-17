@@ -7,33 +7,15 @@ import javax.persistence.*;
 public class dbControl {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
     private int id;
-    @Column(name="orderid")
     private String OrderID;
-    @Column(name="lastname")
     private String LastName;
-    @Column(name="firstname")
     private String FirstName;
-    @Column(name="merchtype")
     private String MerchType;
-    @Column(name="merchprice")
     private float MerchPrice;
-    @Column(name="orderstatus")
     private String OrderStatus;
+    private String PaymentStatus;
 
-public dbControl(){}
-
-    public dbControl(int id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) 
-    {
-        this.id = id;
-        this.OrderID = OrderID;
-        this.LastName = LastName;
-        this.FirstName = FirstName;
-        this.MerchType = MerchType;
-        this.MerchPrice = MerchPrice;
-        this.OrderStatus = OrderStatus;
-    }
 
     public int getId() {
         return id;
@@ -77,5 +59,19 @@ public dbControl(){}
     public void setOrderStatus(String orderStatus) {
         OrderStatus = orderStatus;
     }
+    public String getPaymentStatus()
+    {
+        return PaymentStatus;
+    }
+    public void setPaymentStatus(String paymentStatus)
+    {
+        PaymentStatus = paymentStatus;
+    }
     
+    @Override
+	public String toString()
+	{
+		return "Employee [id=" + id + ", OrderID=" + OrderID + ", LastName=" + LastName + ", FirstName=" + FirstName
+				+ ", MerchType=" + MerchType + ", MerchPrice=" + MerchPrice + ", OrderStatus=" +OrderStatus + ", PaymentStatus=" + PaymentStatus + "]";
+	}
 }

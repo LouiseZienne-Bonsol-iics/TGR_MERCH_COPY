@@ -37,6 +37,7 @@ public class loginController
     @GetMapping("/databaseControl")
     public String databaseControl(Model model) 
     {
+        
         return "databaseControl";
     }
 

@@ -9,31 +9,15 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class dbServiceImplementation implements dbService{
-    
+
     @Autowired
-    dbRepository dbRepository;
+    private dbRepository dbRepository;
 
     @Override
-    public List<dbControl> getAlldata() 
+    public List<dbControl> getData() 
     {
-        return (List<dbControl>) dbRepository.findAll();
+        return dbRepository.getData();
     }
 
-    @Override
-    public dbControl getDataById(int id)
-    {
-        return dbRepository.findById(id).get();
-    }
-
-    @Override
-    public void addData(dbControl dbControl)
-    {
-        dbRepository.save(dbControl);
-    }
-
-    @Override 
-    public void deleteData(int id)
-    {
-        dbRepository.deleteById(id);
-    }
+    
 }
