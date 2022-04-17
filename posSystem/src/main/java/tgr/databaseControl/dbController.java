@@ -14,16 +14,16 @@ public class dbController
 	@Autowired
 	private dbService dbService;
 	
+	@RequestMapping(value="/dbControl", method=RequestMethod.GET)
+	public ModelAndView getData() 
+    {
+	    ModelAndView model = new ModelAndView();
+	    List<dbControl> dbList = dbService.getData();
+        model.setViewName("databaseControl");
+        System.out.println("AAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHH: " + dbList);
+	    model.addObject("dbList", dbList);
 	
-	 @RequestMapping(value="/dbControl", method=RequestMethod.GET)
-	 public ModelAndView getData() {
-		 
-	  ModelAndView model = new ModelAndView();
-	  List<dbControl> dbList = dbService.getData();
-	  model.addObject("dbList", dbList);
-	
-	  return model;
-	 }
-	 
+	    return model;
+	}
 	 
 }

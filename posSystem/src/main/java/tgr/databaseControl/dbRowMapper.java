@@ -14,7 +14,7 @@ public class dbRowMapper implements RowMapper<dbControl>
         dbControl.setOrderID(rs.getString("OrderID"));
         dbControl.setLastName(rs.getString("LastName"));
         dbControl.setFirstName(rs.getString("FirstName"));
-        dbControl.setMerchType(rs.getString("OrderType"));
+        dbControl.setMerchType(rs.getString("MerchType"));
         dbControl.setMerchPrice(rs.getFloat("MerchPrice"));
         dbControl.setOrderStatus(rs.getString("OrderStatus"));
         dbControl.setPaymentStatus(rs.getString("PaymentStatus"));

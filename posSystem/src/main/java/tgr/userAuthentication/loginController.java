@@ -1,11 +1,10 @@
 package tgr.userAuthentication;
  
-import java.util.List;
 import java.util.Objects;
  
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import tgr.databaseControl.dbControl;
 import tgr.databaseControl.dbRepository;
  
 @Controller
@@ -23,8 +21,8 @@ public class loginController
 {
     @Autowired
     private loginService userService;
-    @Autowired
-    private dbRepository dbRepository;
+    //@Autowired
+    //private dbRepository dbRepository;
                                   
     @GetMapping("/login")
     public String login(Model model) 
@@ -37,23 +35,23 @@ public class loginController
     @GetMapping("/databaseControl")
     public String databaseControl(Model model) 
     {
-        
         return "databaseControl";
     }
 
 
-    /*
-    @GetMapping("/databaseControl")
+    /*@GetMapping("/databaseControl")
     public String databaseControl(Model model) 
     {
-        for(dbControl dbControl : dbRepository.findAll())
-        model.addAttribute("dbControl", dbControl);
+        List<User> listUsers = dbControl;
+        model.addAttribute("listUsers", listUsers);
+        //for(dbControl dbControl : dbRepository.getData())
+        //model.addAttribute("dbControl", listUser);
 
-        return "dbControl";
+        return "databaseControl";
     }*/
 
 
- 
+
     @PostMapping("/login")
     //public String login(@ModelAttribute("user") login user ) {
     public String login(@ModelAttribute login login, Model model)

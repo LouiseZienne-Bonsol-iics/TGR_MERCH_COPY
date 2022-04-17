@@ -16,7 +16,7 @@
                     <th>Merch Price</th>
                     <th>Order Status</th>
                 </tr>
-                <tr th:each="db: ${dbList}">
+                <tr th:each="dbControl: ${dbList}">
                     <td th:text="${dbControl.id}">ID</td>
                     <td th:text="${dbControl.OrderID}">Order ID</td>
                     <td th:text="${dbControl.LastName}">Last Name</td>
