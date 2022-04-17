@@ -34,14 +34,22 @@ public class loginController
     }
 
     
+    @GetMapping("/databaseControl")
+    public String databaseControl(Model model) 
+    {
+        return "databaseControl";
+    }
 
+
+    /*
     @GetMapping("/databaseControl")
     public String databaseControl(Model model) 
     {
         for(dbControl dbControl : dbRepository.findAll())
         model.addAttribute("dbControl", dbControl);
+
         return "dbControl";
-    }
+    }*/
 
 
  
