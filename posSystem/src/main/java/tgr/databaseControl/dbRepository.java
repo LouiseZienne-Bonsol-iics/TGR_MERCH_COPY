@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface dbRepository extends JpaRepository<dbControl, Long> {
-    dbControl findData(String OrderID, String LastName);
+    //dbControl findData(String OrderID, String LastName);
 }
