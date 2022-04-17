@@ -27,6 +27,7 @@ public dbControl(){}
     public dbControl(int id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) 
     {
         this.id = id;
+        this.OrderID = OrderID;
         this.LastName = LastName;
         this.FirstName = FirstName;
         this.MerchType = MerchType;
