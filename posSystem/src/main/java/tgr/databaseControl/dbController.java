@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping(value="/databaseControl")
+@RequestMapping(value="/dbControl")
 public class dbController 
 {
 	@Autowired
