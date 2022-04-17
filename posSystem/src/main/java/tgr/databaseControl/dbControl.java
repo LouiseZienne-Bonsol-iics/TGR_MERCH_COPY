@@ -15,7 +15,18 @@ public class dbControl {
     private float MerchPrice;
     private String OrderStatus;
 
+    public dbControl(){}
     
+    public dbControl(Long id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) 
+    {
+        this.id = id;
+        this.LastName = LastName;
+        this.FirstName = FirstName;
+        this.MerchType = MerchType;
+        this.MerchPrice = MerchPrice;
+        this.OrderStatus = OrderStatus;
+    }
+
     public Long getId() {
         return id;
     }
