@@ -14,23 +14,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 
 @SpringBootApplication
-public class PosSystemApplication implements CommandLineRunner
+public class PosSystemApplication
 {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	public static void main(String[] args) {
 		SpringApplication.run(PosSystemApplication.class, args);
-	}
-	@Override
-	public void run(String... args) throws Exception 
-	{
-		String sql = "SELECT * FROM ORDERS";
-         
-        List<order> listorder = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(order.class));
-
-		for (order merch : listorder)
-		{
-			System.out.println(merch);
-		}
 	}
 }

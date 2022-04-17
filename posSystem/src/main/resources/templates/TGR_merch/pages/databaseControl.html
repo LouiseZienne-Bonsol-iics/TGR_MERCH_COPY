@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th=http://www.thymeleaf.org>
+<head>
+<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+ 
+    
+    
+    <style type="text/css">
+    body,td,th{
+        color: #000000;
+    }
+    
+    body{
+        background-color: #F0F0F0;
+    }
+    
+    .style1
+    {
+        font-family: arial;
+        font-size: 14px;
+        padding: 12px;
+        line-height: 25px;
+        border-radius: 4px;
+        text-decoration: none;
+        
+    }
+    
+    .style2
+    {
+        font-family: arial;
+        font-size: 17px;
+        padding: 12px;
+        line-height: 25px;
+        border-radius: 4px;
+        text-decoration: none;
+        
+    }
+    
+    
+</style>
+
+    </head>
+    <body>
+        <div class="container">
+            <table width="100%" height="100%" border="0" cellpadding="0" align="center">
+            <tr>
+                <td align="center" valign="middle">
+                <table class="table-bordered" width="350" border="0" cellpadding="3"cellspacing="3" bgcolor="#ffffff">
+        
+	            <!-- <form action="#" th:object="${databaseControl}" method="post">
+                            <p>Order ID: <input type="text" th:field="*{OrderID}" /></p>
+                            <p>Last Name: <input type="password" th:field="*{LastName}" /></p>
+                            <p><input type="submit" value="Submit" /> </p>
+			        
+			    </form> -->
+       </table>  
+         </td>   
+         </tr>  
+      </table> 
+     </div>  
+
+     <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>User ID</th>
+                    <th>E-mail</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user: ${databaseControl}">
+                    <td th:text="*{dbControl.OrderID}">Order ID</td>
+                    <td th:text="*{dbControl.LastName}">Last Name</td>
+                    <td th:text="*{dbControl.FirstName}">First Name</td>
+                    <td th:text="*{dbControl.MerchType}">Merch Type</td>
+                    <td th:text="*{dbControl.MerchPrice}">Merch Price</td>
+                    <td th:text="*{dbControl.OrderStatus}">OrderStatus</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
