@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-
 public class dbServiceImplementation implements dbService{
+    
     @Autowired
     dbRepository dbRepository;
 
