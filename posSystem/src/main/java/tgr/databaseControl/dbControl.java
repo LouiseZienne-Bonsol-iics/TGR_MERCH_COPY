@@ -3,7 +3,7 @@ package tgr.databaseControl;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "orders")
+@Table(name="orders")
 public class dbControl {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,17 +22,7 @@ public class dbControl {
     @Column(name="orderstatus")
     private String OrderStatus;
 
-    // public dbControl(){}
-    
-    // public dbControl(int id, String OrderID, String LastName, String FirstName, String MerchType, float MerchPrice, String OrderStatus) 
-    // {
-    //     this.id = id;
-    //     this.LastName = LastName;
-    //     this.FirstName = FirstName;
-    //     this.MerchType = MerchType;
-    //     this.MerchPrice = MerchPrice;
-    //     this.OrderStatus = OrderStatus;
-    // }
+
 
     public int getId() {
         return id;
