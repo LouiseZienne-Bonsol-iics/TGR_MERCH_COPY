@@ -31,7 +31,7 @@ public class dbController {
 	 
 	 
 	 @RequestMapping(value="/addData/", method=RequestMethod.GET)
-	 public ModelAndView addStudent() {
+	 public ModelAndView addData() {
 		 
 	  ModelAndView model = new ModelAndView();
 	  dbControl dbControl = new dbControl();
@@ -44,7 +44,7 @@ public class dbController {
 	 
 	 
 	 @RequestMapping(value="/editdb/{id}", method=RequestMethod.GET)
-	 public ModelAndView editStudent(@PathVariable int id) {
+	 public ModelAndView editData(@PathVariable int id) {
 	  ModelAndView model = new ModelAndView();
 	  
 	  dbControl dbControl = dbService.getDataById(id);
