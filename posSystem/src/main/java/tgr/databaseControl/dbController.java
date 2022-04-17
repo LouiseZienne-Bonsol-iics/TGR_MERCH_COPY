@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 public class dbController {
-    @Autowired
+    /*@Autowired
     private dbRepository dbRepo;
 
     @GetMapping("/databaseControl")
@@ -16,6 +16,12 @@ public class dbController {
         List<dbControl> databaseControl = dbRepo.findAll();
         model.addAttribute("databaseControl", databaseControl);
         return "databaseControl";
-    }
- 
+    }*/
+
+    /*
+    @GetMapping("/databaseControl")
+    public String databaseControl(Model model) 
+    {
+        return "databaseControl";
+    }*/
 }

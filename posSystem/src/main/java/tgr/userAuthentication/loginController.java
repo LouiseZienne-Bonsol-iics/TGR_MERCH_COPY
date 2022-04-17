@@ -1,5 +1,6 @@
 package tgr.userAuthentication;
  
+import java.util.List;
 import java.util.Objects;
  
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import tgr.databaseControl.dbControl;
+import tgr.databaseControl.dbRepository;
  
 @Controller
 public class loginController 
@@ -26,6 +30,19 @@ public class loginController
         model.addAttribute("login", new login());
         return "login";
     }
+
+    @Autowired
+    private dbRepository dbRepo;
+
+    @GetMapping("/databaseControl")
+    public String databaseControl(Model model) 
+    {
+        List<dbControl> databaseControl = dbRepo.findAll();
+        model.addAttribute("databaseControl", databaseControl);
+        return "databaseControl";
+    }
+
+
  
     @PostMapping("/login")
     //public String login(@ModelAttribute("user") login user ) {
@@ -37,7 +54,7 @@ public class loginController
         System.out.print(oauthUser);
         if(Objects.nonNull(oauthUser))
         {
-            return "redirect:/";
+            return "redirect:/databaseControl";
         } 
         else 
         {
