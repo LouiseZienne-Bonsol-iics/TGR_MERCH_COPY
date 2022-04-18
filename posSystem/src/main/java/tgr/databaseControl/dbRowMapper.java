@@ -10,7 +10,7 @@ public class dbRowMapper implements RowMapper<dbControl>
     public dbControl mapRow(ResultSet rs, int rowNum) throws SQLException
     {
         dbControl dbControl = new dbControl();
-        dbControl.setId(rs.getInt("ID"));
+        dbControl.setId(rs.getInt(Integer.parseInt("ID")));
         dbControl.setOrderID(rs.getString("OrderID"));
         dbControl.setLastName(rs.getString("LastName"));
         dbControl.setFirstName(rs.getString("FirstName"));

@@ -104,8 +104,9 @@ public class order
     }*/
 
     @Override
-    public String toString() {
-
-        return "order{" + "id=" + id + ", OrderID='" + OrderID + "' , LastName='" + LastName + "',FirstName= '" + FirstName + "', MerchType='" + MerchType + "', MerchPrice='" + MerchPrice + "', OrderStatus='" + OrderStatus + "'}";
+    public String toString() 
+    {
+        return "order{" + "id=" + id + ", OrderID='" + OrderID + "' , LastName='" + LastName + "',FirstName= '" + FirstName + "', MerchType='" + 
+                MerchType + "', MerchPrice='" + MerchPrice + "', OrderStatus='" + OrderStatus + "'}";
     }
 }
