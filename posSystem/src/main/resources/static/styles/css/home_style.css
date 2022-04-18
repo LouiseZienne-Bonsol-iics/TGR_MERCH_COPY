@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Lekton:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cambay:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Antonio:wght@100&family=Montserrat:wght@100&family=Red+Hat+Display&family=Roboto+Mono:ital,wght@0,100;1,100&display=swap");
+/* 
+font-family: 'Jost', sans-serif;
+font-family: 'Lekton', sans-serif; 
+font-family: 'Roboto Mono', monospace;
+font-family: 'Red Hat Display', sans-serif;
+font-family: 'Antonio', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Alegreya Sans SC', sans-serif;
+font-family: "Teko", sans-serif;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Cambay', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+
+*/
+.main-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 2.8%;
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #444444;
+}
+
+.main-container.finished {
+  z-index: 900;
+}
+
+.main-container .container-2 {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #444444;
+  padding: 0 0 3em 0;
+}
+
+.main-container .container-2 .cont-restrict {
+  min-height: 100vh;
+  width: 85%;
+}
+
+.main-container .container-2 .cont-restrict .categories-row {
+  height: 20vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2em;
+}
+
+.main-container .container-2 .cont-restrict .categories-row .cat-tab {
+  height: 15em;
+  width: 27em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main-container .container-2 .cont-restrict .categories-row .cat-tab .cat-text {
+  height: 100%;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+.main-container .container-2 .cont-restrict .categories-row .cat-tab .cat-text h1 {
+  font-family: 'Cambay', sans-serif;
+  font-size: 2.6em;
+  font-style: italic;
+  color: #e0e0e0;
+  line-height: 1.2em;
+}
+
+.main-container .container-2 .cont-restrict .categories-row .cat-tab .cat-text h3 {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 1.4em;
+  color: #e0e0e0;
+  font-weight: 100;
+  letter-spacing: 0.05em;
+}
+
+.main-container .container-2 .cont-restrict .categories-row .cat-tab img {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.main-container .container-2 .cont-restrict .categories-row .cat-tab:hover img {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.main-container .container-2 .cont-restrict .featured {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 6em;
+}
+
+.main-container .container-2 .cont-restrict .featured .feat-header {
+  font-family: 'Red Hat Display', sans-serif;
+  color: #ebebeb;
+  letter-spacing: 0.1em;
+  font-size: 1.7em;
+}
+
+.main-container .container-2 .cont-restrict .featured hr {
+  margin-top: 1.7em;
+  width: 8%;
+  height: 0.08em;
+  border: #ecaf2b solid 2px;
+  background: #ecaf2b;
+}

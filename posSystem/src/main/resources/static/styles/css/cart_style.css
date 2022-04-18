@@ -1,0 +1,531 @@
+html * {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.title-text {
+  font-size: 1em;
+  font-family: "Red Hat Display", sans-serif;
+  color: #ebebeb;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3em;
+}
+
+ul.breadcrumb {
+  margin-top: 7em;
+  list-style: none;
+  font-family: sans-serif;
+}
+
+ul.breadcrumb li {
+  display: inline;
+}
+
+ul.breadcrumb li a {
+  color: #bcbcbc;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: #bcbcbc;
+  content: "/\00a0";
+}
+
+.cart-container {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #444444;
+  padding: 2em 0 5em 0;
+}
+
+.cart-container.finished {
+  z-index: 900;
+}
+
+.cart-container .sub-container {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #444444;
+  padding: 0 0 0 0;
+}
+
+.cart-container .sub-container .cont-restrict {
+  min-height: 100vh;
+  width: 85%;
+}
+
+.cart-container .sub-container .cont-restrict .shopping-cart-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 3em;
+  padding-bottom: 3em;
+}
+
+.cart-container .sub-container .cont-restrict .shopping-cart-label .cart-header {
+  font-family: "Red Hat Display", sans-serif;
+  color: #ebebeb;
+  letter-spacing: 0.1em;
+  font-size: 1.7em;
+}
+
+.cart-container .sub-container .cont-restrict .shopping-cart-label hr {
+  margin-top: 1.7em;
+  width: 8%;
+  height: 0.08em;
+  border: #ecaf2b solid 2px;
+  background: #ecaf2b;
+}
+
+/*Quantity Number Spinner*/
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  height: auto;
+}
+
+.stepper {
+  border: 1px solid #ecaf2b;
+  overflow: visible;
+  height: 2.1em;
+  padding: 1px;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+.stepper input {
+  width: 3em;
+  height: 100%;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 1em;
+}
+
+.stepper button {
+  width: 1.4em;
+  font-weight: 300;
+  height: 100%;
+  line-height: 0.1em;
+  font-size: 1.4em;
+  padding: 0.2em !important;
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+
+.stepper button:hover {
+  cursor: pointer;
+}
+
+/* Global settings */
+/* Global "table" column settings */
+.product-image {
+  float: left;
+  width: 18%;
+}
+
+.product-details {
+  float: left;
+  width: 37%;
+}
+
+.product-price {
+  display: inline-block;
+  text-align: center;
+  margin-right: -10px;
+  width: 15%;
+}
+
+.product-quantity {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-right: -10px;
+  width: 20%;
+}
+
+.product-line-price {
+  display: inline-block;
+  width: 10%;
+  text-align: right;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before, .shopping-cart:before,
+.column-labels:before,
+.product:before,
+.totals-item:before,
+.group:after,
+.shopping-cart:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
+  content: "";
+  display: table;
+}
+
+
+.group:after,
+.shopping-cart:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
+  clear: both;
+}
+
+.group, .shopping-cart,
+.column-labels,
+.product,
+.totals-item {
+  zoom: 1;
+}
+
+/* Apply clearfix in a few places */
+/* Apply currency signs */
+.product .product-price:before,
+.product .product-line-price:before,
+.totals-value:before {
+  content: "PHP ";
+}
+
+/* Body/Header stuff */
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+label {
+  color: #fff;
+}
+
+.shopping-cart {
+  margin-top: -45px;
+}
+
+/* Column headers */
+.column-labels {
+  width: 100%;
+}
+
+.column-labels label {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ecaf2b;
+}
+
+.column-labels .product-details {
+  text-indent: -9999px;
+}
+
+/* Product entries */
+.product {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ecaf2b;
+  width: 100%;
+  color: white;
+}
+
+.product .product-image {
+  text-align: center;
+}
+
+.product .product-image img {
+  width: 200px;
+  float: left;
+}
+
+.product .product-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 4em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.product .product-details .product-title {
+  margin-right: 20px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.product .product-details .product-description {
+  margin: 5px 20px 5px 0;
+  line-height: 1.4em;
+  font-family: "Roboto Mono", monospace;
+}
+
+.product .product-price {
+  margin-top: 4em;
+  font-family: "Roboto Mono", monospace;
+}
+
+.product .product-quantity {
+  margin-top: 4em;
+}
+
+.product .product-quantity input {
+  width: 50px;
+}
+
+.product .remove-product {
+  margin-top: 0.5em;
+  border: 0;
+  background-color: transparent;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+.product .remove-product:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.product .product-line-price {
+  margin-top: 4em;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* Totals section */
+.totals {
+  padding-top: 1.5em;
+  width: 100%;
+}
+
+.totals .totals-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.totals .totals-item label {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 100%;
+  text-align: right;
+  font-size: 18px;
+}
+
+.totals .totals-item .totals-value {
+  font-size: 32px;
+  font-family: "Red Hat Display", sans-serif;
+  color: #fff;
+  float: right;
+  width: 45%;
+  text-align: right;
+}
+
+.totals .totals-item-total {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.totals .shipping-info {
+  color: #fff;
+  text-align: right;
+  font-family: "Roboto Mono", monospace;
+}
+
+.buttons {
+  width: 100%;
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 1em;
+}
+
+.buttons .button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 1em;
+  border-radius: 0.25em;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.buttons .btn-1 {
+  width: 40% !important;
+  background-color: transparent;
+  color: #fec86e;
+  border: #fec86e solid 2px;
+  width: 33%;
+}
+
+.buttons .btn-2 {
+  background-color: #fec86e;
+  color: #000000;
+  border: #fec86e solid 2px;
+}
+
+.bottom-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.bottom-container .notes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+  .shopping-cart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid #ecaf2b;
+  }
+  .column-labels {
+    display: none;
+  }
+  .product-image {
+    float: right;
+    width: auto;
+  }
+  .product-image img {
+    margin: 0 0 10px 10px;
+  }
+  .product-details {
+    float: none;
+    margin-bottom: 10px;
+    width: auto;
+  }
+  .product-price {
+    clear: both;
+    width: 70px;
+  }
+  .product-quantity {
+    width: 100px;
+  }
+  .product-quantity input {
+    margin-left: 20px;
+  }
+  .product-quantity:before {
+    content: "x";
+  }
+  .product-removal {
+    width: auto;
+  }
+  .product-line-price {
+    float: right;
+    width: 70px;
+  }
+}
+
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+  .product-removal {
+    float: right;
+  }
+  .product-line-price {
+    float: right;
+    clear: left;
+    width: auto;
+    margin-top: 10px;
+  }
+  .product .product-line-price:before {
+    content: "Item Total: $";
+  }
+  .totals .totals-item label {
+    width: 60%;
+  }
+  .totals .totals-item .totals-value {
+    width: 40%;
+  }
+}

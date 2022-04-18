@@ -1,0 +1,571 @@
+html * {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul.breadcrumb {
+  margin-top: 7em;
+  list-style: none;
+  font-family: sans-serif;
+}
+
+ul.breadcrumb li {
+  display: inline;
+}
+
+ul.breadcrumb li a {
+  color: #bcbcbc;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: #bcbcbc;
+  content: "/\00a0";
+}
+
+.order-stat-container {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #444444;
+  padding: 2em 0 5em 0;
+}
+
+.order-stat-container.finished {
+  z-index: 900;
+}
+
+.order-stat-container .sub-container {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #444444;
+  padding: 0 0 0 0;
+}
+
+.order-stat-container .sub-container .cont-restrict {
+  min-height: 100vh;
+  width: 85%;
+}
+
+.order-stat-container .sub-container .cont-restrict .page-heading-labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 3em;
+  padding-bottom: 3em;
+}
+
+.order-stat-container .sub-container .cont-restrict .page-heading-labels .order-headers {
+  font-family: "Red Hat Display", sans-serif;
+  color: #ebebeb;
+  letter-spacing: 0.1em;
+  font-size: 1.7em;
+}
+
+.order-stat-container .sub-container .cont-restrict .page-heading-labels hr {
+  margin-top: 1.7em;
+  width: 8%;
+  height: 0.08em;
+  border: #ecaf2b solid 2px;
+  background: #ecaf2b;
+}
+
+/* Global settings */
+/* Global "table" column settings */
+.product-image {
+  float: left;
+  width: 18%;
+}
+
+.product-details {
+  float: left;
+  width: 37%;
+}
+
+.product-price {
+  display: inline-block;
+  text-align: center;
+  margin-right: -10px;
+  width: 15%;
+}
+
+.product-quantity {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-right: -10px;
+  width: 20%;
+}
+
+.product-line-price {
+  display: inline-block;
+  width: 10%;
+  text-align: right;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before, .order-table:before,
+.column-labels:before,
+.product:before,
+.totals-item:before,
+.group:after,
+.order-table:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
+  content: "";
+  display: table;
+}
+
+
+.group:after,
+.order-table:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
+  clear: both;
+}
+
+.group, .order-table,
+.column-labels,
+.product,
+.totals-item {
+  zoom: 1;
+}
+
+/* Apply clearfix in a few places */
+/* Apply currency signs */
+.product .product-price:before,
+.product .product-line-price:before,
+.totals-value:before {
+  content: "PHP ";
+}
+
+/* Body/Header stuff */
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+label {
+  color: #fff;
+}
+
+.order-table {
+  margin-top: -45px;
+}
+
+/* Column headers */
+.column-labels {
+  width: 100%;
+}
+
+.column-labels label {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ecaf2b;
+}
+
+.column-labels .product-details {
+  text-indent: -9999px;
+}
+
+/* Product entries */
+.product {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ecaf2b;
+  width: 100%;
+  color: white;
+}
+
+.product .product-image {
+  text-align: center;
+}
+
+.product .product-image img {
+  width: 200px;
+  float: left;
+}
+
+.product .product-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 4em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.product .product-details .product-title {
+  margin-right: 20px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.product .product-details .product-description {
+  margin: 5px 20px 5px 0;
+  line-height: 1.4em;
+  font-family: "Roboto Mono", monospace;
+}
+
+.product .product-price {
+  margin-top: 4em;
+  font-family: "Roboto Mono", monospace;
+}
+
+.product .product-quantity {
+  margin-top: 4em;
+}
+
+.product .product-quantity input {
+  width: 50px;
+}
+
+.product .product-line-price {
+  margin-top: 4em;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* Totals section */
+.totals {
+  padding-top: 1.5em;
+  width: 100%;
+}
+
+.totals .totals-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.totals .totals-item label {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 100%;
+  text-align: right;
+  font-weight: 100;
+}
+
+.totals .totals-item .totals-value {
+  font-weight: 100;
+  font-family: "Red Hat Display", sans-serif;
+  color: #fff;
+  float: right;
+  width: 18%;
+  text-align: right;
+}
+
+.totals .totals-item-total {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* Customer details section */
+.customer-cont {
+  padding-bottom: 6em;
+  display: inline-block;
+  width: 100%;
+}
+
+.customer-cont .customer-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.customer-cont .customer-item label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 15%;
+  text-align: left;
+  font-weight: 100;
+}
+
+.customer-cont .customer-item .customer-value {
+  font-weight: 100;
+  font-family: "Red Hat Display", sans-serif;
+  color: #fff;
+  float: right;
+  width: 20%;
+  text-align: left;
+}
+
+/*Order Details Section*/
+/* Global settings */
+.order-details-cont {
+  padding-bottom: 4em;
+}
+
+/* Global order status "table" column settings */
+.order-no {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  margin-right: -10px;
+}
+
+.order-date {
+  display: inline-block;
+  text-align: center;
+  margin-right: -10px;
+  width: 25%;
+}
+
+.order-payment-stat {
+  display: inline-block;
+  text-align: center;
+  margin-right: -10px;
+  width: 15%;
+}
+
+.order-waybill-no {
+  display: inline-block;
+  text-align: center;
+  margin-right: -10px;
+  width: 25%;
+}
+
+.order-delivery-stat {
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+}
+
+/*Order Status Entries*/
+.orders {
+  padding-top: 2em;
+  color: #fff;
+}
+
+.orders .order-payment-stat {
+  color: #aaef98;
+}
+
+.orders .order-delivery-stat {
+  color: #aaef98;
+}
+
+/* Order Tracking */
+.form-inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-inline ::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+  font-family: "Roboto Mono", monospace;
+}
+
+.form-inline :-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+  font-family: "Roboto Mono", monospace;
+}
+
+.form-inline ::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+  font-family: "Roboto Mono", monospace;
+}
+
+.form-inline ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1;
+  /* Firefox */
+  font-family: "Roboto Mono", monospace;
+}
+
+.form-inline input {
+  width: 50%;
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 1em;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: #fff;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.buttons {
+  width: 15%;
+  gap: 1em;
+}
+
+.buttons .button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.25em;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.buttons .btn-2 {
+  background-color: #fec86e;
+  color: #000000;
+  border: #fec86e solid 2px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  .form-inline {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+  .order-table {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid #ecaf2b;
+  }
+  .column-labels {
+    display: none;
+  }
+  .product-image {
+    float: right;
+    width: auto;
+  }
+  .product-image img {
+    margin: 0 0 10px 10px;
+  }
+  .product-details {
+    float: none;
+    margin-bottom: 10px;
+    width: auto;
+  }
+  .product-price {
+    clear: both;
+    width: 70px;
+  }
+  .product-quantity {
+    width: 100px;
+  }
+  .product-quantity input {
+    margin-left: 20px;
+  }
+  .product-quantity:before {
+    content: "x";
+  }
+  .product-line-price {
+    float: right;
+    width: 70px;
+  }
+}
+
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+  .product-line-price {
+    float: right;
+    clear: left;
+    width: auto;
+    margin-top: 10px;
+  }
+  .product .product-line-price:before {
+    content: "Item Total: $";
+  }
+  .totals .totals-item label {
+    width: 60%;
+  }
+  .totals .totals-item .totals-value {
+    width: 40%;
+  }
+}
