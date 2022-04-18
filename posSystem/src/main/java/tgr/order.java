@@ -93,6 +93,16 @@ public class order
         this.OrderStatus = OrderStatus;
     }
 
+    
+    /*public String getPaymentStatus()
+    {
+        return PaymentStatus;
+    }
+    public void setPaymentStatus(String paymentStatus)
+    {
+        PaymentStatus = paymentStatus;
+    }*/
+
     @Override
     public String toString() {
 

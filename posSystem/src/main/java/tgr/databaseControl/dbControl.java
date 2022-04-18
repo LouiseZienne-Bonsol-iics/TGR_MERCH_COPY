@@ -71,7 +71,10 @@ public class dbControl {
     @Override
 	public String toString()
 	{
-		return "Employee [id=" + id + ", OrderID=" + OrderID + ", LastName=" + LastName + ", FirstName=" + FirstName
-				+ ", MerchType=" + MerchType + ", MerchPrice=" + MerchPrice + ", OrderStatus=" +OrderStatus + ", PaymentStatus=" + PaymentStatus + "]";
+		//return "order [id=" + id + ", OrderID=" + OrderID + ", LastName=" + LastName + ", FirstName=" + FirstName
+				//+ ", MerchType=" + MerchType + ", MerchPrice=" + MerchPrice + ", OrderStatus=" +OrderStatus + ", PaymentStatus=" + PaymentStatus + "]";
+
+        return "order{" + "id=" + id + ", OrderID='" + OrderID + "' , LastName='" + LastName + "',FirstName= '" + FirstName + "', MerchType='" + 
+                MerchType + "', MerchPrice='" + MerchPrice + "', OrderStatus='" + OrderStatus + ", PaymentStatus=" + PaymentStatus + "'}";
 	}
 }
