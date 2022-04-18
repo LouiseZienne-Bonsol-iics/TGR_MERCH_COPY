@@ -4,20 +4,32 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
 public class dbServiceImplementation implements dbService{
 
     @Autowired
-    private dbRepository dbRepository;
+    private dbDao dbDao;
 
     @Override
-    public List<dbControl> getData() 
+    public void insertData(dbControl dbControl) 
     {
-        return dbRepository.getData();
+        dbDao.insertData(dbControl);
     }
 
-    
+    @Override
+    public void insertDatas(List<dbControl> dbControls)
+    {
+        dbDao.insertDatas(dbControls);
+    }
+
+    public void getAllData()
+    {
+        List<dbControl> dbControls = dbDao.getAllData();
+        for (dbControl dbControl : dbControls)
+        {
+            System.out.println(dbControl.toString());
+        }
+    }
+
 }

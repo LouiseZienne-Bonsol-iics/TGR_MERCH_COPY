@@ -1,13 +1,7 @@
 package tgr.databaseControl;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="orders")
 public class dbControl 
 {
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String OrderID;
     private String LastName;

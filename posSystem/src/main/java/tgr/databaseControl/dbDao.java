@@ -1,12 +1,9 @@
 package tgr.databaseControl;
-
 import java.util.List;
 
-
-public interface dbService 
+public interface dbDao
 {
-    void insertData(dbControl dbC);
+    void insertData(dbControl db);
     void insertDatas(List<dbControl> dbControls);
-    void getAllData();
-
+    List<dbControl> getAllData();
 }
