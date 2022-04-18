@@ -426,7 +426,6 @@ label {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  width: 40%;
   padding: 1em;
   border-radius: 0.25em;
   border: 0;
@@ -435,6 +434,7 @@ label {
 }
 
 .buttons .btn-1 {
+  width: 40% !important;
   background-color: transparent;
   color: #fec86e;
   border: #fec86e solid 2px;
@@ -528,4 +528,3 @@ label {
     width: 40%;
   }
 }
-/*# sourceMappingURL=cart_style.css.map */
