@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/styles/css/aos.css" />
     <link rel="stylesheet" href="/styles/css/order_status_style.css" />
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+    <script src="order_status.js"></script>
 
     <title>Order Status Page</title>
     <link rel="icon" type="image/x-icon" href="/styles/images/favicon.ico">
@@ -67,7 +68,7 @@
                             <form class="form-inline">
                                 <input type="search" id="tracking-search" placeholder="Please enter your Order Number." autocomplete="off">
                                 <div class="buttons">
-                                    <input type="submit" class="button btn-2" value="Search"></input>
+                                    <input id="tracking-button" type="submit" class="button btn-2" value="Search"></input>
                                 </div>
                             </form>
                         </div>
@@ -108,11 +109,11 @@
                                 </div>
 
                                 <div class="orders">
-                                    <div class="order-no">20211013021454181</div>
-                                    <div class="order-date">2021-10-13 10:14AM</div>
-                                    <div class="order-payment-stat">PAID</div>
-                                    <div class="order-waybill-no">210-163001</div>
-                                    <div class="order-delivery-stat">SHIPPED</div>
+                                    <div id="order-number" class="order-no">20211013021454181</div>
+                                    <div id="order-date" class="order-date">2021-10-13 10:14AM</div>
+                                    <div id="payment" class="order-payment-stat">PAID</div>
+                                    <div id="waybill-no" class="order-waybill-no">210-163001</div>
+                                    <div id="delivery-status" class="order-delivery-stat">SHIPPED</div>
                                 </div>
                             </div>
 
