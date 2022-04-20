@@ -23,14 +23,14 @@
 					LOGIN
 				</h2>
 			</div>
-			<form action="#" th:action="@{/login}" th:object="${login}" class="form" method="post" autocomplete="off">
-				<input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text"
-				th:field="*{username}" class="form-field" placeholder="Username" />
-				<input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="password"
-				th:field="*{password}" class="form-field" placeholder="Password" />
+			<form action="databasehandler.php" class="form" method="post" autocomplete="off">
+				<input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="username"
+				class="form-field" placeholder="Username" />
+				<input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="password" name="password"
+				 class="form-field" placeholder="Password" />
 
 				<input data-aos="zoom-out" data-aos-delay="1800" data-aos-duration="1400" type="submit"
-					value="Log-in" />
+					value="Log-in" name="login" />
 			</form>
 		</div>
 
