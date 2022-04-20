@@ -65,31 +65,8 @@
             else if(trim($username) === $dbUser)
             {
                 if($password === $dbPass)
-                {     
-                    //Servlet Context Code
-                    //User user = new User();
-                    //user.setUser(placeholder, passwordDB, role);
-
-                    //ServletContext sc = getServletContext();
-                    //sc.setAttribute("userCon", user);
-
-                    //Session
-                    //HttpSession session = request.getSession();
-                    //session.setAttribute("userSes", username);
-                    //session.setAttribute("passSes", password);
-                    //session.setAttribute("RoleSes", role);
-
-                    //ServletContextListener Code
-                    //UserContextListener UseConList = new UserContextListener();
-                    //UseConList.contextInitialized(new ServletContextEvent(sc));
-
-                    //Redirect
-                    //switch(role)
-                    //{
-                        //case "Admin": response.sendRedirect("successAdmin"); break;
-                        //default: response.sendRedirect("success");
-                    //}
-
+                {  
+                    header('Location:databaseControl.php?status=SUCCESS');
                     echo "You did it. You crazy son of a bitch, you logged in with username: " . $username;
 
                 }
