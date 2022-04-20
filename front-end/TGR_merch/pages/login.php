@@ -23,7 +23,7 @@
 					LOGIN
 				</h2>
 			</div>
-			<form action="/order_control.php" class="form" method="post" autocomplete="off">
+			<form action="/posSystem/src/main/php/tgr/order_control.php" class="form" method="post" autocomplete="off">
 				<input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="username"
 				class="form-field" placeholder="Username" />
 				<input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="password" name="password"
