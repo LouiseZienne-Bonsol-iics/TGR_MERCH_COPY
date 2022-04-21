@@ -91,37 +91,37 @@ $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;pass
     ?>
     <h3>Insert</h3>
     <form action="#" method="post">
-        <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="OrderID"
+        <input   type="text" name="OrderID"
                     class="form-field" placeholder="Order ID" />
-        <input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="text" name="LastName"
+        <input   type="text" name="LastName"
                     class="form-field" placeholder="Last Name" />
-        <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="FirstName"
+        <input   type="text" name="FirstName"
                     class="form-field" placeholder="First Name" />
-        <input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="text" name="CustomerNumber"
+        <input   type="text" name="CustomerNumber"
                     class="form-field" placeholder="Customer Number" />
-        <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="CustomerEmail"
+        <input   type="text" name="CustomerEmail"
                     class="form-field" placeholder="Customer Email" />
-        <input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="text" name="CustomerAddress"
+        <input   type="text" name="CustomerAddress"
                     class="form-field" placeholder="Customer Address" />
-        <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="MerchType"
+        <input   type="text" name="MerchType"
                     class="form-field" placeholder="Merch Type" />
-        <input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="text" name="MerchPrice"
+        <input   type="text" name="MerchPrice"
                     class="form-field" placeholder="Merch Price" />
-        <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="CourierChoice"
+        <input   type="text" name="CourierChoice"
                     class="form-field" placeholder="CourierChoice" />
-        <input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="text" name="CourierNumber"
+        <input   type="text" name="CourierNumber"
                     class="form-field" placeholder="CourierNumber" />
-        <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="OrderStatus"
+        <input   type="text" name="OrderStatus"
                     class="form-field" placeholder="Order Status" />
-        <input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="text" name="PaymentStatus"
+        <input   type="text" name="PaymentStatus"
                     class="form-field" placeholder="Payment Status" />
-		<input data-aos="zoom-out" data-aos-delay="1800" data-aos-duration="1400" type="submit"
+		<input type="submit"
 				    value="Insert" name="insert" />
     </form>
 
     <h3>Update</h3>
     <form action="#" method="post">
-        <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="ID"
+        <input   type="text" name="ID"
                     class="form-field" placeholder="ID" />
         <label for="dataColumn">Column</label>
         <select id="dataColumn" name="dataColumn">
@@ -138,9 +138,9 @@ $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;pass
                     <option value="OrderStatus">Order Status</option>
                     <option value="PaymentStatus">Payment Status</option>
         </select>
-        <input data-aos="zoom-out-right" data-aos-delay="1600" data-aos-duration="1400" type="text" name="dataReplacement"
+        <input  type="text" name="dataReplacement"
                     class="form-field" placeholder="Insert Data" />
-        <input data-aos="zoom-out" data-aos-delay="1800" data-aos-duration="1400" type="submit"
+        <input type="submit"
 				    value="Insert" name="Update" />
     </form>
     <?php 
@@ -160,9 +160,9 @@ $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;pass
 
     <h3>Delete</h3>
     <form method="POST">
-    <input data-aos="zoom-out-right" data-aos-delay="1400" data-aos-duration="1400" type="text" name="ID"
+    <input   type="text" name="ID"
                     class="form-field" placeholder="ID" />
-    <input data-aos="zoom-out" data-aos-delay="1800" data-aos-duration="1400" type="submit"
+    <input type="submit"
 				    value="Delete" name="delete" />
     </form>
     <?php 
