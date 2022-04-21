@@ -19,8 +19,8 @@
 <body class="inactive">
     <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
-    </section>
-    <section class="bg-1"></section>
+    </section> -->
+     <section class="bg-1"></section>
     <section class="bg-2"></section>
 
     <section class="main-container">
@@ -65,14 +65,39 @@
                                 <h1 class="order-headers">Order Status Tracking</h1>
                                 <hr>
                             </div>
-                            <form class="form-inline">
-                                <input type="search" id="tracking-search" placeholder="Please enter your Order Number." autocomplete="off">
+                            <form action="" method="POST" class="form-inline"> 
+                                <input type="search" id="tracking-search" placeholder="Please enter your Order Number." autocomplete="off" name="tracking_search">
                                 <div class="buttons">
-                                    <input id="tracking-button" type="submit" class="button btn-2" value="Search"></input>
+                                    <input id="tracking-button" type="submit" class="button btn-2" value="Search" name="track"></input>
                                 </div>
                             </form>
                         </div>
 
+                        <?php 
+                            $host = "localhost";
+                            $port = "3306";
+                            $dbUserName = "root";
+                            $dbPassword = "root";
+                            $dbName = "tgr_merch";
+                            $tableDB = "orders";
+                            $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;password=$dbPassword"); 
+                            if(isset($_POST['track']))
+                            {
+                                $tracking_search = $_POST['tracking_search'];
+                                
+                                $result = $pdo->prepare('SELECT * FROM orders where OrderID= :n');
+                                $result->bindParam('n', $tracking_search);
+                                $result->execute();
+
+                                // while(
+                                    $row = $result->fetch()
+                                //     )
+                                // {
+                                    
+                                // }
+                                
+                            ?>
+                        
                         <!-- Order Details -->
                         <div class="order-details-cont">
                             <div class="page-heading-labels">
@@ -83,19 +108,19 @@
                             <div class="customer-cont">
                                 <div class="customer-item">
                                     <label>Customer Name: </label>
-                                    <div class="customer-value" id="customer-name">Juan Dela Cruz</div>
+                                    <div class="customer-value" id="customer-name"><?php echo $row["FirstName"]; echo " ",$row["LastName"] ?></div>
                                 </div>
                                 <div class="customer-item">
                                     <label>Contact Number: </label>
-                                    <div class="customer-value" id="contact-number">09876543***</div>
+                                    <div class="customer-value" id="contact-number"><?php echo $row["CustomerNumber"] ?></div>
                                 </div>
                                 <div class="customer-item">
                                     <label>Email Address: </label>
-                                    <div class="customer-value" id="email-address">juan.de****@gmail.com</div>
+                                    <div class="customer-value" id="email-address"><?php echo $row["CustomerEmail"] ?></div>
                                 </div>
                                 <div class="customer-item">
                                     <label>Delivery Option: </label>
-                                    <div class="customer-value" id="delivery-option">J&T Express</div>
+                                    <div class="customer-value" id="delivery-option"><?php echo $row["CourierChoice"] ?></div>
                                 </div>
                             </div>
 
@@ -109,11 +134,11 @@
                                 </div>
 
                                 <div class="orders">
-                                    <div id="order-number" class="order-no">20211013021454181</div>
+                                    <div id="order-number" class="order-no"><?php echo $row["OrderID"] ?></div>
                                     <div id="order-date" class="order-date">2021-10-13 10:14AM</div>
-                                    <div id="payment" class="order-payment-stat">PAID</div>
-                                    <div id="waybill-no" class="order-waybill-no">210-163001</div>
-                                    <div id="delivery-status" class="order-delivery-stat">SHIPPED</div>
+                                    <div id="payment" class="order-payment-stat"><?php echo $row["PaymentStatus"] ?></div>
+                                    <div id="waybill-no" class="order-waybill-no"><?php echo $row["CourierNumber"] ?></div>
+                                    <div id="delivery-status" class="order-delivery-stat"><?php echo $row["OrderStatus"] ?></div>
                                 </div>
                             </div>
 
@@ -183,11 +208,11 @@
                         <div class="buttons" style="float: right; margin-top: 2em; width: 25%;">
                             <a href="payment_proof" class="button btn-2">Send Proof of Payment</a>
                         </div>
-
+                        <?php  } ?>
                     </div>
                 </section>
             </section>
-
+                          
         </section>
         <!-- FOOTER -->
         <section class="main-footer-container">

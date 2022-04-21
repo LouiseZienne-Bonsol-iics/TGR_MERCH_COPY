@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php session_start(); ?>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,11 +17,11 @@
 </head>
 
 <body class="inactive">
-    <section class="background">
+    <!-- <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
     <section class="bg-1"></section>
-    <section class="bg-2"></section>
+    <section class="bg-2"></section> -->
 
     <section class="main-container">
         <!-- HEADER -->
@@ -61,7 +61,7 @@
                     </div>
                     <center>
                         <p class="subheading-text">
-                            Your order #20211013021454181 has been received!
+                            Your order <?php $_SESSION["OrderID"]; ?> has been received!
                         </p>
                     </center>
                     
@@ -72,11 +72,11 @@
                         </div>
                         <div class="customer-item">
                             <label>Order Number:</label>
-                            <div class="customer-value" id="order-no">20211013021454181</div>
+                            <div class="customer-value" id="order-no"><?php $_SESSION["OrderID"]; ?></div>
                         </div>
                         <div class="customer-item">
                             <label>Customer Name:</label>
-                            <div class="customer-value" id="customer-name">Juan Dela Cruz</div>
+                            <div class="customer-value" id="customer-name"><?php $_SESSION["CustomerName"];?></div>
                         </div>
                     </div>
 
@@ -90,12 +90,38 @@
                          of your proof of payment via link below. 
                     </p>
 
-                    <form action="">
-                        <input type="file" class="file-upload" id="myFile" name="filename">
+                    <form action="" method="post">
+                        <input type="file" class="file-upload" id="filename" name="filename">
                         <div class="buttons">
-                            <input type="submit" class="button btn-2" value="Upload Proof of Payment"></input>
+                            <input type="submit" class="button btn-2" value="Upload Proof of Payment" name="fileUpload" ></input>
                         </div>
                     </form>
+
+                    <?php
+                        $target_dir = "uploads/";
+                        $target_file = $target_dir . basename($_FILES['filename']["name"]);
+                        $uploadOk = 1;
+                        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                        if(isset($_POST['fileUpload'])) 
+                        {
+                            $check = getimagesize($_FILES['filename']["tmp_name"]);
+                            if($check !== false) 
+                            {
+                                echo "File is an image - " . $check["mime"] . ".";
+                                $uploadOk = 1;
+                            } 
+                            else 
+                            {
+                                    echo "File is not an image.";
+                                    $uploadOk = 0;
+                            }
+                        }
+                        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
+                        {
+                            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                            $uploadOk = 0;
+                        }
+                    ?>
 
                     <hr>
 

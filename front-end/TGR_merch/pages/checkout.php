@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php 
+session_start();
+$host = "localhost";
+$port = "3306";
+$dbUserName = "root";
+$dbPassword = "root";
+$dbName = "tgr_merch";
+$tableDB = "orders";
+$pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;password=$dbPassword"); ?>
 <html lang="en">
 
 <head>
@@ -28,47 +37,47 @@
             <div class="form-container">
                 <h1>Shipping</h1>
                 <p>Please enter your shipping details.</p>
-                <form class="form" action="payment_proof">
+                <form class="form" method="post">
                     <div class="fields fields--2">
                         <label class="field">
                             <span class="field__label" for="firstname">First name</span>
-                            <input class="field__input" type="text" id="firstname" />
+                            <input class="field__input" type="text" id="firstname" name="FirstName" />
                         </label>
                         <label class="field">
                             <span class="field__label" for="lastname">Last name</span>
-                            <input class="field__input" type="text" id="lastname" />
+                            <input class="field__input" type="text" id="lastname" name="LastName"/>
                         </label>
                     </div>
                     <div class="fields fields--2">
                         <label class="field">
                             <span class="field__label" for="email">E-mail Address</span>
-                            <input class="field__input" type="email" id="email" />
+                            <input class="field__input" type="email" id="email" name="CustomerEmail"/>
                         </label>
                         <label class="field">
                             <span class="field__label" for="contact-num">Contact number</span>
-                            <input class="field__input" type="tel" id="contact-num" />
+                            <input class="field__input" type="tel" id="contact-num" name="CustomerNumber" />
                         </label>
                     </div>
                     <div class="fields">
                         <label class="field">
                             <span class="field__label" for="address">Address</span>
-                            <input class="field__input" type="text" id="address" />
+                            <input class="field__input" type="text" id="address" name="Address"/>
                         </label>
                     </div>
 
                     <div class="fields fields--3">
                         <label class="field">
                             <span class="field__label" for="province">Province</span>
-                            <input class="field__input" type="text" id="province" />
+                            <input class="field__input" type="text" id="province" name="Province"/>
                             </select>
                         </label>
                         <label class="field">
                             <span class="field__label" for="city">City</span>
-                            <input class="field__input" type="text" id="city" />
+                            <input class="field__input" type="text" id="city" name="City"/>
                         </label>
                         <label class="field">
                             <span class="field__label" for="zipcode">Zip code</span>
-                            <input class="field__input" type="text" id="zipcode" />
+                            <input class="field__input" type="text" id="zipcode" name="ZIP"/>
                         </label>
                     </div>
                     <div class="courier">
@@ -77,7 +86,7 @@
                         <div class="fields">
                             <label class="field">
                                 <span class="field__label" for="courier">Courier</span>
-                                <input class="field__input" type="text" id="courier" list="courier-list">
+                                <input class="field__input" type="text" id="courier" list="courier-list" name="CourierChoice">
                                 <datalist id="courier-list">
                                     <option value="J&T Express"></option>
                                     <option value="Grab"></option>
@@ -86,7 +95,47 @@
                             </label>
                         </div>
                     </div>
+                    <?php
+        if(isset($_POST['insert']))
+        {
+            $LastName = $_REQUEST['LastName'];
+            $FirstName = $_REQUEST['FirstName'];
+            $CustomerNumber = $_REQUEST['CustomerNumber'];
+            $CustomerEmail = $_REQUEST['CustomerEmail'];
+            $Address = $_REQUEST['Address'];
+            // $MerchType = $_REQUEST['MerchType'];
+            // $MerchPrice = $_REQUEST['MerchPrice'];
+            $CourierChoice = $_REQUEST['CourierChoice'];
+            // $CourierNumber = $_REQUEST['CourierNumber'];
+            $Province = $_REQUEST['Province'];
+            $City = $_REQUEST['City'];
+            $Zip = $_REQUEST['ZIP'];
+            $CustomerAddress = $Address . ', ' . $City . ', ' . $Province . ', ' . $Zip;
 
+            $random = bin2hex(random_bytes(6));
+            $OrderID = "TGR" . $random;
+
+            $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`,  `CourierChoice`) 
+                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$CourierChoice')"; 
+
+            $CustomerName = $FirstName . '' . $LastName;
+            $_SESSION["OrderID"] = $OrderID;
+            $_SESSION["CustomerName"] = $CustomerName;
+            if($pdo->query($sql))
+            {
+                echo '<h3>Successful</h3>';
+                echo "<script>location.href='payment_proof.php';</script>";
+            }
+            else
+            {
+                echo '<h3>Unsuccessful, Retry</h3>';
+            }
+        }
+        else
+        {
+            echo '<h3>Failure</h3>';
+        }
+    ?>
                     <div class="payment">
                         <h1>Payment Information</h1>
                         <fieldset>
@@ -107,7 +156,7 @@
                     </div>
                     <div class="buttons">
                         <a href="cart" class="button btn-1">Return to cart</a>
-                        <input type="submit" class="button btn-2" value="Place order"></input>
+                        <input type="submit" class="button btn-2" value="Place order" name="insert"></input>
                     </div>
                 </form>
 
