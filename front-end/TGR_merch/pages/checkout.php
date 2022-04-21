@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <?php 
 session_start();
-$host = "localhost";
-$port = "3306";
-$dbUserName = "root";
-$dbPassword = "root";
-$dbName = "tgr_merch";
+include('databaseConnect.php');
 $tableDB = "orders";
-$pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;password=$dbPassword"); ?>
+?>
 <html lang="en">
 
 <head>
@@ -111,16 +107,19 @@ $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;pass
             $City = $_REQUEST['City'];
             $Zip = $_REQUEST['ZIP'];
             $CustomerAddress = $Address . ', ' . $City . ', ' . $Province . ', ' . $Zip;
+            date_default_timezone_set('Asia/Manila');
+            $OrderDate = date('m-d-y h:i:s');
 
             $random = bin2hex(random_bytes(6));
             $OrderID = "TGR" . $random;
 
-            $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`,  `CourierChoice`) 
-                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$CourierChoice')"; 
+            $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`,'OrderDate' , `CourierChoice`) 
+                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$OrderDate' ,'$CourierChoice')"; 
 
-            $CustomerName = $FirstName . '' . $LastName;
-            $_SESSION["OrderID"] = $OrderID;
-            $_SESSION["CustomerName"] = $CustomerName;
+            $CustomerName = $FirstName . ' ' . $LastName;
+            $_SESSION['IDOrder'] = $OrderID;
+            $_SESSION['NameCustomer'] = $CustomerName;
+            $_SESSION['DateOrder'] = $OrderDate;
             if($pdo->query($sql))
             {
                 echo '<h3>Successful</h3>';

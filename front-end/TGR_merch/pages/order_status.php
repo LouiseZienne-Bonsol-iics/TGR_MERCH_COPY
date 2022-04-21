@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include('databaseConnect.php');
+$tableDB = "orders";
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -74,28 +78,13 @@
                         </div>
 
                         <?php 
-                            $host = "localhost";
-                            $port = "3306";
-                            $dbUserName = "root";
-                            $dbPassword = "root";
-                            $dbName = "tgr_merch";
-                            $tableDB = "orders";
-                            $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;password=$dbPassword"); 
                             if(isset($_POST['track']))
                             {
-                                $tracking_search = $_POST['tracking_search'];
-                                
+                                $tracking_search = $_POST['tracking_search'];                                
                                 $result = $pdo->prepare('SELECT * FROM orders where OrderID= :n');
                                 $result->bindParam('n', $tracking_search);
-                                $result->execute();
-
-                                // while(
-                                    $row = $result->fetch()
-                                //     )
-                                // {
-                                    
-                                // }
-                                
+                                $result->execute();                                
+                                $row = $result->fetch();                                                                
                             ?>
                         
                         <!-- Order Details -->
@@ -108,7 +97,7 @@
                             <div class="customer-cont">
                                 <div class="customer-item">
                                     <label>Customer Name: </label>
-                                    <div class="customer-value" id="customer-name"><?php echo $row["FirstName"]; echo " ",$row["LastName"] ?></div>
+                                    <div class="customer-value" id="customer-name"><?php echo $row["FirstName"]. ' ' . $row["LastName"] ?></div>
                                 </div>
                                 <div class="customer-item">
                                     <label>Contact Number: </label>
@@ -135,7 +124,7 @@
 
                                 <div class="orders">
                                     <div id="order-number" class="order-no"><?php echo $row["OrderID"] ?></div>
-                                    <div id="order-date" class="order-date">2021-10-13 10:14AM</div>
+                                    <div id="order-date" class="order-date"><?php echo $row["OrderDate"] ?></div>
                                     <div id="payment" class="order-payment-stat"><?php echo $row["PaymentStatus"] ?></div>
                                     <div id="waybill-no" class="order-waybill-no"><?php echo $row["CourierNumber"] ?></div>
                                     <div id="delivery-status" class="order-delivery-stat"><?php echo $row["OrderStatus"] ?></div>

@@ -1,14 +1,7 @@
 <!-- Sorry Robin labyu <3-->
 <?php
-$host = 'localhost';
-$port = '3306';
-$dbUserName = 'root';
-$dbPassword = 'root';
-$dbName = 'tgr_merch';
-$tableDB = 'orders';
-$pdo = new PDO(
-    "mysql:host=$host;port=$port;dbname=$dbName;user=$dbUserName;password=$dbPassword"
-);
+include('databaseConnect.php');
+$tableDB = "orders";
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,11 +23,13 @@ $pdo = new PDO(
                 <th>Customer Number</th>
                 <th>Customer Email</th>
                 <th>Customer Address</th>
+                <th>Order Date</th>
                 <th>Merch Type</th>
                 <th>Merch Price</th>
                 <th>Courier Choice</th>
                 <th>Courier Number</th>
                 <th>Order Status</th>
+                <th>Payment Image</th>
                 <th>Payment Status</th>
             </tr>
             <?php
@@ -73,14 +68,16 @@ $pdo = new PDO(
         $CustomerNumber = $_REQUEST['CustomerNumber'];
         $CustomerEmail = $_REQUEST['CustomerEmail'];
         $CustomerAddress = $_REQUEST['CustomerAddress'];
+        $OrderDate = $_REQUEST['OrderDate'];
         $MerchType = $_REQUEST['MerchType'];
         $MerchPrice = $_REQUEST['MerchPrice'];
         $CourierChoice = $_REQUEST['CourierChoice'];
         $CourierNumber = $_REQUEST['CourierNumber'];
         $OrderStatus = $_REQUEST['OrderStatus'];
+        $PaymentImage = $_REQUEST['PaymentImage'];
         $PaymentStatus = $_REQUEST['PaymentStatus'];
-        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, `MerchType`, `MerchPrice`, `CourierChoice`, `CourierNumber`, `OrderStatus`, `PaymentStatus`) 
-                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$MerchType', '$MerchPrice', '$CourierChoice', '$CourierNumber', '$OrderStatus', '$PaymentStatus')";
+        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, 'OrderDate',`MerchType`, `MerchPrice`, `CourierChoice`, `CourierNumber`, `OrderStatus`, 'PaymentImage' ,`PaymentStatus`) 
+                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress','$OrderDate' , '$MerchType', '$MerchPrice', '$CourierChoice', '$CourierNumber', '$OrderStatus', '$PaymentImage','$PaymentStatus')";
         if ($pdo->query($sql)) {
             echo '<h3>Successful</h3>';
             header('Location:databaseControl.php?status=SUCCESS');
@@ -98,11 +95,13 @@ $pdo = new PDO(
         <input type="text" name="CustomerNumber" class="form-field" placeholder="Customer Number" />
         <input type="text" name="CustomerEmail" class="form-field" placeholder="Customer Email" />
         <input type="text" name="CustomerAddress" class="form-field" placeholder="Customer Address" />
+        <input type="text" name="OrderDate" class="form-field" placeholder="Order Date" />
         <input type="text" name="MerchType" class="form-field" placeholder="Merch Type" />
         <input type="text" name="MerchPrice" class="form-field" placeholder="Merch Price" />
         <input type="text" name="CourierChoice" class="form-field" placeholder="CourierChoice" />
         <input type="text" name="CourierNumber" class="form-field" placeholder="CourierNumber" />
         <input type="text" name="OrderStatus" class="form-field" placeholder="Order Status" />
+        <input type="text" name="PaymentImage" class="form-field" placeholder="Payment Image" />
         <input type="text" name="PaymentStatus" class="form-field" placeholder="Payment Status" />
         <input type="submit" value="Insert" name="insert" />
     </form>
@@ -118,11 +117,13 @@ $pdo = new PDO(
             <option value="CustomerNumber">Customer Number</option>
             <option value="CustomerEmail">Customer Email</option>
             <option value="CustomerAddress">Customer Address</option>
+            <option value="OrderDate">Order Date</option>
             <option value="MerchType">Merch Type</option>
             <option value="MerchPrice">Merch Price</option>
             <option value="CourierChoice">Courier Choice</option>
             <option value="CourierNumber">Courier Number</option>
             <option value="OrderStatus">Order Status</option>
+            <option value="PaymentImage">Payment Image</option>
             <option value="PaymentStatus">Payment Status</option>
         </select>
         <input type="text" name="dataReplacement" class="form-field" placeholder="Insert Data" />

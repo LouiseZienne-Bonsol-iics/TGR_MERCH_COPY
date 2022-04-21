@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start(); ?>
+<?php session_start();
+include('databaseConnect.php');
+$tableDB = "orders";
+?>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -61,22 +64,22 @@
                     </div>
                     <center>
                         <p class="subheading-text">
-                            Your order <?php $_SESSION["OrderID"]; ?> has been received!
+                            Your order <?php echo $_SESSION['IDOrder']; ?> has been received!
                         </p>
                     </center>
                     
                     <div class="customer-cont">
                         <div class="customer-item">
                             <label>Order Placing Date:</label>
-                            <div class="customer-value" id="order-date">2021-10-13 10:14AM</div>
+                            <div class="customer-value" id="order-date"><?php echo $_SESSION['DateOrder'];?></div>
                         </div>
                         <div class="customer-item">
                             <label>Order Number:</label>
-                            <div class="customer-value" id="order-no"><?php $_SESSION["OrderID"]; ?></div>
+                            <div class="customer-value" id="order-no"><?php echo $_SESSION['IDOrder']; ?></div>
                         </div>
                         <div class="customer-item">
                             <label>Customer Name:</label>
-                            <div class="customer-value" id="customer-name"><?php $_SESSION["CustomerName"];?></div>
+                            <div class="customer-value" id="customer-name"><?php echo $_SESSION['NameCustomer'];?></div>
                         </div>
                     </div>
 
@@ -98,28 +101,30 @@
                     </form>
 
                     <?php
-                        $target_dir = "uploads/";
-                        $target_file = $target_dir . basename($_FILES['filename']["name"]);
-                        $uploadOk = 1;
-                        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                        if(isset($_POST['fileUpload'])) 
+                        if (isset($_POST['fileUpload'])) 
                         {
-                            $check = getimagesize($_FILES['filename']["tmp_name"]);
-                            if($check !== false) 
+                            $filetype = array('application/pdf','image/jpeg','image/jpg','image/png');
+                            if(in_array($_FILES["filename"]["type"],$filetype))
                             {
-                                echo "File is an image - " . $check["mime"] . ".";
-                                $uploadOk = 1;
-                            } 
-                            else 
-                            {
-                                    echo "File is not an image.";
-                                    $uploadOk = 0;
+                                $filename = $_FILES["filename"]["name"];
+                                $tempname = $_FILES["filename"]["tmp_name"];    
+                                $folder = "uploads/".$filename;
+                            
+                                // Get all the submitted data from the form
+                                $sql = "INSERT INTO orders (PaymentImage) VALUES ('$filename')";
+                            
+                                // Execute query
+                                $pdo->query($sql);
+                                    
+                                // Now let's move the uploaded image into the folder: image
+                                if (move_uploaded_file($tempname, $folder))  {
+                                    $msg = "Image uploaded successfully";
+                                }
+                                else
+                                {
+                                    $msg = "Failed to upload image";
+                                }
                             }
-                        }
-                        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
-                        {
-                            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-                            $uploadOk = 0;
                         }
                     ?>
 

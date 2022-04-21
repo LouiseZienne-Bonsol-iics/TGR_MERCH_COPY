@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+include('databaseConnect.php');
+$tableDB = "products";
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -17,11 +22,11 @@
 </head>
 
 <body class="inactive">
-    <section class="background">
+    <!-- <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
     <section class="bg-1"></section>
-    <section class="bg-2"></section>
+    <section class="bg-2"></section> -->
 
     <section class="main-container">
         <!-- HEADER -->
@@ -110,12 +115,19 @@
                         </div>
 
                         <div class="products">
-                            <!-- product-tile should be automatically generated per unique item -->
+                            <?php 
+                                $result = $pdo->query("SELECT ProductName from $tableDB");
+                                while($row = $result->fetchAll())
+                                {
+                                
+                            ?>
+
+
                             <div class="product-tile">
                                 <a href="product_info" class="product-img-container"><img src="../styles/images/product_placeholder.png"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
+                                    <h1><?php echo $row?></h1>
                                 </div>
                                 <div class="product-price">
                                     <h3>PHP 00.00</h3>
@@ -125,7 +137,7 @@
                                 <a href="product_info" class="product-img-container"><img src="../styles/images/product_placeholder.png"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
+                                    <h1><?php echo $row; ?></h1>
                                 </div>
                                 <div class="product-price">
                                     <h3>PHP 00.00</h3>
@@ -135,7 +147,7 @@
                                 <a href="product_info" class="product-img-container"><img src="../styles/images/product_placeholder.png"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
+                                    <h1><?php $row; ?></h1>
                                 </div>
                                 <div class="product-price">
                                     <h3>PHP 00.00</h3>
@@ -145,7 +157,7 @@
                                 <a href="product_info" class="product-img-container"><img src="../styles/images/product_placeholder.png"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1>Temporary Product Name</h1>
+                                    <h1><?php  echo $row; }?></h1>
                                 </div>
                                 <div class="product-price">
                                     <h3>PHP 00.00</h3>
