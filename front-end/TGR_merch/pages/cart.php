@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+    include('databaseConnect.php');
+    session_start();
+    $tableDB = "products";
+?>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,11 +20,11 @@
 </head>
 
 <body class="inactive">
-    <section class="background">
+    <!-- <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
     <section class="bg-1"></section>
-    <section class="bg-2"></section>
+    <section class="bg-2"></section> -->
 
     <section class="main-container">
         <!-- HEADER -->
@@ -75,55 +79,69 @@
                             <label class="product-line-price">TOTAL</label>
                         </div>
 
-                        <div class="product">
-                            <div class="product-image">
-                                <img src="../styles/images/product_placeholder.png">
-                            </div>
-                            <div class="product-details">
-                                <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
-                                <p class="product-description">LARGE</p>
-                            </div>
-                            <div class="product-price">00.00</div>
-                            <div class="product-quantity">
-                                <span class="stepper">
-                                    <button>–</button>
-                                    <input type="number" id="stepper1" value="1" min="1" max="100" step="1">
-                                    <button>+</button>
-                                </span>
-                                <div class="product-removal">
-                                    <button class="remove-product">
-                                        Remove Item
-                                    </button>
-                                </div>
-                            </div>
+                        <?php
+                            if(isset($_SESSION["shopping_cart"]))
+                            {
+                                $total_price = 0;
+                                foreach ($_SESSION['shopping_cart'] as $product)
+                                {
+                                    echo '<div class="product">
+                                        <div class="product-image">
+                                            <img
+                                                src="../styles/images/' .  $product['image'] .'_1.jpg">
+                                        </div>
+                                        <div class="product-details">
+                                            <div class="product-title">'. $product['name'] . '</div>
+                                            <p class="product-description">' . $product['size'] . '</p>
+                                        </div>
+                                        <div class="product-price">' . $product['price']  . '</div>
+                                        <div class="product-quantity">
+                                            <span class="stepper">
+                                                <input type="hidden" name="id" value="' . $product['id']. ' " />
+                                                <button type="button">–</button>
+                                                <input type="number" name="counter" id="stepper2" value=' . $product['quantity'] . ' min="1" max="100" step="1">
+                                                <button type="button">+</button>
+                                            </span>
+                                            <div class="product-removal">
+                                                <input type="hidden" name="id" value="' . $product['id']. '" />
+                                                <input type="hidden" name="remove" value="remove" />
+                                                <button type="submit" class="remove">
+                                                    Remove Item
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="product-line-price">' . $product['quantity']*$product['price']  . '</div>
+                                    </div>' ;
+                                    $total_price+= ($product['quantity']*$product['price']);
+                                }
+                            }
+                            $status="";
+                            if (isset($_POST['remove']))
+                            {
+                                if(!empty($_SESSION['shopping_cart'])) 
+                                {
+                                    foreach($_SESSION['shopping_cart'] as $key => $value) 
+                                    {
+                                        if($_POST['id'] == $key)
+                                        {
+                                        unset($_SESSION['shopping_cart'][$key]);
+                                        $status = "<div class='box' style='color:red;'>
+                                        Product is removed from your cart!</div>";
+                                        }
+                                    }	
+                                }
+                            }
 
-                            <div class="product-line-price">00.00</div>
-                        </div>
-
-                        <div class="product">
-                            <div class="product-image">
-                                <img
-                                    src="../styles/images/product_placeholder.png">
-                            </div>
-                            <div class="product-details">
-                                <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
-                                <p class="product-description">MEDIUM</p>
-                            </div>
-                            <div class="product-price">00.00</div>
-                            <div class="product-quantity">
-                                <span class="stepper">
-                                    <button>–</button>
-                                    <input type="number" id="stepper2" value="1" min="1" max="100" step="1">
-                                    <button>+</button>
-                                </span>
-                                <div class="product-removal">
-                                    <button class="remove-product">
-                                        Remove Item
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-line-price">00.00</div>
-                        </div>
+                            if (isset($_POST['action'])){
+                            foreach($_SESSION["shopping_cart"] as &$value){
+                                if($value['id'] === $_POST['id']){
+                                    $value['quantity'] = $_POST['quantity'];
+                                    break; // Stop the loop after we've found the product
+                                }
+                            }
+                                
+                            }
+                        ?>
 
                         <div class="bottom-container">
                             <div class="notes-container">
@@ -139,13 +157,12 @@
                                 <div class="totals">
                                     <div class="totals-item">
                                         <label>SUBTOTAL: </label>
-                                        <div class="totals-value" id="cart-subtotal">00.00</div>
+                                        <div class="totals-value" id="cart-subtotal"><?php echo $total_price ?></div>
                                     </div>
                                     <p class="shipping-info">Shipping fee will be calculated at checkout.</p>
                                 </div>
                                 <div class="buttons">
-                                    <a href="product_info.html" class="button btn-1">Continue Shopping</a>
-                                    <!--Hardcoded for presentation (must change when handling inputs)-->
+                                    <a href="product_info.pdf" class="button btn-1">Continue Shopping</a>
                                     <form action="checkout">
                                     <input type="submit" class="button btn-2" value="Proceed to Checkout"></input>
                                     </form>

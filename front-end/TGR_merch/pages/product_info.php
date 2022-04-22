@@ -3,6 +3,7 @@
 <?php 
     include('databaseConnect.php');
     session_start();
+    $tableDB = "products";
 ?>
 <head>
     <meta charset="UTF-8" />
@@ -19,11 +20,11 @@
 </head>
 
 <body class="inactive">
-    <section class="background">
+    <!-- <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
     <section class="bg-1"></section>
-    <section class="bg-2"></section>
+    <section class="bg-2"></section> -->
 
     <section class="main-container">
         <!-- HEADER -->
@@ -46,12 +47,25 @@
                         <input class="search-input" type="search" placeholder="Search here ...">
                         <i class="fa fa-search"></i>
                     </form>
-                    <a href="cart.html">
+                    <a href="cart.php">
                         <img src="../styles/images/shopping-bag.png" class="bag-icon" />
                     </a>
                 </div>
             </div>
-
+            <?php
+                if(isset($_SESSION['message'])){
+                    ?>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-6">
+                            <div class="alert alert-info text-center">
+                                <?php echo $_SESSION['message']; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    unset($_SESSION['message']);
+                }
+            ?>
             <!--Products container-->
             <section class="prod-info-container">
                 <section class="sub-container" id="subcont">
@@ -59,8 +73,10 @@
 
                         <ul class="breadcrumb">
                             <li><a href="index">Home</a></li>
-                            <li><a href="catalogue">Products</a></li>
-                            <li style="color: white;"><?php $shirt = $_SESSION['shirt']; while($row = $shirt->fetch()){
+                            <li><a href="catalogue.php">Products</a></li>
+                            <li style="color: white;"><?php $id = $_GET['next_id'];
+                            $merch = $pdo->query("SELECT * FROM $tableDB WHERE id = $id"); 
+                            $row = $merch->fetch();
                                 echo $row['ProductName']?></li>
                         </ul>
 
@@ -72,40 +88,40 @@
                                 <div class="product-imgs">
                                     <div class="img-display">
                                         <div class="img-showcase">
-                                            <img src="../styles/images/<?php echo $row['ProductImage']?>" alt="shoe image">
-                                            <img src="../styles/images/shirt_2.JPG" alt="shoe image">
-                                            <img src="../styles/images/shirt_3.JPG" alt="shoe image">
-                                            <img src="../styles/images/shirt_4.JPG" alt="shoe image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_1.jpg" alt="shoe image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_2.JPG" alt="shoe image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_3.JPG" alt="shoe image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_4.JPG" alt="shoe image">
                                         </div>
                                     </div>
                                     <div class="img-select">
                                         <div class="img-item">
                                             <a href="#" data-id="1">
-                                                <img src="../styles/images/<?php echo $row['ProductImage']?>" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_1.jpg" alt="shoe image">
                                             </a>
                                         </div>
                                         <div class="img-item">
                                             <a href="#" data-id="2">
-                                                <img src="../styles/images/shirt_2.JPG" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_2.JPG" alt="shoe image">
                                             </a>
                                         </div>
                                         <div class="img-item">
                                             <a href="#" data-id="3">
-                                                <img src="../styles/images/shirt_3.JPG" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_3.JPG" alt="shoe image">
                                             </a>
                                         </div>
                                         <div class="img-item">
                                             <a href="#" data-id="4">
-                                                <img src="../styles/images/shirt_4.JPG" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_4.JPG" alt="shoe image">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- card right -->
                                 <div class="product-content">
-                                    <h2 class="product-title">Teletigers 2021 Jersey</h2>
+                                    <h2 class="product-title"><?php echo $row['ProductName'] ?></h2>
                                     <div class="product-price">
-                                    <?php echo $row['ProductPrice'];}?>
+                                    <?php echo $row['ProductPrice'];?>
                                     </div>
 
                                     <hr>
@@ -114,38 +130,87 @@
                                         <h4>Availability</h4>
                                         <p>In Stock</p>
                                     </div>
-
+                                <form action="#" method="post">
+                                    <input type="hidden" name="itemId" value="<?php echo $row['id']; ?>"
                                     <div class="product-variation">
                                         <div class="choice-title">
-                                            <h4>Select Variation</h4>
-                                            <input type="radio" name="title" id="title-1" checked><label
-                                                for="title-1">small</label>
-                                            <input type="radio" name="title" id="title-2"><label
-                                                for="title-2">medium</label>
-                                            <input type="radio" name="title" id="title-3"><label
-                                                for="title-3">large</label>
-                                            <input type="radio" name="title" id="title-4"><label for="title-4">extra
-                                                large</label>
+                                            <h5>Select Variation</h5>
+                                            <select class="field__input" id="size" name="size">
+                                                <option></option>
+                                                <option value="small">Small</option>
+                                                <option value="medium">Medium</option>
+                                                <option value="large">Large</option>
+                                                <option value="extralarge">Extra Large</option>
+                                                <option></option>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="product-quantity">
                                         <h4>Quantity</h4>
                                         <span class="stepper">
-                                            <button>–</button>
-                                            <input type="number" id="stepper1" value="1" min="1" max="100" step="1">
-                                            <button>+</button>
+                                            <button type="button">–</button>
+                                            <input type="number" name="quantity" id="stepper1" value="1" min="1" max="100" step="1">
+                                            <button type="button">+</button>
                                         </span>
                                     </div>
 
                                     <div class="purchase-buttons">
                                         <div class="buttons">
                                             <input type="submit" class="button btn-2" value="Add to Cart" name="cart"></input>
+                                            
                                         </div>
                                     </div>
+                                </form>
+                                <?php 
+                                    $status="";
+                                    if (isset($_POST['itemId']) && $_POST['itemId']!="")
+                                    {
+                                        $id = $_POST['itemId'];
+                                        $quantity = $_POST['quantity'];
+                                        $size = $_POST['size'];
+                                        $IdProduct = $row['id'];
+                                        $name = $row['ProductName'];
+                                        $image = $row['ProductImage'];
+                                        $price = $row['ProductPrice'];
+
+                                        $cartArray = array(
+                                            $id=>array(
+                                            'id'=>$IdProduct,
+                                            'name'=>$name,
+                                            'price'=>$price,
+                                            'image'=>$image,
+                                            'quantity'=>$quantity,
+                                            'size'=>$size)
+                                        );
+                                        if(!empty($_SESSION['shopping_cart']))
+                                        {
+                                            $array_keys = array_keys($_SESSION['shopping_cart']);
+                                            if(in_array($id,$array_keys)) 
+                                            {
+                                                $status = "<div class='box' style='color:red;'>
+                                                Product is already added to your cart!</div>";	
+                                            } 
+                                            else {
+                                                $_SESSION['shopping_cart'] = array_merge(
+                                                $_SESSION['shopping_cart'],
+                                                $cartArray
+                                                );
+                                            }
+                                        }
+                                        if(empty($_SESSION["shopping_cart"])) 
+                                        {
+                                            $_SESSION["shopping_cart"] = $cartArray;
+                                            $status = "<div class='box'>Product is added to your cart!</div>";
+                                        }
+                                        
+                                    }
+                                ?>
                                 </div>
                             </div>
                         </div>
+
+                        
 
                         <!-- Lower Product Info -->
                         <div class="tabs">
@@ -236,7 +301,6 @@
                         </div>
                         <div class="info-tab">
                             <h1>Affiliates</h1>
-                            <!-- Fatherless Behavior-->
                         </div>
                     </div>
                 </div>

@@ -22,11 +22,11 @@ $tableDB = "products";
 </head>
 
 <body class="inactive">
-    <!-- <section class="background">
+    <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
     <section class="bg-1"></section>
-    <section class="bg-2"></section> -->
+    <section class="bg-2"></section>
 
     <section class="main-container">
         <!-- HEADER -->
@@ -49,7 +49,7 @@ $tableDB = "products";
                         <input class="search-input" type="search" placeholder="Search here .">
                         <i class="fa fa-search"></i>
                     </form>
-                    <a href="cart.html">
+                    <a href="cart.php">
                     <img src="../styles/images/shopping-bag.png" class="bag-icon" />
                     </a>
                 </div>
@@ -129,7 +129,7 @@ $tableDB = "products";
 
                             <div class="product-tile">
                                 <?php while($row = $shirt->fetch()) {?>
-                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php?next_id= <?php echo $row['id']?>" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.jpg"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
@@ -140,7 +140,7 @@ $tableDB = "products";
                             </div>
                             <div class="product-tile">
                             <?php while($row = $jersey->fetch()) {?>
-                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php?next_id=<?php echo $row['id']?>" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.jpg"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
@@ -151,7 +151,7 @@ $tableDB = "products";
                             </div>
                             <div class="product-tile">
                             <?php while($row = $jacket->fetch()) {?>
-                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php?next_id=<?php echo $row['id']?>" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.jpg"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
@@ -162,7 +162,7 @@ $tableDB = "products";
                             </div>
                             <div class="product-tile">
                             <?php while($row = $mask->fetch()) {?>
-                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php?next_id=<?php echo $row['id']?>"class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.jpg"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
