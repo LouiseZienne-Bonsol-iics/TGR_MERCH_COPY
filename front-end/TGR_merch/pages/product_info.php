@@ -20,11 +20,11 @@
 </head>
 
 <body class="inactive">
-    <!-- <section class="background">
+    <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
     <section class="bg-1"></section>
-    <section class="bg-2"></section> -->
+    <section class="bg-2"></section>
 
     <section class="main-container">
         <!-- HEADER -->
@@ -131,7 +131,7 @@
                                         <p>In Stock</p>
                                     </div>
                                 <form action="#" method="post">
-                                    <input type="hidden" name="itemId" value="<?php echo $row['id']; ?>"
+                                    <input type="hidden" name="itemId" value="<?php echo $row['id']; ?>">
                                     <div class="product-variation">
                                         <div class="choice-title">
                                             <h5>Select Variation</h5>
@@ -186,7 +186,7 @@
                                         if(!empty($_SESSION['shopping_cart']))
                                         {
                                             $array_keys = array_keys($_SESSION['shopping_cart']);
-                                            if(in_array($id,$array_keys)) 
+                                            if(in_array($id,$array_keys) && in_array($size,$array_keys)) 
                                             {
                                                 $status = "<div class='box' style='color:red;'>
                                                 Product is already added to your cart!</div>";	

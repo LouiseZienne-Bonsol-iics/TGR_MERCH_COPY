@@ -118,48 +118,62 @@
                     </div>
                 </div>
                 <div class="featured">
+                <?php 
+                                $shirt = $pdo->query("SELECT * from $tableDB WHERE id = '1'");
+                                $jersey = $pdo->query("SELECT * from $tableDB WHERE id = '2'");
+                                $jacket = $pdo->query("SELECT * from $tableDB WHERE id = '3'");
+                                $mask = $pdo->query("SELECT * from $tableDB WHERE id = '4'");
+                                $_SESSION['shirt'] = $shirt;
+                                $_SESSION['jersey'] = $jersey;
+                                $_SESSION['jacket'] = $jacket;
+                                $_SESSION['mask'] = $mask;
+                            ?>
+
                     <h1 class="feat-header">Featured Products</h1>
                     <hr>
                     <div class="products">
-                        <!-- product-tile should be automatically generated per unique item -->
+                    <?php while($row = $shirt->fetch()) {?>
                         <div class="product-tile">
-                            <a href="product_info" class="product-img-container"><img src="../styles/images/shirt_1.JPG"
+                            <a href="product_info.php?next_id=<?php echo $row['id']?>" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.JPG"
                                     alt=""></a>
                             <div class="product-title">
-                                <h1>Teletigers 2021 Jersey</h1>
+                                <h1><?php echo $row['ProductName']; ?></h1>
                             </div>
                             <div class="product-price">
-                                <h3>PHP 00.00</h3>
+                                <h3><?php echo $row['ProductPrice']; }?></h3>
                             </div>
                         </div>
                         <div class="product-tile">
-                            <a href="product_info.php" class="product-img-container"><img src="../styles/images/mask_1.png"
+                        <?php while($row = $jersey->fetch()) {?>
+                            <a href="product_info.php?next_id=<?php echo $row['id']?>" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.jpg"
                                     alt=""></a>
                             <div class="product-title">
-                                <h1>Teletigers 2021 Face Mask</h1>
+                                <h1><?php echo $row['ProductName']; ?></h1>
                             </div>
                             <div class="product-price">
-                                <h3>PHP 00.00</h3>
+                                <h3><?php echo $row['ProductPrice']; }?></h3>
                             </div>
                         </div>
                         <div class="product-tile">
-                            <a href="product_info.php" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                        <?php while($row = $jacket->fetch()) {?>
+                            <a href="product_info.php?next_id=<?php echo $row['id']?>" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.jpg"
                                     alt=""></a>
                             <div class="product-title">
-                                <h1>Temporary Product Name</h1>
+                                <h1><?php echo $row['ProductName']; ?></h1>
                             </div>
                             <div class="product-price">
-                                <h3>PHP 00.00</h3>
+                                <h3><?php echo $row['ProductPrice']; }?></h3>
                             </div>
                         </div>
                         <div class="product-tile">
-                            <a href="product_info.php" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                        <?php while($row = $mask->fetch()) {?>
+                            <a href="product_info.php?next_id=<?php echo $row['id']?>" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>_1.jpg"
                                     alt=""></a>
                             <div class="product-title">
-                                <h1>Temporary Product Name</h1>
+                                <h1><?php echo $row['ProductName']; ?></h1>
                             </div>
                             <div class="product-price">
-                                <h3>PHP 00.00</h3>
+                                <h3><?php echo $row['ProductPrice']; }?></h3>
                             </div>
                         </div>
                     </div>

@@ -83,7 +83,7 @@
                             if(isset($_SESSION["shopping_cart"]))
                             {
                                 $total_price = 0;
-                                foreach ($_SESSION['shopping_cart'] as $product)
+                                foreach ($_SESSION["shopping_cart"] as $product)
                                 {
                                     echo '<div class="product">
                                         <div class="product-image">
@@ -97,18 +97,21 @@
                                         <div class="product-price">' . $product['price']  . '</div>
                                         <div class="product-quantity">
                                             <span class="stepper">
-                                                <input type="hidden" name="id" value="' . $product['id']. ' " />
-                                                <button type="button">–</button>
-                                                <input type="number" name="counter" id="stepper2" value=' . $product['quantity'] . ' min="1" max="100" step="1">
-                                                <button type="button">+</button>
+                                            <form action="" method="post">
+                                                <input type="hidden" name="id" value="' . $product['id'] . '" />
+                                                <input type="hidden" name="action" value="change" />
+                                                <input type="submit" name="counter" id="stepper2" value="' . $product['quantity'] . '">
+                                            </form>
                                             </span>
+                                            <form action="" method="post">
                                             <div class="product-removal">
-                                                <input type="hidden" name="id" value="' . $product['id']. '" />
+                                                <input type="hidden" name="id" value="' . $product['id'] . '" />
                                                 <input type="hidden" name="remove" value="remove" />
                                                 <button type="submit" class="remove">
                                                     Remove Item
                                                 </button>
                                             </div>
+                                            </form>
                                         </div>
                                         <div class="product-line-price">' . $product['quantity']*$product['price']  . '</div>
                                     </div>' ;
@@ -117,32 +120,23 @@
                             }
                             $status="";
                             //removes an item from the cart
-                            if (isset($_POST['remove']))
-                            {
-                                if(!empty($_SESSION['shopping_cart'])) 
-                                {
-                                    foreach($_SESSION['shopping_cart'] as $key => $value) 
-                                    {
-                                        if($_POST['id'] == $key)
-                                        {
-                                            unset($_SESSION['shopping_cart'][$key]);
-                                            $status = "<div class='box' style='color:red;'>
-                                            Product is removed from your cart!</div>";
-                                        }
-                                    }	
+                            if (isset($_POST['remove']) && $_POST['remove']=="remove"){
+                                if(!empty($_SESSION["shopping_cart"])) {
+                                    foreach($_SESSION["shopping_cart"] as $key => $value) {
+                                      if($_POST['id'] == $key){
+                                      unset($_SESSION["shopping_cart"][$key]);
+                                      $status = "<div class='box' style='color:red;'>
+                                      Product is removed from your cart!</div>";
+                                      }
+                                      if(empty($_SESSION["shopping_cart"]))
+                                      unset($_SESSION["shopping_cart"]);
+                                      }		
                                 }
-                            }
+                                }
                             //decreases or increases no. of items and calculates it
-                            if (isset($_POST['action']))
+                            if (isset($_POST['counter']))
                             {
-                                foreach($_SESSION["shopping_cart"] as &$value)
-                                {
-                                    if($value['id'] == $_POST['id'])
-                                    {
-                                        $value['quantity'] = $_POST['quantity'];
-                                        break; // Stop the loop after we've found the product
-                                    }
-                                }
+                                $product['quantity'] = $_POST['counter'];
                             }
                         ?>
 
@@ -160,12 +154,12 @@
                                 <div class="totals">
                                     <div class="totals-item">
                                         <label>SUBTOTAL: </label>
-                                        <div class="totals-value" id="cart-subtotal"><?php echo $total_price ?></div>
+                                        <div class="totals-value" id="cart-subtotal"><?php if(empty($total_price)){$total_price=00.00;}echo $total_price ?></div>
                                     </div>
                                     <p class="shipping-info">Shipping fee will be calculated at checkout.</p>
                                 </div>
                                 <div class="buttons">
-                                    <a href="product_info.pdf" class="button btn-1">Continue Shopping</a>
+                                    <a href="product_info.php" class="button btn-1">Continue Shopping</a>
                                     <form action="checkout.php">
                                     <input type="submit" class="button btn-2" value="Proceed to Checkout"></input>
                                     </form>

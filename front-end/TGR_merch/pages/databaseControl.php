@@ -76,13 +76,15 @@
         $OrderDate = $_REQUEST['OrderDate'];
         $MerchType = $_REQUEST['MerchType'];
         $MerchPrice = $_REQUEST['MerchPrice'];
+        $MerchQuantity = $_REQUEST['MerchQuantity'];
+        $MerchSize = $_REQUEST['MerchSize'];
         $CourierChoice = $_REQUEST['CourierChoice'];
         $CourierNumber = $_REQUEST['CourierNumber'];
         $OrderStatus = $_REQUEST['OrderStatus'];
         $PaymentImage = $_REQUEST['PaymentImage'];
         $PaymentStatus = $_REQUEST['PaymentStatus'];
-        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, 'OrderDate',`MerchType`, `MerchPrice`, `CourierChoice`, `CourierNumber`, `OrderStatus`, 'PaymentImage' ,`PaymentStatus`) 
-                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress','$OrderDate' , '$MerchType', '$MerchPrice', '$CourierChoice', '$CourierNumber', '$OrderStatus', '$PaymentImage','$PaymentStatus')";
+        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, 'OrderDate',`MerchType`, `MerchPrice`,`MerchQuantity`, `MerchSize`, `CourierChoice`, `CourierNumber`, `OrderStatus`, 'PaymentImage' ,`PaymentStatus`) 
+                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress','$OrderDate' , '$MerchType', '$MerchPrice',`$MerchType`, `$MerchPrice`, '$CourierChoice', '$CourierNumber', '$OrderStatus', '$PaymentImage','$PaymentStatus')";
         if ($pdo->query($sql)) {
             echo '<h3>Successful</h3>';
             header('Location:databaseControl.php?status=SUCCESS');
@@ -142,12 +144,20 @@
 
                         <div class="fields fields--2">
                             <label class="field">
+                                <span class="field__label" for="MerchType">Merch type</span>
+                                <input class="field__input" type="text" id="MerchType" name="MerchType" />
+                            </label>
+                            <label class="field">
                                 <span class="field__label" for="MerchPrice">Merch price</span>
                                 <input class="field__input" type="text" id="MerchPrice" name="MerchPrice" />
                             </label>
                             <label class="field">
-                                <span class="field__label" for="lastname">Last name</span>
-                                <input class="field__input" type="text" id="lastname" name="LastName" />
+                                <span class="field__label" for="MerchQuantity">Merch quantity</span>
+                                <input class="field__input" type="text" id="MerchQuantity" name="MerchQuantity" />
+                            </label>
+                            <label class="field">
+                                <span class="field__label" for="MerchPrice">Merch size</span>
+                                <input class="field__input" type="text" id="MerchSize" name="MerchSize" />
                             </label>
                         </div>
 
@@ -219,6 +229,8 @@
                                     <option value="OrderDate">Order Date</option>
                                     <option value="MerchType">Merch Type</option>
                                     <option value="MerchPrice">Merch Price</option>
+                                    <option value="MerchQuantity">Merch Quantity</option>
+                                    <option value="MerchSize">Merch Size</option>
                                     <option value="CourierChoice">Courier Choice</option>
                                     <option value="CourierNumber">Courier Number</option>
                                     <option value="OrderStatus">Order Status</option>
@@ -304,6 +316,8 @@
                     <th style="width: 0%;">Order Date</th>
                     <th style="width: 0%;">Merch Type</th>
                     <th style="width: 0%;">Merch Price</th>
+                    <th style="width: 0%;">Merch Quantity</th>
+                    <th style="width: 0%;">Merch Size</th>
                     <th style="width: 0%;">Courier Choice</th>
                     <th style="width: 0%;">Courier Number</th>
                     <th style="width: 0%;">Order Status</th>

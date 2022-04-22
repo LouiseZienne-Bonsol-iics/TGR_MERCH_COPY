@@ -64,7 +64,12 @@ $tableDB = "orders";
                     </div>
                     <center>
                         <p class="subheading-text">
-                            Your order <?php echo $_SESSION['IDOrder']; ?> has been received!
+                            Your order <?php $amtOrder=1; 
+                            while($_SESSION['OrderAmt'] >= $amtOrder)
+                            {   
+                                echo $_SESSION['IDOrder'.$amtOrder] . ', ';
+                                $amtOrder++;
+                            } ?> has been received!
                         </p>
                     </center>
                     
@@ -75,7 +80,12 @@ $tableDB = "orders";
                         </div>
                         <div class="customer-item">
                             <label>Order Number:</label>
-                            <div class="customer-value" id="order-no"><?php echo $_SESSION['IDOrder']; ?></div>
+                            <div class="customer-value" id="order-no"><?php $amtOrder=1; 
+                            while($_SESSION['OrderAmt'] >= $amtOrder)
+                            {   
+                                echo $_SESSION['IDOrder'.$amtOrder] . ', ';
+                                $amtOrder++;
+                            } ?></div>
                         </div>
                         <div class="customer-item">
                             <label>Customer Name:</label>
@@ -109,7 +119,7 @@ $tableDB = "orders";
                                 $filename = $_FILES["filename"]["name"];
                                 $tempname = $_FILES["filename"]["tmp_name"];    
                                 $folder = "uploads/".$filename;
-                                $IDOrder = $_SESSION['IDOrder']; 
+                                $IDOrder = $_SESSION['IDOrder'.$amtOrder]; 
                             
                                 // Get all the submitted data from the form
                                 $sql = "Update orders set PaymentImage='$filename' WHERE OrderID='$IDOrder'";

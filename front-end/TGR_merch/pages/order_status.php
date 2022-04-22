@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+session_start();
 include('databaseConnect.php');
 $tableDB = "orders";
 ?>
@@ -84,7 +85,10 @@ $tableDB = "orders";
                                 $result = $pdo->prepare('SELECT * FROM orders where OrderID= :n');
                                 $result->bindParam('n', $tracking_search);
                                 $result->execute();                                
-                                $row = $result->fetch();                                                                
+                                $row = $result->fetch();
+                                $_SESSION['IDOrder'] = $row['OrderID'];
+                                $_SESSION['DateOrder'] = $row['OrderDate'];
+                                $_SESSION['NameCustomer'] = $row['FirstName']. ' ' . $row['LastName'];                                                               
                             ?>
                         
                         <!-- Order Details -->
@@ -150,42 +154,23 @@ $tableDB = "orders";
                                     <label class="product-line-price">TOTAL</label>
                                 </div>
 
-                                <div class="product">
-                                    <div class="product-image">
-                                        <img src="../styles/images/product_placeholder.png">
-                                    </div>
-                                    <div class="product-details">
-                                        <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
-                                        <p class="product-description">LARGE</p>
-                                    </div>
-                                    <div class="product-price">00.00</div>
-                                    <div class="product-quantity">1</div>
-                                    <div class="product-line-price">00.00</div>
-                                </div>
+                                <?php 
+                                    $productName = $row['MerchType'];
+                                    $image = $pdo->query("SELECT ProductImage from products WHERE ProductName='$productName'");
+
+                                ?>
 
                                 <div class="product">
                                     <div class="product-image">
-                                        <img
-                                            src="../styles/images/product_placeholder.png">
+                                        <img src="../styles/images/<?php echo $image?>_1.jpg">
                                     </div>
                                     <div class="product-details">
-                                        <div class="product-title">A LONG TEMPORARY PRODUCT NAME</div>
-                                        <p class="product-description">MEDIUM</p>
+                                        <div class="product-title"><?php $row['MerchType']?></div>
+                                        <p class="product-description"><?php $row['MerchSize']?></p>
                                     </div>
-                                    <div class="product-price">00.00</div>
-                                    <div class="product-quantity">1</div>
-                                    <div class="product-line-price">00.00</div>
+                                    <div class="product-price"><?php $row['MerchPrice']?></div>
+                                    <div class="product-quantity"><?php $row['MerchQuantity']?></div>
                                 </div>
-
-                                <div class="totals">
-                                    <div class="totals-item">
-                                        <label>SUBTOTAL: </label>
-                                        <div class="totals-value" id="order-subtotal">00.00</div>
-                                    </div>
-                                    <div class="totals-item">
-                                        <label>SHIPPING FEE: </label>
-                                        <div class="totals-value" id="shipping-fee">00.00</div>
-                                    </div>
                                     <div class="totals-item">
                                         <label>TOTAL: </label>
                                         <div class="totals-value" id="order-total">00.00</div>

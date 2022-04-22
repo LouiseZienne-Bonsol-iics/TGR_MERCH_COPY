@@ -92,44 +92,9 @@ $tableDB = "orders";
                         </div>
                     </div>
                     <?php
-        if(isset($_POST['insert']))
-        {
-            $LastName = $_REQUEST['LastName'];
-            $FirstName = $_REQUEST['FirstName'];
-            $CustomerNumber = $_REQUEST['CustomerNumber'];
-            $CustomerEmail = $_REQUEST['CustomerEmail'];
-            $Address = $_REQUEST['Address'];
-            // $MerchType = $_REQUEST['MerchType'];
-            // $MerchPrice = $_REQUEST['MerchPrice'];
-            $CourierChoice = $_REQUEST['CourierChoice'];
-            // $CourierNumber = $_REQUEST['CourierNumber'];
-            $Province = $_REQUEST['Province'];
-            $City = $_REQUEST['City'];
-            $Zip = $_REQUEST['ZIP'];
-            $CustomerAddress = $Address . ', ' . $City . ', ' . $Province . ', ' . $Zip;
-            date_default_timezone_set('Asia/Manila');
-            $OrderDate = date('y-m-d h:i:s');
-
-            $random = bin2hex(random_bytes(6));
-            $OrderID = "TGR" . $random;
-
-            $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, `OrderDate` , `CourierChoice`) 
-                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$OrderDate' ,'$CourierChoice')"; 
-
-            $CustomerName = $FirstName . ' ' . $LastName;
-            $_SESSION['IDOrder'] = $OrderID;
-            $_SESSION['NameCustomer'] = $CustomerName;
-            $_SESSION['DateOrder'] = $OrderDate;
-            if($pdo->query($sql))
-            {
-                echo '<h3>Successful</h3>';
-                echo "<script>location.href='payment_proof.php';</script>";
-            }
-            else
-            {
-                echo '<h3>Unsuccessful, Retry</h3>';
-            }
-        }
+        
+            
+        
     ?>
                     <h1>Payment Information</h1>
                     <div class="payment">
@@ -158,24 +123,73 @@ $tableDB = "orders";
         </section>
         <section class="orders-container">
             <?php
-            if(isset($_SESSION["shopping_cart"]))
-            {
-                $total_price = 0;
-                foreach ($_SESSION['shopping_cart'] as $product)
+           
+                if(isset($_SESSION["shopping_cart"]))
                 {
-                    echo '<div class="product-cont">
-                        <div class="prod-img"><img src="../styles/images/'. $product['image'] .'_1.jpg" alt=""></div>
-                        <div class="prod-name">
-                            <h1>'. $product['name'] . '</h1>
-                            <h1>'. $product['quantity'] .'</h1>
-                        </div>
-                        <div class="prod-price">
-                            <h1>PHP '. $product['price']*$product['quantity'] .'</h1>
-                        </div>
-                    </div>';
-                    $total_price += $product['price']*$product['quantity'];
+                    $total_price = 0;
+                    $OrderAmount = 0;
+                    foreach ($_SESSION['shopping_cart'] as $product)
+                    {
+                        echo '<div class="product-cont">
+                            <div class="prod-img"><img src="../styles/images/'. $product['image'] .'_1.jpg" alt=""></div>
+                            <div class="prod-name">
+                                <h1>'. $product['name'] . '</h1>
+                                <h1>'. $product['quantity'] .'</h1>
+                            </div>
+                            <div class="prod-price">
+                                <h1>PHP '. $product['price']*$product['quantity'] .'</h1>
+                            </div>
+                        </div>';
+                        $total_price += $product['price']*$product['quantity'];
+                        
+                        if(isset($_POST['insert']))
+                        {
+                        $LastName = $_REQUEST['LastName'];
+                        $FirstName = $_REQUEST['FirstName'];
+                        $CustomerNumber = $_REQUEST['CustomerNumber'];
+                        $CustomerEmail = $_REQUEST['CustomerEmail'];
+                        $Address = $_REQUEST['Address'];
+                        $MerchType = $product['name'];
+                        $MerchPrice = $product['price'];
+                        $MerchQuantity = $product['quantity'];
+                        $MerchSize = $product['size'];
+                        $CourierChoice = $_REQUEST['CourierChoice'];
+                        $Province = $_REQUEST['Province'];
+                        $City = $_REQUEST['City'];
+                        $Zip = $_REQUEST['ZIP'];
+                        $CustomerAddress = $Address . ', ' . $City . ', ' . $Province . ', ' . $Zip;
+                        date_default_timezone_set('Asia/Manila');
+                        $OrderDate = date('y-m-d h:i:s');
+
+                        $random = bin2hex(random_bytes(6));
+                        $OrderID = "TGR" . $random;
+
+                        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`,`MerchType`, `MerchPrice`,`MerchQuantity`, `MerchSize`, `OrderDate` , `CourierChoice`) 
+                                VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$MerchType', '$MerchPrice','$MerchQuantity', '$MerchSize','$OrderDate' ,'$CourierChoice')"; 
+
+                        $CustomerName = $FirstName . ' ' . $LastName;
+                        $_SESSION['NameCustomer'] = $CustomerName;
+                        $_SESSION['DateOrder'] = $OrderDate;
+                        
+                        $OrderAmount++;
+
+                        if($pdo->query($sql))
+                        {
+                            $_SESSION['OrderAmt'] = $OrderAmount; 
+                            $_SESSION['IDOrder'. $OrderAmount] = $OrderID;
+                            unset($_SESSION['shopping_cart']);
+                            echo '<h3>Successful</h3>';
+                            echo "<script>location.href='payment_proof.php';</script>";
+                            
+                        }
+                        else
+                        {
+                            echo '<h3>Unsuccessful, Retry</h3>';
+                        }
+                    }
                 }
-            }
+                }
+            
             ?>
             <!-- Remove this -->
             <hr>
@@ -193,7 +207,7 @@ $tableDB = "orders";
             <div class="total-cont">
                 <div class="total">
                     <h2>total</h2>
-                    <h1>PHP <?php echo $total_price ?></h1>
+                    <h1>PHP <?php if(empty($total_price)){$total_price=00.00;} echo $total_price ?></h1>
                 </div>
             </div>
         </section>
