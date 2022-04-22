@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +36,13 @@
 				<input data-aos="zoom-out" data-aos-delay="1800" data-aos-duration="1400" type="submit"
 					value="Log-in" name="login" />
 			</form>
+
+			<!-- fix this Robin/Zee-->
+			<br>
+			<div style="align-self:flex-end; margin-right: 10%;"> <!-- Wooo scary inline styles wooooo -->
+				<p style="color:#EE4B2B;"><?php echo $_SESSION['wrong'];?></p> <!-- This is an Error that pops up if you have the wrong credentials -->
+			</div>
+
 		</div>
 
 		<section class="right">

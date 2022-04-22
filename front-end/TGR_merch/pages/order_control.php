@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     try{
         $host = "localhost";
         $port = "3306";
@@ -11,12 +13,12 @@
 
         if ($dbconn)
         {
-            echo "<h1>Connection attempt succeeded</h1>";  
+            //echo "<h1>Connection attempt succeeded</h1>";  
 
             //Entered Username and Password
-            echo "<h2>Connection Information</h2>";
+            /*echo "<h2>Connection Information</h2>";
             echo "Username Entered: " . $_POST['username'] . "<br>";
-            echo "Password Entered: " . $_POST['password'] . "<br>";
+            echo "Password Entered: " . $_POST['password'] . "<br>";*/
 
             //Entered Username and Password
             $username = $_POST['username'];
@@ -31,7 +33,7 @@
             $stmt->bindParam('n', $username);
             $stmt->execute();
 
-            echo "<br>";
+            //echo "<br>";
 
             
 
@@ -42,9 +44,10 @@
                 $dbPass = $row['password'];
                 $role = $row['role'];
 
-                echo $dbUser. " " . $dbPass . " " . $role. "<br>";
+                //echo $dbUser. " " . $dbPass . " " . $role. "<br>";
             }
 
+            /*
             echo "<br>";
 
 
@@ -53,21 +56,30 @@
             echo "Database Role: " . $role . "<br>";
             echo "<br><br>";
 
-            echo "<h2>Output:</h2>";
+            echo "<h2>Output:</h2>";*/
 
             //The Checker
             if( empty($username) && empty($password) )
             {
                 //throw new NullValueException();
-                echo "Username and Password is Empty";
+
+                //Unsets the sessions
+                unset($_SESSION['username']);
+                unset($_SESSION['supersecret']);
+
+                $_SESSION['wrong'] = "Username and Password is Empty";
+                header('Location:login.php');
             }
 
             else if(trim($username) === $dbUser)
             {
                 if($password === $dbPass)
                 {  
+                    $_SESSION['username'] = $dbUser;
+                    $_SESSION['supersecret'] = $dbPass;
+
                     header('Location:databaseControl.php?status=SUCCESS');
-                    echo "You did it. You crazy son of a bitch, you logged in with username: " . $username;
+                    //echo "You did it. You crazy son of a bitch, you logged in with username: " . $username;
 
                 }
 
@@ -75,7 +87,13 @@
                 {
                     //Error 2 (Wrong Password)
                     //throw new AuthenticationException_2();
-                    echo "Wrong Password";
+                  
+                    //Unsets the sessions
+                    unset($_SESSION['username']);
+                    unset($_SESSION['supersecret']);
+
+                    $_SESSION['wrong'] = "Wrong Username or Password";
+                    header('Location:login.php');
                 } 
 
             }
@@ -87,14 +105,26 @@
                 {
                     //Error 1 (Not in Database)
                     //throw new AuthenticationException_1();
-                    echo "Empty Password";
+
+                    //Unsets the sessions
+                    unset($_SESSION['username']);
+                    unset($_SESSION['supersecret']);
+
+                    $_SESSION['wrong'] = "Empty Password";
+                    header('Location:login.php');
                 }
 
                 else
                 {
                     //Error 3 (Wrong Username and Password)
                     //throw new AuthenticationException_3();
-                    echo "Wrong Username and Password";
+
+                    //Unsets the sessions
+                    unset($_SESSION['username']);
+                    unset($_SESSION['supersecret']);
+
+                    $_SESSION['wrong'] = "Wrong Username or Password";
+                    header('Location:login.php');
                 }
             }
 
@@ -102,10 +132,13 @@
 
         else 
         {
+            //Error Page to no Connection for server
             echo 'Connection attempt failed.';
+            //header('Location:login.php');
         }
 
-    }catch(PDOException $e)
+    }
+    catch(PDOException $e)
     {
         die('Connection Error: ' . $e->getMessage() );
     }

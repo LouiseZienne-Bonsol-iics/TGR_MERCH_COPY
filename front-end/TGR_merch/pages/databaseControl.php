@@ -1,7 +1,18 @@
 <!-- Sorry Robin labyu <3-->
  <?php
-include('databaseConnect.php');
-$tableDB = "orders";
+    session_start();
+    if($_SESSION['username']  == null)
+    {
+        if($_SESSION['supersecret']  == null)
+        {
+            $_SESSION['wrong'] = "Must login first";
+            header('Location:login.php');
+        }
+    }
+
+
+    include('databaseConnect.php');
+    $tableDB = "orders";
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,14 +55,11 @@ $tableDB = "orders";
                     <li><a href="help.html">FAQs</a></li>
                 </ul>
 
+                <!-- fix this Robin/Zee-->
                 <div class="header-icons-container">
-                    <form class="search-form" action="">
-                        <input class="search-input" type="search" placeholder="Search here .">
-                        <i class="fa fa-search"></i>
+                    <form class="bag-icon" action="../../../back-end/checker/logout.php">
+                        <input type="submit" class="fa fa-sign-out" aria-hidden="true"></input> <!-- class="fa fa-sign-out" is a logout icon that fits this-->
                     </form>
-                    <a href="cart.html">
-                        <img src="../styles/images/shopping-bag.png" class="bag-icon" />
-                    </a>
                 </div>
             </div>
         </section>
