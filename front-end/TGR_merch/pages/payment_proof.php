@@ -36,10 +36,10 @@ $tableDB = "orders";
                 </div>
                 <ul class="header-opt">
                     <li><a href="home">home</a></li>
-                    <li><a href="catalogue">products</a></li>
-                    <li><a href="wip">services</a></li>
-                    <li><a href="order_status">tracking</a></li>
-                    <li><a href="help">FAQs</a></li>
+                    <li><a href="catalogue.php">products</a></li>
+                    <li><a href="wip.html">services</a></li>
+                    <li><a href="order_status.php">tracking</a></li>
+                    <li><a href="help.html">FAQs</a></li>
                 </ul>
 
                 <div class="header-icons-container">
@@ -47,7 +47,7 @@ $tableDB = "orders";
                         <input class="search-input" type="search" placeholder="Search here ...">
                         <i class="fa fa-search"></i>
                     </form>
-                    <a href="cart">
+                    <a href="cart.html">
                         <img src="../styles/images/shopping-bag.png" class="bag-icon" />
                     </a>
                 </div>
@@ -136,7 +136,7 @@ $tableDB = "orders";
                     </p>
 
                     <div class="buttons">
-                        <a href="order_status" class="button btn-1">Check Order Status</a>
+                        <a href="order_status.php" class="button btn-1">Check Order Status</a>
                     </div>
 
                 </div>
@@ -163,13 +163,13 @@ $tableDB = "orders";
                         </div>
                         <div class="info-tab">
                             <h1>Customer Services</h1>
-                            <a href="help">
+                            <a href="help.html">
                                 <h2>Return Policy</h2>
                             </a>
-                            <a href="help">
+                            <a href="help.html">
                                 <h2>Accessibility</h2>
                             </a>
-                            <a href="help">
+                            <a href="help.html">
                                 <h2>Terms and Conditions</h2>
                             </a>
                         </div>
