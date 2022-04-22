@@ -39,9 +39,9 @@
                 <ul class="header-opt">
                     <li><a href="index.php">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
-                    <li><a href="wip.html">services</a></li>
+                    <li><a href="wip.php">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>
-                    <li><a href="help.html">FAQs</a></li>
+                    <li><a href="help.php">FAQs</a></li>
                 </ul>
 
                 <div class="header-icons-container">
@@ -49,8 +49,8 @@
                         <input class="search-input" type="search" placeholder="Search here ...">
                         <i class="fa fa-search"></i>
                     </form>
-                    <a href="cart.html">
-                        <img src="../styles/images/shopping-bag.png" class="bag-icon" href="cart.html"/>
+                    <a href="cart.php">
+                        <img src="../styles/images/shopping-bag.png" class="bag-icon" href="cart.php"/>
                     </a>
                 </div>
 
@@ -65,16 +65,16 @@
                 <input type="radio" name="radio-btn" id="radio3">
 
                 <div class="slide first">
-                    <a href="product_info.html">
+                    <a href="product_info.php">
                     <img src="../styles/images/main_banner 1.png">
                     </a>
                 </div>
                 <div class="slide">
-                    <a href="product_info.html"></a>
+                    <a href="product_info.php"></a>
                     <img src="../styles/images/main_banner 2.png"> </a>
                 </div>
                 <div class="slide">
-                    <a href="product_info.html">
+                    <a href="product_info.php">
                     <img src="../styles/images/main_banner 3.jpg"> </a>
                     </div>
 
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         <div class="product-tile">
-                            <a href="product_info.html" class="product-img-container"><img src="../styles/images/mask_1.png"
+                            <a href="product_info.php" class="product-img-container"><img src="../styles/images/mask_1.png"
                                     alt=""></a>
                             <div class="product-title">
                                 <h1>Teletigers 2021 Face Mask</h1>
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                         <div class="product-tile">
-                            <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                            <a href="product_info.php" class="product-img-container"><img src="../styles/images/product_placeholder.png"
                                     alt=""></a>
                             <div class="product-title">
                                 <h1>Temporary Product Name</h1>
@@ -153,7 +153,7 @@
                             </div>
                         </div>
                         <div class="product-tile">
-                            <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                            <a href="product_info.php" class="product-img-container"><img src="../styles/images/product_placeholder.png"
                                     alt=""></a>
                             <div class="product-title">
                                 <h1>Temporary Product Name</h1>
@@ -186,13 +186,13 @@
                         </div>
                         <div class="info-tab">
                             <h1>Customer Services</h1>
-                            <a href="help.html">
+                            <a href="help.php">
                                 <h2>Return Policy</h2>
                             </a>
-                            <a href="help.html">
+                            <a href="help.php">
                                 <h2>Accessibility</h2>
                             </a>
-                            <a href="help.html">
+                            <a href="help.php">
                                 <h2>Terms and Conditions</h2>
                             </a>
                         </div>
