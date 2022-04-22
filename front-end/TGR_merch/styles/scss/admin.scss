@@ -191,8 +191,9 @@ hr {
 
 	table {
 		width: 200%;
-		color: #ffffff;
+
 		th {
+			color: #000000 !important;
 			background-color: #ba8106 !important;
 		}
 	}
@@ -206,6 +207,7 @@ hr {
 	}
 
 	tr {
+		color: #ffffff;
 		&:nth-child(even) {
 			background-color: #454545;
 		}

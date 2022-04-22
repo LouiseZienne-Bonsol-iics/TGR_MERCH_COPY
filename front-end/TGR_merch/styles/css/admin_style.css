@@ -255,10 +255,10 @@ hr {
 
 .table-container table {
   width: 200%;
-  color: #ffffff;
 }
 
 .table-container table th {
+  color: #000000 !important;
   background-color: #ba8106 !important;
 }
 
@@ -269,6 +269,10 @@ hr {
   padding: 0.25em;
   border-color: #000000;
   border-collapse: collapse;
+}
+
+.table-container tr {
+  color: #ffffff;
 }
 
 .table-container tr:nth-child(even) {
