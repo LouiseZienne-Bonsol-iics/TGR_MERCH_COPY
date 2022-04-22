@@ -32,7 +32,7 @@
                             src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
                 </div>
                 <ul class="header-opt">
-                    <li><a href="home">home</a></li>
+                    <li><a href="index.php">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
                     <li><a href="wip.html">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>
@@ -76,7 +76,7 @@
                 <div class="faq-container">
                     <div class="sidebar">
                         <!-- <h1>Customer Services</h1> -->
-                        <a href="home">
+                        <a href="index.php">
                             <h2>Home</h2>
                         </a>
                         <a href="">

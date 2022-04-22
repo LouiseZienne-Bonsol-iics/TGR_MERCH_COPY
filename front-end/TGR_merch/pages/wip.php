@@ -32,7 +32,7 @@
                             src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
                 </div>
                 <ul class="header-opt">
-                    <li><a href="home">home</a></li>
+                    <li><a href="index.php">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
                     <li><a href="wip.html">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>
@@ -73,7 +73,7 @@
                              our store to check out our other products and merchandise.
                         </p>
                         <div class="buttons">
-                            <a href="home" class="button btn-1">Return to Home</a>
+                            <a href="index.php" class="button btn-1">Return to Home</a>
                         </div>
                     </center>
                 </div>

@@ -37,7 +37,7 @@ $tableDB = "products";
                             src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
                 </div>
                 <ul class="header-opt">
-                    <li><a href="home">home</a></li>
+                    <li><a href="index.php">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
                     <li><a href="wip.php">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>
@@ -62,7 +62,7 @@ $tableDB = "products";
                 <div class="cont-restrict">
 
                     <ul class="breadcrumb">
-                        <li><a href="home">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li style="color: white;">Products</li>
                       </ul>
 

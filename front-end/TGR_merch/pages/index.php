@@ -37,7 +37,7 @@
                             src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
                 </div>
                 <ul class="header-opt">
-                    <li><a href="home.php">home</a></li>
+                    <li><a href="index.php.php">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
                     <li><a href="wip.html">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>

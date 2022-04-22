@@ -35,7 +35,7 @@
                             src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
                 </div>
                 <ul class="header-opt">
-                    <li><a href="home">home</a></li>
+                    <li><a href="index.php">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
                     <li><a href="wip.php">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>
@@ -60,7 +60,7 @@
                 <div class="cont-restrict">
 
                     <ul class="breadcrumb">
-                        <li><a href="home">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li style="color: white;">Cart</li>
                     </ul>
 
@@ -125,22 +125,24 @@
                                     {
                                         if($_POST['id'] == $key)
                                         {
-                                        unset($_SESSION['shopping_cart'][$key]);
-                                        $status = "<div class='box' style='color:red;'>
-                                        Product is removed from your cart!</div>";
+                                            unset($_SESSION['shopping_cart'][$key]);
+                                            $status = "<div class='box' style='color:red;'>
+                                            Product is removed from your cart!</div>";
                                         }
                                     }	
                                 }
                             }
                             //decreases or increases no. of items and calculates it
-                            if (isset($_POST['action'])){
-                            foreach($_SESSION["shopping_cart"] as &$value){
-                                if($value['id'] === $_POST['id']){
-                                    $value['quantity'] = $_POST['quantity'];
-                                    break; // Stop the loop after we've found the product
+                            if (isset($_POST['action']))
+                            {
+                                foreach($_SESSION["shopping_cart"] as &$value)
+                                {
+                                    if($value['id'] == $_POST['id'])
+                                    {
+                                        $value['quantity'] = $_POST['quantity'];
+                                        break; // Stop the loop after we've found the product
+                                    }
                                 }
-                            }
-                                
                             }
                         ?>
 
