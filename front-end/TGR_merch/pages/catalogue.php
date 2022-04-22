@@ -124,7 +124,7 @@ $tableDB = "products";
 
 
                             <div class="product-tile">
-                                <a href="product_info" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                                <a href="product_info" class="product-img-container"><img src="../styles/images/shirt_1.JPG"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row?></h1>
@@ -134,7 +134,7 @@ $tableDB = "products";
                                 </div>
                             </div>
                             <div class="product-tile">
-                                <a href="product_info" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                                <a href="product_info" class="product-img-container"><img src="../styles/images/mask_1.png"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row; ?></h1>

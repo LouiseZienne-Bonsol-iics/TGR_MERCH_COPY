@@ -135,23 +135,22 @@ $tableDB = "orders";
             echo '<h3>Failure</h3>';
         }
     ?>
+                    <h1>Payment Information</h1>
                     <div class="payment">
-                        <h1>Payment Information</h1>
-                        <fieldset>
-                            <br>
-                            <p style="padding: 0.2em 0.8em 1em 1em;">
-                                We accept bank transfer payments via BPI and BDO. Please use your Order ID as the
+                            <p>
+                                We accept bank transfer and E-wallet payments via BDO and GCash. Please use your Order ID as the
                                 payment reference.
                                 Your order will not be shipped until the funds have cleared in our account. </p>
-                            <p> &emsp; BDO:
-                                <br> &emsp; Account Name: Lorem Ipsum
-                                <br> &emsp; Account Number: 1234-4321-5678
+                            <p><b>BDO:</b>
+                                <br>Account Name: Angelico Dela Cruz
+                                <br>Account Number: 007280103666
                             </p>
-                            <p> &emsp; BPI:
-                                <br> &emsp; Account Name: Lorem Ipsum
-                                <br> &emsp; Account Number: 4321- 1234-12
+                            <p><b>GCash:</b>
+                                <br>Account Name: Angelico Dela Cruz
+                                <br>Mobile Number: 09664083458
+                                <br><br>You may also scan and pay using the QR code below: <br>
                             </p>
-                        </fieldset>
+                        <img style="width: 50%;" src="../styles/images/gcashQr.png">
                     </div>
                     <div class="buttons">
                         <a href="cart" class="button btn-1">Return to cart</a>
