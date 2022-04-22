@@ -83,159 +83,162 @@ $tableDB = "orders";
     } else {
         echo '<h3>Failure</h3>';
     } ?> -->
-        <section class="forms-container">
-            <div class="form-container">
-                <h1>Insert</h1>
-                <hr>
-                <div class="container">
-                    <div class="labels">
-                        <h1>Order ID</h1>
-                        <h1>Customer Name</h1>
-                        <h1>Contact Details</h1>
-                        <h1>Address</h1>
-                        <h1>Merch</h1>
-                        <h1>Courier</h1>
-                        <h1>Order Details</h1>
-                        <h1>Payment </h1>
+        <section class="main-forms">
+            <section class="forms-container">
+                <div class="form-container">
+                    <h1>Insert</h1>
+                    <hr>
+                    <div class="container">
+                        <div class="labels">
+                            <h1>Order ID</h1>
+                            <h1>Customer Name</h1>
+                            <h1>Contact Details</h1>
+                            <h1>Address</h1>
+                            <h1>Merch</h1>
+                            <h1>Courier</h1>
+                            <h1>Order Details</h1>
+                            <h1>Payment </h1>
+                        </div>
+                        <form action="#" method="post" class="form">
+                            <div class="fields">
+                                <label class="field">
+                                    <span class="field__label" for="OrderID">Order ID</span>
+                                    <input class="field__input" type="text" id="OrderID" name="OrderID" />
+                                </label>
+                            </div>
+                            <div class="fields fields--2">
+                                <label class="field">
+                                    <span class="field__label" for="firstname">First name</span>
+                                    <input class="field__input" type="text" id="firstname" name="FirstName" />
+                                </label>
+                                <label class="field">
+                                    <span class="field__label" for="lastname">Last name</span>
+                                    <input class="field__input" type="text" id="lastname" name="LastName" />
+                                </label>
+                            </div>
+                            <div class="fields fields--2">
+                                <label class="field">
+                                    <span class="field__label" for="CustomerNumber">Customer number</span>
+                                    <input class="field__input" type="text" id="CustomerNumber" name="CustomerNumber" />
+                                </label>
+                                <label class="field">
+                                    <span class="field__label" for="CustomerEmail">Customer Email</span>
+                                    <input class="field__input" type="text" id="CustomerEmail" name="CustomerEmail" />
+                                </label>
+                            </div>
+
+                            <div class="fields">
+                                <label class="field">
+                                    <span class="field__label" for="CustomerAddress">Customer Address</span>
+                                    <input class="field__input" type="text" id="CustomerAddress"
+                                        name="CustomerAddress" />
+                                </label>
+                            </div>
+
+                            <div class="fields fields--2">
+                                <label class="field">
+                                    <span class="field__label" for="MerchPrice">Merch price</span>
+                                    <input class="field__input" type="text" id="MerchPrice" name="MerchPrice" />
+                                </label>
+                                <label class="field">
+                                    <span class="field__label" for="lastname">Last name</span>
+                                    <input class="field__input" type="text" id="lastname" name="LastName" />
+                                </label>
+                            </div>
+
+                            <div class="fields fields--2">
+                                <label class="field">
+                                    <span class="field__label" for="CourierChoice">Courier</span>
+                                    <input class="field__input" type="text" id="CourierChoice" name="CourierChoice" />
+                                </label>
+                                <label class="field">
+                                    <span class="field__label" for="CourierNumber">Courier tracking number</span>
+                                    <input class="field__input" type="text" id="CourierNumber" name="CourierNumber" />
+                                </label>
+                            </div>
+                            <div class="fields fields--2">
+                                <label class="field">
+                                    <span class="field__label" for="OrderDate">order date</span>
+                                    <input class="field__input" type="text" id="OrderDate" name="OrderDate" />
+                                </label>
+                                <label class="field">
+                                    <span class="field__label" for="OrderStatus">order status</span>
+                                    <input class="field__input" type="text" id="OrderStatus" name="OrderStatus" />
+                                </label>
+                            </div>
+                            <div class="fields fields--2">
+                                <label class="field">
+                                    <span class="field__label" for="PaymentStatus">Payment status</span>
+                                    <input class="field__input" type="text" id="PaymentStatus" name="PaymentStatus" />
+                                </label>
+                                <label class="field">
+                                    <span class="field__label" for="PaymentImage">proof of payment</span>
+                                    <input class="field__input" type="file" id="PaymentImage" name="PaymentImage" />
+                                </label>
+                            </div>
+                            <input type="reset" value="Reset">
+
+                            <input type="submit" value="Insert" name="insert" />
+                        </form>
                     </div>
-                    <form action="#" method="post" class="form">
-                        <div class="fields">
-                            <label class="field">
-                                <span class="field__label" for="OrderID">Order ID</span>
-                                <input class="field__input" type="text" id="OrderID" name="OrderID" />
-                            </label>
-                        </div>
-                        <div class="fields fields--2">
-                            <label class="field">
-                                <span class="field__label" for="firstname">First name</span>
-                                <input class="field__input" type="text" id="firstname" name="FirstName" />
-                            </label>
-                            <label class="field">
-                                <span class="field__label" for="lastname">Last name</span>
-                                <input class="field__input" type="text" id="lastname" name="LastName" />
-                            </label>
-                        </div>
-                        <div class="fields fields--2">
-                            <label class="field">
-                                <span class="field__label" for="CustomerNumber">Customer number</span>
-                                <input class="field__input" type="text" id="CustomerNumber" name="CustomerNumber" />
-                            </label>
-                            <label class="field">
-                                <span class="field__label" for="CustomerEmail">Customer Email</span>
-                                <input class="field__input" type="text" id="CustomerEmail" name="CustomerEmail" />
-                            </label>
-                        </div>
-
-                        <div class="fields">
-                            <label class="field">
-                                <span class="field__label" for="CustomerAddress">Customer Address</span>
-                                <input class="field__input" type="text" id="CustomerAddress" name="CustomerAddress" />
-                            </label>
-                        </div>
-
-                        <div class="fields fields--2">
-                            <label class="field">
-                                <span class="field__label" for="MerchPrice">Merch price</span>
-                                <input class="field__input" type="text" id="MerchPrice" name="MerchPrice" />
-                            </label>
-                            <label class="field">
-                                <span class="field__label" for="lastname">Last name</span>
-                                <input class="field__input" type="text" id="lastname" name="LastName" />
-                            </label>
-                        </div>
-
-                        <div class="fields fields--2">
-                            <label class="field">
-                                <span class="field__label" for="CourierChoice">Courier</span>
-                                <input class="field__input" type="text" id="CourierChoice" name="CourierChoice" />
-                            </label>
-                            <label class="field">
-                                <span class="field__label" for="CourierNumber">Courier tracking number</span>
-                                <input class="field__input" type="text" id="CourierNumber" name="CourierNumber" />
-                            </label>
-                        </div>
-                        <div class="fields fields--2">
-                            <label class="field">
-                                <span class="field__label" for="OrderDate">order date</span>
-                                <input class="field__input" type="text" id="OrderDate" name="OrderDate" />
-                            </label>
-                            <label class="field">
-                                <span class="field__label" for="OrderStatus">order status</span>
-                                <input class="field__input" type="text" id="OrderStatus" name="OrderStatus" />
-                            </label>
-                        </div>
-                        <div class="fields fields--2">
-                            <label class="field">
-                                <span class="field__label" for="PaymentStatus">Payment status</span>
-                                <input class="field__input" type="text" id="PaymentStatus" name="PaymentStatus" />
-                            </label>
-                            <label class="field">
-                                <span class="field__label" for="PaymentImage">proof of payment</span>
-                                <input class="field__input" type="file" id="PaymentImage" name="PaymentImage" />
-                            </label>
-                        </div>
-                        <input type="reset" value="Reset">
-
-                        <input type="submit" value="Insert" name="insert" />
-                    </form>
                 </div>
-            </div>
 
-            <div class="form-container">
-                <h1>Update</h1>
-                <hr>
-                <div class="container">
-                    <div class="labels">
-                        <h1>Unique ID</h1>
-                        <h1>Column</h1>
-                        <h1>Data</h1>
+                <div class="form-container">
+                    <h1>Update</h1>
+                    <hr>
+                    <div class="container">
+                        <div class="labels">
+                            <h1>Unique ID</h1>
+                            <h1>Column</h1>
+                            <h1>Data</h1>
+                        </div>
+                        <form action="#" method="post" class="form">
+                            <div class="fields">
+                                <label class="field">
+                                    <span class="field__label" for="ID">Unique ID</span>
+                                    <input class="field__input" type="text" id="ID" name="ID" />
+                                </label>
+                            </div>
+
+                            <div class="fields fields--2">
+                                <label class="field">
+                                    <span class="field__label">Select Column</span>
+                                    <select class="field__input" id="dataColumn" name="dataColumn">
+                                        <option></option>
+                                        <option value="OrderID">Order ID</option>
+                                        <option value="LastName">Last Name</option>
+                                        <option value="FirstName">First Name</option>
+                                        <option value="CustomerNumber">Customer Number</option>
+                                        <option value="CustomerEmail">Customer Email</option>
+                                        <option value="CustomerAddress">Customer Address</option>
+                                        <option value="OrderDate">Order Date</option>
+                                        <option value="MerchType">Merch Type</option>
+                                        <option value="MerchPrice">Merch Price</option>
+                                        <option value="CourierChoice">Courier Choice</option>
+                                        <option value="CourierNumber">Courier Number</option>
+                                        <option value="OrderStatus">Order Status</option>
+                                        <option value="PaymentImage">Payment Image</option>
+                                        <option value="PaymentStatus">Payment Status</option>
+                                        <option></option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="fields">
+                                <label class="field">
+                                    <span class="field__label" for="dataReplacement">Insert Data</span>
+                                    <input class="field__input" type="text" id="dataReplacement"
+                                        name="dataReplacement" />
+                                </label>
+                            </div>
+
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Update" name="Update" />
+                        </form>
                     </div>
-                    <form action="#" method="post" class="form">
-                        <div class="fields">
-                            <label class="field">
-                                <span class="field__label" for="ID">Unique ID</span>
-                                <input class="field__input" type="text" id="ID" name="ID" />
-                            </label>
-                        </div>
-
-                        <div class="fields fields--2">
-                            <label class="field">
-                                <span class="field__label">Select Column</span>
-                                <select class="field__input" id="dataColumn" name="dataColumn">
-                                    <option></option>
-                                    <option value="OrderID">Order ID</option>
-                                    <option value="LastName">Last Name</option>
-                                    <option value="FirstName">First Name</option>
-                                    <option value="CustomerNumber">Customer Number</option>
-                                    <option value="CustomerEmail">Customer Email</option>
-                                    <option value="CustomerAddress">Customer Address</option>
-                                    <option value="OrderDate">Order Date</option>
-                                    <option value="MerchType">Merch Type</option>
-                                    <option value="MerchPrice">Merch Price</option>
-                                    <option value="CourierChoice">Courier Choice</option>
-                                    <option value="CourierNumber">Courier Number</option>
-                                    <option value="OrderStatus">Order Status</option>
-                                    <option value="PaymentImage">Payment Image</option>
-                                    <option value="PaymentStatus">Payment Status</option>
-                                    <option></option>
-                                </select>
-                            </label>
-                        </div>
-
-                        <div class="fields">
-                            <label class="field">
-                                <span class="field__label" for="dataReplacement">Insert Data</span>
-                                <input class="field__input" type="text" id="dataReplacement" name="dataReplacement" />
-                            </label>
-                        </div>
-
-                        <input type="reset" value="Reset">
-                        <input type="submit" value="Update" name="Update" />
-                    </form>
                 </div>
-            </div>
 
-            <!-- <?php if (isset($_POST['Update'])) {
+                <!-- <?php if (isset($_POST['Update'])) {
         $dataColumn = $_POST['dataColumn'];
         $dataReplacement = $_POST['dataReplacement'];
         $id = $_POST['ID'];
@@ -245,29 +248,29 @@ $tableDB = "orders";
             header('Location:databaseControl.php?status=SUCCESS');
         }
     } ?> -->
-            <div class="form-container">
-                <h1>Delete</h1>
-                <hr>
-                <div class="container">
-                    <div class="labels">
-                        <h1>Unique ID</h1>
+                <div class="form-container">
+                    <h1>Delete</h1>
+                    <hr>
+                    <div class="container">
+                        <div class="labels">
+                            <h1>Unique ID</h1>
 
-                    </div>
-                    <form action="#" method="post" class="form">
-                        <div class="fields">
-                            <label class="field">
-                                <span class="field__label" for="ID">Unique ID</span>
-                                <input class="field__input" type="text" id="ID" name="ID" />
-                            </label>
                         </div>
+                        <form action="#" method="post" class="form">
+                            <div class="fields">
+                                <label class="field">
+                                    <span class="field__label" for="ID">Unique ID</span>
+                                    <input class="field__input" type="text" id="ID" name="ID" />
+                                </label>
+                            </div>
 
-                        <input type="reset" value="Reset">
-                        <input type="submit" value="Update" name="Update" />
-                    </form>
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Update" name="Update" />
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-            <!-- <?php if (isset($_POST['delete'])) {
+                <!-- <?php if (isset($_POST['delete'])) {
         $id = $_POST['ID'];
         $sql = "DELETE FROM $tableDB WHERE ID = $id";
         // echo "Are you sure to delete $id?";
@@ -280,29 +283,33 @@ $tableDB = "orders";
         }
         //}
     } ?> -->
-        </section>
-        <div class="table-container">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th style="width: 0%;">ID</th>
-                        <th style="width: 0%;">Order ID</th>
-                        <th style="width: 0%;">Last Name</th>
-                        <th style="width: 0%;">First Name</th>
-                        <th style="width: 0%;">Customer Number</th>
-                        <th style="width: 0%;">Customer Email</th>
-                        <th style="width: 0%;">Customer Address</th>
-                        <th style="width: 0%;">Order Date</th>
-                        <th style="width: 0%;">Merch Type</th>
-                        <th style="width: 0%;">Merch Price</th>
-                        <th style="width: 0%;">Courier Choice</th>
-                        <th style="width: 0%;">Courier Number</th>
-                        <th style="width: 0%;">Order Status</th>
-                        <th style="width: 0%;">Payment Image</th>
-                        <th style="width: 0%;">Payment Status</th>
-                    </tr>
-                </thead>
-                <!-- <?php
+            </section>
+            <div class="label">
+                <h1>Insert</h1>
+                <hr>
+            </div>
+            <div class="table-container">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th style="width: 0%;">ID</th>
+                            <th style="width: 0%;">Order ID</th>
+                            <th style="width: 0%;">Last Name</th>
+                            <th style="width: 0%;">First Name</th>
+                            <th style="width: 0%;">Customer Number</th>
+                            <th style="width: 0%;">Customer Email</th>
+                            <th style="width: 0%;">Customer Address</th>
+                            <th style="width: 0%;">Order Date</th>
+                            <th style="width: 0%;">Merch Type</th>
+                            <th style="width: 0%;">Merch Price</th>
+                            <th style="width: 0%;">Courier Choice</th>
+                            <th style="width: 0%;">Courier Number</th>
+                            <th style="width: 0%;">Order Status</th>
+                            <th style="width: 0%;">Payment Image</th>
+                            <th style="width: 0%;">Payment Status</th>
+                        </tr>
+                    </thead>
+                    <!-- <?php
         function outputMySQLToHTMLTable(pdo $pdo, string $table)
         {
             $tableNames = $pdo
@@ -329,8 +336,9 @@ $tableDB = "orders";
 
         outputMySQLToHTMLTable($pdo, $tableDB);
         ?> -->
-            </table>
-        </div>
+                </table>
+            </div>
+        </section>
         <section class="main-footer-container">
             <div class="footer-row">
                 <div class="footer-left-col">

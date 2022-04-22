@@ -32,8 +32,13 @@ hr {
 	background: #ecaf2b;
 }
 
-.main-container {
-	justify-content: start;
+.main-forms {
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 .forms-container {
@@ -166,16 +171,46 @@ hr {
 	}
 }
 
+.label {
+	font-size: 14px;
+	width: 65%;
+	h1 {
+		font-size: 2.5em;
+		color: #ffffff;
+	}
+}
+
 .table-container {
 	display: flex;
-	max-width: 60%;
+	max-width: 65%;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	padding: 5em 0em 5em 0em;
+	padding: 1em 0em 0em 0em;
 	overflow-x: scroll;
+
 	table {
 		width: 200%;
+		thead {
+			background-color: #ba8106;
+		}
+	}
+	table,
+	th,
+	td,
+	tr {
+		padding: 0.25em;
+		border-color: #000000;
+		border-collapse: collapse;
+	}
+
+	tr {
+		&:nth-child(even) {
+			background-color: #454545;
+		}
+		&:nth-child(odd) {
+			background-color: #2b2b2b;
+		}
 	}
 	&::-webkit-scrollbar-track {
 		background-color: transparent;

@@ -31,10 +31,23 @@ hr {
   background: #ecaf2b;
 }
 
-.main-container {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+.main-forms {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .forms-container {
@@ -211,11 +224,21 @@ hr {
   margin-bottom: 3vh;
 }
 
+.label {
+  font-size: 14px;
+  width: 65%;
+}
+
+.label h1 {
+  font-size: 2.5em;
+  color: #ffffff;
+}
+
 .table-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 60%;
+  max-width: 65%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -226,12 +249,33 @@ hr {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 5em 0em 5em 0em;
+  padding: 1em 0em 0em 0em;
   overflow-x: scroll;
 }
 
 .table-container table {
   width: 200%;
+}
+
+.table-container table thead {
+  background-color: #ba8106;
+}
+
+.table-container table,
+.table-container th,
+.table-container td,
+.table-container tr {
+  padding: 0.25em;
+  border-color: #000000;
+  border-collapse: collapse;
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #454545;
+}
+
+.table-container tr:nth-child(odd) {
+  background-color: #2b2b2b;
 }
 
 .table-container::-webkit-scrollbar-track {
