@@ -130,10 +130,6 @@ $tableDB = "orders";
                 echo '<h3>Unsuccessful, Retry</h3>';
             }
         }
-        else
-        {
-            echo '<h3>Failure</h3>';
-        }
     ?>
                     <h1>Payment Information</h1>
                     <div class="payment">
@@ -161,16 +157,27 @@ $tableDB = "orders";
             </div>
         </section>
         <section class="orders-container">
-            <div class="product-cont">
-                <div class="prod-img"><img src="../styles/images/mini_banner_3.png" alt=""></div>
-                <div class="prod-name">
-                    <h1>a very long product name</h1>
-                    <h1>[[quantity]]</h1>
-                </div>
-                <div class="prod-price">
-                    <h1>php 00.00</h1>
-                </div>
-            </div>
+            <?php
+            if(isset($_SESSION["shopping_cart"]))
+            {
+                $total_price = 0;
+                foreach ($_SESSION['shopping_cart'] as $product)
+                {
+                    echo '<div class="product-cont">
+                        <div class="prod-img"><img src="../styles/images/'. $product['image'] .'_1.jpg" alt=""></div>
+                        <div class="prod-name">
+                            <h1>'. $product['name'] . '</h1>
+                            <h1>'. $product['quantity'] .'</h1>
+                        </div>
+                        <div class="prod-price">
+                            <h1>PHP '. $product['price']*$product['quantity'] .'</h1>
+                        </div>
+                    </div>';
+                    $total_price += $product['price']*$product['quantity'];
+                }
+            }
+            ?>
+            <!-- Remove this -->
             <hr>
             <div class="costs-cont">
                 <div class="sub-tot">
@@ -186,7 +193,7 @@ $tableDB = "orders";
             <div class="total-cont">
                 <div class="total">
                     <h2>total</h2>
-                    <h1>php 00.00</h1>
+                    <h1>PHP <?php echo $total_price ?></h1>
                 </div>
             </div>
         </section>

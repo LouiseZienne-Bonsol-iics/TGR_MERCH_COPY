@@ -112,7 +112,7 @@ $tableDB = "orders";
                                 $IDOrder = $_SESSION['IDOrder']; 
                             
                                 // Get all the submitted data from the form
-                                $sql = "INSERT INTO orders (PaymentImage) where OrderID:$IDOrder VALUES ('$filename')";
+                                $sql = "Update orders set PaymentImage='$filename' WHERE OrderID='$IDOrder'";
                             
                                 // Execute query
                                 $pdo->query($sql);

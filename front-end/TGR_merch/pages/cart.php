@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="buttons">
                                     <a href="product_info.pdf" class="button btn-1">Continue Shopping</a>
-                                    <form action="checkout">
+                                    <form action="checkout.php">
                                     <input type="submit" class="button btn-2" value="Proceed to Checkout"></input>
                                     </form>
                                 </div>
