@@ -109,9 +109,10 @@ $tableDB = "orders";
                                 $filename = $_FILES["filename"]["name"];
                                 $tempname = $_FILES["filename"]["tmp_name"];    
                                 $folder = "uploads/".$filename;
+                                $IDOrder = $_SESSION['IDOrder']; 
                             
                                 // Get all the submitted data from the form
-                                $sql = "INSERT INTO orders (PaymentImage) VALUES ('$filename')";
+                                $sql = "INSERT INTO orders (PaymentImage) where OrderID:$IDOrder VALUES ('$filename')";
                             
                                 // Execute query
                                 $pdo->query($sql);

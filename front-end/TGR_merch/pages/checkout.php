@@ -108,12 +108,12 @@ $tableDB = "orders";
             $Zip = $_REQUEST['ZIP'];
             $CustomerAddress = $Address . ', ' . $City . ', ' . $Province . ', ' . $Zip;
             date_default_timezone_set('Asia/Manila');
-            $OrderDate = date('m-d-y h:i:s');
+            $OrderDate = date('y-m-d h:i:s');
 
             $random = bin2hex(random_bytes(6));
             $OrderID = "TGR" . $random;
 
-            $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`,'OrderDate' , `CourierChoice`) 
+            $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, `OrderDate` , `CourierChoice`) 
                     VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$OrderDate' ,'$CourierChoice')"; 
 
             $CustomerName = $FirstName . ' ' . $LastName;
