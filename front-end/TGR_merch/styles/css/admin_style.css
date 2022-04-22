@@ -231,7 +231,7 @@ hr {
 }
 
 .table-container table {
-  width: 2000px;
+  width: 200%;
 }
 
 .table-container::-webkit-scrollbar-track {
