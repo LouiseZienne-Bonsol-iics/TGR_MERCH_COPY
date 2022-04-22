@@ -1,0 +1,425 @@
+<!-- Sorry Robin labyu <3-->
+<!-- <?php
+include('databaseConnect.php');
+$tableDB = "orders";
+?> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/css/header_footer_style.css" />
+    <link rel="stylesheet" href="../styles/css/aos.css" />
+    <link rel="stylesheet" href="../styles/css/loading_screen_style.css">
+    <link rel="stylesheet" href="../styles/css/admin_style.css" />
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+    <link rel="icon" type="image/x-icon" href="../styles/images/favicon.ico">
+    <title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body class="inactive">
+    <section class="background">
+        <h1 class="bg-title">#TGRWIN</h1>
+    </section>
+    <section class="bg-1"></section>
+    <section class="bg-2"></section>
+
+    <section class="main-container">
+
+        <section class="main-header-container">
+            <div class="header-container" data-aos="fade-in">
+                <div class="header_logo">
+                    <a href="#"><img src="../styles/images/LOGO_TELETIGERS 3.png" class="tgr_logo"><img
+                            src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
+                </div>
+                <ul class="header-opt">
+                    <li><a href="home">home</a></li>
+                    <li><a href="catalogue">products</a></li>
+                    <li><a href="wip">services</a></li>
+                    <li><a href="order_status">tracking</a></li>
+                    <li><a href="help">FAQs</a></li>
+                </ul>
+
+                <div class="header-icons-container">
+                    <form class="search-form" action="">
+                        <input class="search-input" type="search" placeholder="Search here .">
+                        <i class="fa fa-search"></i>
+                    </form>
+                    <a href="cart">
+                        <img src="../styles/images/shopping-bag.png" class="bag-icon" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- <?php if (isset($_POST['insert'])) {
+        $OrderID = $_REQUEST['OrderID'];
+        $LastName = $_REQUEST['LastName'];
+        $FirstName = $_REQUEST['FirstName'];
+        $CustomerNumber = $_REQUEST['CustomerNumber'];
+        $CustomerEmail = $_REQUEST['CustomerEmail'];
+        $CustomerAddress = $_REQUEST['CustomerAddress'];
+        $OrderDate = $_REQUEST['OrderDate'];
+        $MerchType = $_REQUEST['MerchType'];
+        $MerchPrice = $_REQUEST['MerchPrice'];
+        $CourierChoice = $_REQUEST['CourierChoice'];
+        $CourierNumber = $_REQUEST['CourierNumber'];
+        $OrderStatus = $_REQUEST['OrderStatus'];
+        $PaymentImage = $_REQUEST['PaymentImage'];
+        $PaymentStatus = $_REQUEST['PaymentStatus'];
+        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, 'OrderDate',`MerchType`, `MerchPrice`, `CourierChoice`, `CourierNumber`, `OrderStatus`, 'PaymentImage' ,`PaymentStatus`) 
+                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress','$OrderDate' , '$MerchType', '$MerchPrice', '$CourierChoice', '$CourierNumber', '$OrderStatus', '$PaymentImage','$PaymentStatus')";
+        if ($pdo->query($sql)) {
+            echo '<h3>Successful</h3>';
+            header('Location:databaseControl.php?status=SUCCESS');
+        } else {
+            echo '<h3>Unsuccessful, Retry</h3>';
+        }
+    } else {
+        echo '<h3>Failure</h3>';
+    } ?> -->
+        <section class="forms-container">
+            <div class="form-container">
+                <h1>Insert</h1>
+                <hr>
+                <div class="container">
+                    <div class="labels">
+                        <h1>Order ID</h1>
+                        <h1>Customer Name</h1>
+                        <h1>Contact Details</h1>
+                        <h1>Address</h1>
+                        <h1>Merch</h1>
+                        <h1>Courier</h1>
+                        <h1>Order Details</h1>
+                        <h1>Payment </h1>
+                    </div>
+                    <form action="#" method="post" class="form">
+                        <div class="fields">
+                            <label class="field">
+                                <span class="field__label" for="OrderID">Order ID</span>
+                                <input class="field__input" type="text" id="OrderID" name="OrderID" />
+                            </label>
+                        </div>
+                        <div class="fields fields--2">
+                            <label class="field">
+                                <span class="field__label" for="firstname">First name</span>
+                                <input class="field__input" type="text" id="firstname" name="FirstName" />
+                            </label>
+                            <label class="field">
+                                <span class="field__label" for="lastname">Last name</span>
+                                <input class="field__input" type="text" id="lastname" name="LastName" />
+                            </label>
+                        </div>
+                        <div class="fields fields--2">
+                            <label class="field">
+                                <span class="field__label" for="CustomerNumber">Customer number</span>
+                                <input class="field__input" type="text" id="CustomerNumber" name="CustomerNumber" />
+                            </label>
+                            <label class="field">
+                                <span class="field__label" for="CustomerEmail">Customer Email</span>
+                                <input class="field__input" type="text" id="CustomerEmail" name="CustomerEmail" />
+                            </label>
+                        </div>
+
+                        <div class="fields">
+                            <label class="field">
+                                <span class="field__label" for="CustomerAddress">Customer Address</span>
+                                <input class="field__input" type="text" id="CustomerAddress" name="CustomerAddress" />
+                            </label>
+                        </div>
+
+                        <div class="fields fields--2">
+                            <label class="field">
+                                <span class="field__label" for="MerchPrice">Merch price</span>
+                                <input class="field__input" type="text" id="MerchPrice" name="MerchPrice" />
+                            </label>
+                            <label class="field">
+                                <span class="field__label" for="lastname">Last name</span>
+                                <input class="field__input" type="text" id="lastname" name="LastName" />
+                            </label>
+                        </div>
+
+                        <div class="fields fields--2">
+                            <label class="field">
+                                <span class="field__label" for="CourierChoice">Courier</span>
+                                <input class="field__input" type="text" id="CourierChoice" name="CourierChoice" />
+                            </label>
+                            <label class="field">
+                                <span class="field__label" for="CourierNumber">Courier tracking number</span>
+                                <input class="field__input" type="text" id="CourierNumber" name="CourierNumber" />
+                            </label>
+                        </div>
+                        <div class="fields fields--2">
+                            <label class="field">
+                                <span class="field__label" for="OrderDate">order date</span>
+                                <input class="field__input" type="text" id="OrderDate" name="OrderDate" />
+                            </label>
+                            <label class="field">
+                                <span class="field__label" for="OrderStatus">order status</span>
+                                <input class="field__input" type="text" id="OrderStatus" name="OrderStatus" />
+                            </label>
+                        </div>
+                        <div class="fields fields--2">
+                            <label class="field">
+                                <span class="field__label" for="PaymentStatus">Payment status</span>
+                                <input class="field__input" type="text" id="PaymentStatus" name="PaymentStatus" />
+                            </label>
+                            <label class="field">
+                                <span class="field__label" for="PaymentImage">proof of payment</span>
+                                <input class="field__input" type="file" id="PaymentImage" name="PaymentImage" />
+                            </label>
+                        </div>
+                        <input type="reset" value="Reset">
+
+                        <input type="submit" value="Insert" name="insert" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h1>Update</h1>
+                <hr>
+                <div class="container">
+                    <div class="labels">
+                        <h1>Unique ID</h1>
+                        <h1>Column</h1>
+                        <h1>Data</h1>
+                    </div>
+                    <form action="#" method="post" class="form">
+                        <div class="fields">
+                            <label class="field">
+                                <span class="field__label" for="ID">Unique ID</span>
+                                <input class="field__input" type="text" id="ID" name="ID" />
+                            </label>
+                        </div>
+
+                        <div class="fields fields--2">
+                            <label class="field">
+                                <span class="field__label">Select Column</span>
+                                <select class="field__input" id="dataColumn" name="dataColumn">
+                                    <option></option>
+                                    <option value="OrderID">Order ID</option>
+                                    <option value="LastName">Last Name</option>
+                                    <option value="FirstName">First Name</option>
+                                    <option value="CustomerNumber">Customer Number</option>
+                                    <option value="CustomerEmail">Customer Email</option>
+                                    <option value="CustomerAddress">Customer Address</option>
+                                    <option value="OrderDate">Order Date</option>
+                                    <option value="MerchType">Merch Type</option>
+                                    <option value="MerchPrice">Merch Price</option>
+                                    <option value="CourierChoice">Courier Choice</option>
+                                    <option value="CourierNumber">Courier Number</option>
+                                    <option value="OrderStatus">Order Status</option>
+                                    <option value="PaymentImage">Payment Image</option>
+                                    <option value="PaymentStatus">Payment Status</option>
+                                    <option></option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="fields">
+                            <label class="field">
+                                <span class="field__label" for="dataReplacement">Insert Data</span>
+                                <input class="field__input" type="text" id="dataReplacement" name="dataReplacement" />
+                            </label>
+                        </div>
+
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Update" name="Update" />
+                    </form>
+                </div>
+            </div>
+
+            <!-- <?php if (isset($_POST['Update'])) {
+        $dataColumn = $_POST['dataColumn'];
+        $dataReplacement = $_POST['dataReplacement'];
+        $id = $_POST['ID'];
+        $sql = "UPDATE $tableDB SET $dataColumn='$dataReplacement' WHERE ID=$id";
+        if ($pdo->query($sql) === true) {
+            echo '<h3>Successful</h3>';
+            header('Location:databaseControl.php?status=SUCCESS');
+        }
+    } ?> -->
+            <div class="form-container">
+                <h1>Delete</h1>
+                <hr>
+                <div class="container">
+                    <div class="labels">
+                        <h1>Unique ID</h1>
+
+                    </div>
+                    <form action="#" method="post" class="form">
+                        <div class="fields">
+                            <label class="field">
+                                <span class="field__label" for="ID">Unique ID</span>
+                                <input class="field__input" type="text" id="ID" name="ID" />
+                            </label>
+                        </div>
+
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Update" name="Update" />
+                    </form>
+                </div>
+            </div>
+
+            <!-- <?php if (isset($_POST['delete'])) {
+        $id = $_POST['ID'];
+        $sql = "DELETE FROM $tableDB WHERE ID = $id";
+        // echo "Are you sure to delete $id?";
+        // echo '<input type="submit" name="yes" value="Yes"></input> <input type="submit" name="no" value="No"></input>';
+        // if(isset($_POST['yes']))
+        // {
+        if ($pdo->query($sql) === true) {
+            echo '<h3>Successful</h3>';
+            header('Location:databaseControl.php?status=SUCCESS');
+        }
+        //}
+    } ?> -->
+        </section>
+        <div class="table-container">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Order ID</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Customer Number</th>
+                        <th>Customer Email</th>
+                        <th>Customer Address</th>
+                        <th>Order Date</th>
+                        <th>Merch Type</th>
+                        <th>Merch Price</th>
+                        <th>Courier Choice</th>
+                        <th>Courier Number</th>
+                        <th>Order Status</th>
+                        <th>Payment Image</th>
+                        <th>Payment Status</th>
+                    </tr>
+                </thead>
+                <!-- <?php
+        function outputMySQLToHTMLTable(pdo $pdo, string $table)
+        {
+            $tableNames = $pdo
+                ->query('SHOW TABLES')
+                ->fetchAll(PDO::FETCH_COLUMN);
+            $stmt = $pdo->query('SELECT * FROM ' . $table);
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $columnCount = $stmt->columnCount();
+            if ($data) {
+                foreach ($data as $row) {
+                    echo '<tr>';
+                    foreach ($row as $cell) {
+                        echo '<td>' . htmlspecialchars($cell) . '</td>';
+                    }
+                    echo '</tr>';
+                }
+            } else {
+                echo '<tr><td colspan="' .
+                    $columnCount .
+                    '">No records in the table!</td></tr>';
+            }
+            echo '</table>';
+        }
+
+        outputMySQLToHTMLTable($pdo, $tableDB);
+        ?> -->
+            </table>
+        </div>
+        <section class="main-footer-container">
+            <div class="footer-row">
+                <div class="footer-left-col">
+                    <div class="text-row">
+                        <div class="info-tab">
+                            <h1>Information</h1>
+                            <a href="">
+                                <h2>About Teletigers</h2>
+                            </a>
+                            <a href="">
+                                <h2>Teletigers website</h2>
+                            </a>
+                            <a href="">
+                                <h2>FAQs</h2>
+                            </a>
+                        </div>
+                        <div class="info-tab">
+                            <h1>Customer Services</h1>
+                            <a href="help">
+                                <h2>Return Policy</h2>
+                            </a>
+                            <a href="help">
+                                <h2>Accessibility</h2>
+                            </a>
+                            <a href="help">
+                                <h2>Terms and Conditions</h2>
+                            </a>
+                        </div>
+                        <div class="info-tab">
+                            <h1>Affiliates</h1>
+                            <!-- Fatherless Behavior-->
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-right-col">
+                    <div class="footer-logo"><a href="#"><img src="../styles/images/LOGO_TELETIGERS 3.png"
+                                class="tgr_logo">
+                            <h1 class="text_logo">TELETIGERS</h1>
+                        </a></div>
+                    <div class="contact" id="contact">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/TeletigersEsports"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/Teletigers_"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitch"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text">all rights reserved 2022</div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="../styles/js/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        delay: 1650,
+    });
+    window.onload = function () {
+        $(".bg-1, .bg-2, .bg-title").addClass("active");
+    };
+
+    window.onunload = function () {
+        window.scrollTo(0, 0);
+    };
+    window.setTimeout(function () {
+        $(".bg-1, .bg-2, .main-container").addClass("finished");
+    }, 2250);
+    window.setTimeout(function () {
+        $("body").removeClass("inactive");
+    }, 2800);
+</script>
+
+</html>

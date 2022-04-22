@@ -18,40 +18,60 @@
 	}
 }
 
-body {
-	overflow-y: hidden;
+.header-container {
+	position: relative !important;
+}
+
+hr {
+	margin-top: 1.7em;
+	margin-bottom: 1.7em;
+
+	width: 8%;
+	height: 0.08em;
+	border: #ecaf2b solid 2px;
+	background: #ecaf2b;
 }
 
 .main-container {
+	justify-content: start;
+}
+
+.forms-container {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	max-height: 100vh;
-	background-color: #fec86e;
-	.forms-container {
-		background-color: #333;
-		font-size: 14px;
-		box-sizing: border-box;
-		overflow-y: scroll;
-		max-height: 100vh;
-		padding: 2vw 0;
-		width: 65%;
+	flex-direction: column;
+	font-size: 14px;
+	box-sizing: border-box;
+	min-height: 100vh;
+	padding: 2vw 0;
+	width: 65%;
+	gap: 2em;
 
-		h1 {
-			margin-bottom: 0.4em;
-			color: #fec86e;
-		}
+	h1 {
+		font-size: 2.5em;
+		color: #ffffff;
+	}
 
-		p {
-			color: var(--color-gray);
-			margin-bottom: 1em;
-		}
+	.form-container {
+		width: 100%;
+		margin: 0 auto;
 
-		.form-container {
-			width: 60%;
-			margin: 0 auto;
+		.container {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			gap: 1.4em;
+			.labels {
+				width: 21em;
+				font-family: "Source Sans Pro", sans-serif;
+				margin-top: 0.5em;
+				gap: 4.20em;
+				font-size: 0.58em;
+				display: flex;
+				flex-direction: column;
+			}
 
 			.form {
+				width: 50%;
 				display: grid;
 				grid-gap: 1em;
 
@@ -62,6 +82,10 @@ body {
 				.fields {
 					display: grid;
 					grid-gap: 1em;
+
+					select option {
+						background-color: #2b2b2b;
+					}
 					.field {
 						width: 100%;
 						display: flex;
@@ -83,7 +107,7 @@ body {
 							border: 0;
 							outline: 0;
 							font-size: 1em;
-							width: 100%;
+							width: 100% !important;
 							-webkit-appearance: none;
 							appearance: none;
 							background-color: transparent;
@@ -139,106 +163,34 @@ body {
 				}
 			}
 		}
-		.logo {
-			width: inherit;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			.tgr-logo {
-				height: 8em;
-			}
-			.tgr-text {
-				height: 3em;
-			}
-		}
-	}
-
-	.orders-container {
-		width: 30%;
-		max-height: 100vh;
-		background-color: #fec86e;
-		overflow-y: scroll;
-		overflow-x: hidden;
-		padding: 4vw 4vw 4vw 0;
-		margin-left: 2vw;
-		display: flex;
-		flex-direction: column;
-		.product-cont {
-			padding: 0.7em;
-			display: flex;
-			flex-direction: row;
-			width: 100%;
-			height: auto;
-			align-items: center;
-			justify-content: space-between;
-			.prod-img {
-				height: 6em;
-				width: 6em;
-				overflow: hidden;
-				img {
-					height: 6em;
-				}
-			}
-			.prod-name {
-				display: flex;
-				flex-direction: column;
-				h1 {
-					font-size: 0.8em;
-					text-transform: uppercase;
-				}
-			}
-			.prod-price {
-				h1 {
-					font-size: 1em;
-					text-transform: uppercase;
-				}
-			}
-		}
-		.costs-cont {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			width: 100%;
-			height: 10vh;
-			padding: 0.7em;
-			.sub-tot,
-			.ship-fee {
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				h1 {
-					text-transform: uppercase;
-					font-size: 0.8em;
-				}
-			}
-		}
-		.total {
-			display: flex;
-			padding: 00.7em;
-			width: 100%;
-			height: auto;
-			flex-direction: row;
-			justify-content: space-between;
-			text-transform: uppercase;
-			align-items: center;
-			h2 {
-				font-size: 1.5em;
-			}
-
-			h1 {
-				font-size: 2em;
-			}
-		}
-
-		hr {
-			background-color: #222222;
-			border: #222222 solid 1px;
-			width: 105%;
-			margin: 0.7em 0;
-		}
 	}
 }
+
+.table-container {
+	display: flex;
+	max-width: 60%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 5em 0em 5em 0em;
+	overflow-x: scroll;
+	table {
+		width: 2000px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar {
+		width: 3px !important;
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #202020;
+	}
+}
+
 ::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	background-color: #000000;

@@ -282,7 +282,7 @@ body.inactive {
       -ms-flex-direction: row;
           flex-direction: row;
   background: #2b2b2b;
-  background: url("../images/footer_banner.png") center center;
+  background: url("../images/footer_banner.png") center;
   background-size: 100%;
   background-attachment: fixed;
 }

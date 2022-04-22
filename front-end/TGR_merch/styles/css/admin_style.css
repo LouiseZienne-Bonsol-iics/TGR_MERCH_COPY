@@ -1,0 +1,263 @@
+@import url("https://rsms.me/inter/inter.css");
+:root {
+  --color-gray: #b0b4c4;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+.header-container {
+  position: relative !important;
+}
+
+hr {
+  margin-top: 1.7em;
+  margin-bottom: 1.7em;
+  width: 8%;
+  height: 0.08em;
+  border: #ecaf2b solid 2px;
+  background: #ecaf2b;
+}
+
+.main-container {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.forms-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100vh;
+  padding: 2vw 0;
+  width: 65%;
+  gap: 2em;
+}
+
+.forms-container h1 {
+  font-size: 2.5em;
+  color: #ffffff;
+}
+
+.forms-container .form-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.forms-container .form-container .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1.4em;
+}
+
+.forms-container .form-container .container .labels {
+  width: 21em;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 0.5em;
+  gap: 4.20em;
+  font-size: 0.58em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.forms-container .form-container .container .form {
+  width: 50%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.forms-container .form-container .container .form :focus-visible {
+  background-color: #333;
+}
+
+.forms-container .form-container .container .form .fields {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.forms-container .form-container .container .form .fields select option {
+  background-color: #2b2b2b;
+}
+
+.forms-container .form-container .container .form .fields .field {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: .5em;
+  border-radius: .25em;
+}
+
+.forms-container .form-container .container .form .fields .field .field__label {
+  color: var(--color-gray);
+  font-size: 0.6em;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25em;
+}
+
+.forms-container .form-container .container .form .fields .field .field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-size: 1em;
+  width: 100% !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background-color: transparent;
+  color: white;
+}
+
+.forms-container .form-container .container .form .fields :focus-within {
+  border-color: #cc9a11;
+}
+
+.forms-container .form-container .container .form .fields--2 {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.forms-container .form-container .container .form .fields--3 {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.forms-container .form-container .container .form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 2em;
+}
+
+.forms-container .form-container .container .form .buttons .button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  width: 30%;
+  padding: 1em;
+  border-radius: 0.25em;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.forms-container .form-container .container .form .buttons .btn-1 {
+  background-color: transparent;
+  color: #fec86e;
+  border: #fec86e solid 2px;
+}
+
+.forms-container .form-container .container .form .buttons .btn-2 {
+  background-color: #fec86e;
+  color: #000000;
+  border: #fec86e solid 2px;
+}
+
+.forms-container .form-container .container .form fieldset {
+  height: 30vh;
+  margin-bottom: 3vh;
+}
+
+.table-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 60%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 5em 0em 5em 0em;
+  overflow-x: scroll;
+}
+
+.table-container table {
+  width: 2000px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 3px !important;
+  background-color: transparent;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #202020;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
