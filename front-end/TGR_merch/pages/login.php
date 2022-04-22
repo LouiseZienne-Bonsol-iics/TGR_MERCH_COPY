@@ -1,5 +1,9 @@
 <?php 
 	session_start();
+	if( !(isset($_SESSION['wrong'])) )
+    {
+        $_SESSION['wrong'] = null;
+    }
 ?>
 
 <!DOCTYPE html>
