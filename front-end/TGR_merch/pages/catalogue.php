@@ -116,51 +116,59 @@ $tableDB = "products";
 
                         <div class="products">
                             <?php 
-                                $result = $pdo->query("SELECT ProductName from $tableDB");
-                                while($row = $result->fetchAll())
-                                {
-                                
+                                $shirt = $pdo->query("SELECT * from $tableDB WHERE id = '1'");
+                                $jersey = $pdo->query("SELECT * from $tableDB WHERE id = '2'");
+                                $jacket = $pdo->query("SELECT * from $tableDB WHERE id = '3'");
+                                $mask = $pdo->query("SELECT * from $tableDB WHERE id = '4'");
+                                $_SESSION['shirt'] = $shirt;
+                                $_SESSION['jersey'] = $jersey;
+                                $_SESSION['jacket'] = $jacket;
+                                $_SESSION['mask'] = $mask;
                             ?>
 
 
                             <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/shirt_1.JPG"
+                                <?php while($row = $shirt->fetch()) {?>
+                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1><?php echo $row?></h1>
+                                    <h1><?php echo $row['ProductName']; ?></h1>
                                 </div>
                                 <div class="product-price">
-                                    <h3>PHP 00.00</h3>
+                                    <h3><?php echo $row['ProductPrice']; }?></h3>
                                 </div>
                             </div>
                             <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/mask_1.png"
+                            <?php while($row = $jersey->fetch()) {?>
+                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1><?php echo $row; ?></h1>
+                                    <h1><?php echo $row['ProductName']; ?></h1>
                                 </div>
                                 <div class="product-price">
-                                    <h3>PHP 00.00</h3>
+                                    <h3><?php echo $row['ProductPrice']; }?></h3>
                                 </div>
                             </div>
                             <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                            <?php while($row = $jacket->fetch()) {?>
+                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1><?php $row; ?></h1>
+                                    <h1><?php echo $row['ProductName']; ?></h1>
                                 </div>
                                 <div class="product-price">
-                                    <h3>PHP 00.00</h3>
+                                    <h3><?php echo $row['ProductPrice']; }?></h3>
                                 </div>
                             </div>
                             <div class="product-tile">
-                                <a href="product_info.html" class="product-img-container"><img src="../styles/images/product_placeholder.png"
+                            <?php while($row = $mask->fetch()) {?>
+                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
-                                    <h1><?php  echo $row; }?></h1>
+                                    <h1><?php echo $row['ProductName']; ?></h1>
                                 </div>
                                 <div class="product-price">
-                                    <h3>PHP 00.00</h3>
+                                    <h3><?php echo $row['ProductPrice']; }?></h3>
                                 </div>
                             </div>
                         </div>

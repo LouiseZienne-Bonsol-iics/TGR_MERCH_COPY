@@ -286,21 +286,21 @@ $tableDB = "orders";
             <table border="1">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Order ID</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Customer Number</th>
-                        <th>Customer Email</th>
-                        <th>Customer Address</th>
-                        <th>Order Date</th>
-                        <th>Merch Type</th>
-                        <th>Merch Price</th>
-                        <th>Courier Choice</th>
-                        <th>Courier Number</th>
-                        <th>Order Status</th>
-                        <th>Payment Image</th>
-                        <th>Payment Status</th>
+                    <th style="width: 0%;">ID</th>
+                    <th style="width: 0%;">Order ID</th>
+                    <th style="width: 0%;">Last Name</th>
+                    <th style="width: 0%;">First Name</th>
+                    <th style="width: 0%;">Customer Number</th>
+                    <th style="width: 0%;">Customer Email</th>
+                    <th style="width: 0%;">Customer Address</th>
+                    <th style="width: 0%;">Order Date</th>
+                    <th style="width: 0%;">Merch Type</th>
+                    <th style="width: 0%;">Merch Price</th>
+                    <th style="width: 0%;">Courier Choice</th>
+                    <th style="width: 0%;">Courier Number</th>
+                    <th style="width: 0%;">Order Status</th>
+                    <th style="width: 0%;">Payment Image</th>
+                    <th style="width: 0%;">Payment Status</th>
                     </tr>
                 </thead>
                 <?php

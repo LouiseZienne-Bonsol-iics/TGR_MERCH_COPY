@@ -7,31 +7,29 @@
                     </form>
 
                     <?php
-                        if (isset($_POST['fileUpload'])) 
-                        {
-                            $filetype = array('application/pdf','image/jpeg','image/jpg','image/png');
-                            $filename = $_FILES['filename']['name'];
-                            $tempname = $_FILES['filename']['tmp_name'];    
-                            $folder = "uploads/".$filename;
-                            $IDOrder = $_SESSION['IDOrder']; 
-                        
-                            if(in_array($_FILES['filename']['type'],$filetype))
-                            {
-                              
-                                // Get all the submitted data from the form
-                                $sql = "INSERT INTO orders (PaymentImage) where OrderID:$IDOrder VALUES ('$filename')";
+                        if(isset($_FILES['filename'])){
+                            $errors= array();
+                            $file_name = $_FILES['filename']['name'];
+                            $file_size =$_FILES['filename']['size'];
+                            $file_tmp =$_FILES['filename']['tmp_name'];
+                            $file_type=$_FILES['filename']['type'];
+                            $file_ext=strtolower(end(explode('.',$_FILES['filename']['name'])));
                             
-                                // Execute query
-                                $pdo->query($sql);
-                                    
-                                // Now let's move the uploaded image into the folder: image
-                                if (move_uploaded_file($tempname, $folder))  {
-                                    $msg = "Image uploaded successfully";
-                                }
-                                else
-                                {
-                                    $msg = "Failed to upload image";
-                                }
+                            $extensions= array("jpeg","jpg","png");
+                            
+                            if(in_array($file_ext,$extensions)=== false){
+                               $errors[]="extension not allowed, please choose a JPEG or PNG file.";
                             }
-                        }
+                            
+                            if($file_size > 2097152){
+                               $errors[]='File size must be excately 2 MB';
+                            }
+                            
+                            if(empty($errors)==true){
+                               move_uploaded_file($file_tmp,"uploads/".$file_name);
+                               echo "Success";
+                            }else{
+                               print_r($errors);
+                            }
+                         }
                     ?>

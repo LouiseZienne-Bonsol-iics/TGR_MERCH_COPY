@@ -93,7 +93,7 @@ $tableDB = "orders";
                          of your proof of payment via link below. 
                     </p>
 
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <input type="file" class="file-upload" id="filename" name="filename">
                         <div class="buttons">
                             <input type="submit" class="button btn-2" value="Upload Proof of Payment" name="fileUpload" ></input>

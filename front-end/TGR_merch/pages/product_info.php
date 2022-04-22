@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+    include('databaseConnect.php');
+    session_start();
+?>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -55,9 +58,10 @@
                     <div class="cont-restrict">
 
                         <ul class="breadcrumb">
-                            <li><a href="home">Home</a></li>
-                            <li><a href="catalogue.php">Products</a></li>
-                            <li style="color: white;">Teletigers 2021 Jersey</li>
+                            <li><a href="index">Home</a></li>
+                            <li><a href="catalogue">Products</a></li>
+                            <li style="color: white;"><?php $shirt = $_SESSION['shirt']; while($row = $shirt->fetch()){
+                                echo $row['ProductName']?></li>
                         </ul>
 
 
@@ -68,7 +72,7 @@
                                 <div class="product-imgs">
                                     <div class="img-display">
                                         <div class="img-showcase">
-                                            <img src="../styles/images/shirt_1.JPG" alt="shoe image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>" alt="shoe image">
                                             <img src="../styles/images/shirt_2.JPG" alt="shoe image">
                                             <img src="../styles/images/shirt_3.JPG" alt="shoe image">
                                             <img src="../styles/images/shirt_4.JPG" alt="shoe image">
@@ -77,7 +81,7 @@
                                     <div class="img-select">
                                         <div class="img-item">
                                             <a href="#" data-id="1">
-                                                <img src="../styles/images/shirt_1.JPG" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>" alt="shoe image">
                                             </a>
                                         </div>
                                         <div class="img-item">
@@ -101,7 +105,7 @@
                                 <div class="product-content">
                                     <h2 class="product-title">Teletigers 2021 Jersey</h2>
                                     <div class="product-price">
-                                        00.00
+                                    <?php echo $row['ProductPrice'];}?>
                                     </div>
 
                                     <hr>
@@ -136,7 +140,7 @@
 
                                     <div class="purchase-buttons">
                                         <div class="buttons">
-                                            <input type="submit" class="button btn-2" value="Add to Cart"></input>
+                                            <input type="submit" class="button btn-2" value="Add to Cart" name="cart"></input>
                                         </div>
                                     </div>
                                 </div>
