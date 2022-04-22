@@ -37,9 +37,9 @@
                 <ul class="header-opt">
                     <li><a href="home">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
-                    <li><a href="wip.html">services</a></li>
+                    <li><a href="wip.php">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>
-                    <li><a href="help.html">FAQs</a></li>
+                    <li><a href="help.php">FAQs</a></li>
                 </ul>
 
                 <div class="header-icons-container">
@@ -47,7 +47,7 @@
                         <input class="search-input" type="search" placeholder="Search here ...">
                         <i class="fa fa-search"></i>
                     </form>
-                    <a href="cart.html">
+                    <a href="cart.php">
                     <img src="../styles/images/shopping-bag.png" class="bag-icon" />
                     </a>
                 </div>
@@ -198,13 +198,13 @@
                         </div>
                         <div class="info-tab">
                             <h1>Customer Services</h1>
-                            <a href="help.html">
+                            <a href="help.php">
                                 <h2>Return Policy</h2>
                             </a>
-                            <a href="help.html">
+                            <a href="help.php">
                                 <h2>Accessibility</h2>
                             </a>
-                            <a href="help.html">
+                            <a href="help.php">
                                 <h2>Terms and Conditions</h2>
                             </a>
                         </div>
