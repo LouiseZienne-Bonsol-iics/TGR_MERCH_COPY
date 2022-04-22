@@ -258,7 +258,7 @@ hr {
 }
 
 .table-container table thead {
-  background-color: #ba8106;
+  background-color: #ba8106 !important;
 }
 
 .table-container table,
