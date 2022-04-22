@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+    include('databaseConnect.php');
+    session_start();
+    $tableDB = "products";
+?>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,7 +37,7 @@
                             src="../styles/images/Teletigers Text.png" class="text_logo" /></a>
                 </div>
                 <ul class="header-opt">
-                    <li><a href="home">home</a></li>
+                    <li><a href="home.php">home</a></li>
                     <li><a href="catalogue.php">products</a></li>
                     <li><a href="wip.html">services</a></li>
                     <li><a href="order_status.php">tracking</a></li>

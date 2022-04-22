@@ -116,6 +116,7 @@
                                 }
                             }
                             $status="";
+                            //removes an item from the cart
                             if (isset($_POST['remove']))
                             {
                                 if(!empty($_SESSION['shopping_cart'])) 
@@ -131,7 +132,7 @@
                                     }	
                                 }
                             }
-
+                            //decreases or increases no. of items and calculates it
                             if (isset($_POST['action'])){
                             foreach($_SESSION["shopping_cart"] as &$value){
                                 if($value['id'] === $_POST['id']){
