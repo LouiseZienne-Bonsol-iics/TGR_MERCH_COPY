@@ -129,7 +129,7 @@ $tableDB = "products";
 
                             <div class="product-tile">
                                 <?php while($row = $shirt->fetch()) {?>
-                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
@@ -140,7 +140,7 @@ $tableDB = "products";
                             </div>
                             <div class="product-tile">
                             <?php while($row = $jersey->fetch()) {?>
-                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
@@ -151,7 +151,7 @@ $tableDB = "products";
                             </div>
                             <div class="product-tile">
                             <?php while($row = $jacket->fetch()) {?>
-                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
@@ -162,7 +162,7 @@ $tableDB = "products";
                             </div>
                             <div class="product-tile">
                             <?php while($row = $mask->fetch()) {?>
-                                <a href="product_info" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
+                                <a href="product_info.php" class="product-img-container"><img src="../styles/images/<?php echo $row['ProductImage']; ?>"
                                         alt=""></a>
                                 <div class="product-title">
                                     <h1><?php echo $row['ProductName']; ?></h1>
