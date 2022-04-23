@@ -88,31 +88,31 @@
                                 <div class="product-imgs">
                                     <div class="img-display">
                                         <div class="img-showcase">
-                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_1.jpg" alt="shoe image">
-                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_2.JPG" alt="shoe image">
-                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_3.JPG" alt="shoe image">
-                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_4.JPG" alt="shoe image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_1.jpg" alt="show image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_2.JPG" alt="show image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_3.JPG" alt="show image">
+                                            <img src="../styles/images/<?php echo $row['ProductImage']?>_4.JPG" alt="show image">
                                         </div>
                                     </div>
                                     <div class="img-select">
                                         <div class="img-item">
                                             <a href="#" data-id="1">
-                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_1.jpg" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_1.jpg" alt="show image">
                                             </a>
                                         </div>
                                         <div class="img-item">
                                             <a href="#" data-id="2">
-                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_2.JPG" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_2.JPG" alt="show image">
                                             </a>
                                         </div>
                                         <div class="img-item">
                                             <a href="#" data-id="3">
-                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_3.JPG" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_3.JPG" alt="show image">
                                             </a>
                                         </div>
                                         <div class="img-item">
                                             <a href="#" data-id="4">
-                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_4.JPG" alt="shoe image">
+                                                <img src="../styles/images/<?php echo $row['ProductImage']?>_4.JPG" alt="show image">
                                             </a>
                                         </div>
                                     </div>

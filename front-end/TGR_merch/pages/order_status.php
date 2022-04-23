@@ -169,7 +169,7 @@
                                     <div class="product-price"><?php echo $row["MerchPrice"]?></div>
                                     <div class="product-quantity"><?php echo $row["MerchQuantity"]?></div>
                                 </div>
-                                    <div class="totals-item">
+                                    <div class="totals-item" style="text-align: right;width: 100%;">
                                         <label>TOTAL: </label>
                                         <div class="totals-value" id="order-total"><?php echo $row["MerchQuantity"]*$row["MerchPrice"] ?></div>
                                     </div>
