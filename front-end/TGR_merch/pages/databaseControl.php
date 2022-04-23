@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../styles/css/admin_style.css" />
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
     <link rel="icon" type="image/x-icon" href="../styles/images/favicon.ico">
-    <title>Insert title here</title>
+    <title>Admin Control</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 </head>
@@ -55,10 +55,12 @@
                     <li><a href="help.php">FAQs</a></li>
                 </ul>
 
-                <!-- fix this Robin/Zee-->
+                <!-- Sign out button-->
                 <div class="header-icons-container">
-                    <form class="bag-icon" action="../../../back-end/checker/logout.php">
-                        <input type="submit" class="fa fa-sign-out" aria-hidden="true"></input> <!-- class="fa fa-sign-out" is a logout icon that fits this-->
+                    <form action="../../../back-end/checker/logout.php">
+                        <button type="submit" class="bag-icon" aria-hidden="true">
+                            <i class="fa fa-sign-out"></i>
+                        </button>
                     </form>
                 </div>
             </div>

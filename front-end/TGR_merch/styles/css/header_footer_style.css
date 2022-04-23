@@ -265,6 +265,11 @@ body.inactive {
   cursor: pointer;
 }
 
+.main-container .main-header-container .header-container .header-icons-container .fa-sign-out {
+  font-size: 1.9em;
+  vertical-align: middle;
+}
+
 .main-container .main-footer-container {
   min-height: 30vh;
   width: 100%;
@@ -622,3 +627,4 @@ body.inactive {
 .main-container .main-footer-container .footer-row .footer-left-col .text-row .info-tab h2:hover {
   color: #dda408;
 }
+/*# sourceMappingURL=header_footer_style.css.map */
