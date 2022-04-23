@@ -21,11 +21,11 @@
 </head>
 
 <body class="inactive">
-    <!-- <section class="background">
+    <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
     </section>
     <section class="bg-1"></section>
-    <section class="bg-2"></section> -->
+    <section class="bg-2"></section>
 
     <section class="main-container">
         <!-- HEADER -->
