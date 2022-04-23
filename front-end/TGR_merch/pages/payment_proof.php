@@ -66,11 +66,16 @@
                     <center>
                         <p class="subheading-text">
                             Your order <?php $amtOrder=1; 
+                            if(!empty($_SESSION['OrderAmt'])){
                             while($_SESSION['OrderAmt'] >= $amtOrder)
                             {   
                                 echo $_SESSION['IDOrder'.$amtOrder] . ', ';
                                 $amtOrder++;
-                            } ?> has been received!
+                            }}
+                            else
+                            { 
+                                echo $_SESSION["IDOrder"];
+                                } ?> has been received!
                         </p>
                     </center>
                     
@@ -82,10 +87,15 @@
                         <div class="customer-item">
                             <label>Order Number:</label>
                             <div class="customer-value" id="order-no"><?php $amtOrder=1; 
+                            if(!empty($_SESSION['OrderAmt'])){
                             while($_SESSION['OrderAmt'] >= $amtOrder)
                             {   
                                 echo $_SESSION['IDOrder'.$amtOrder] . ', ';
                                 $amtOrder++;
+                            }}
+                            else{
+                                echo $_SESSION["IDOrder"];
+                            
                             } ?></div>
                         </div>
                         <div class="customer-item">
