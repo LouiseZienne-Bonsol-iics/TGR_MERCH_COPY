@@ -159,7 +159,7 @@
                                     <p class="shipping-info">Shipping fee will be calculated at checkout.</p>
                                 </div>
                                 <div class="buttons">
-                                    <a href="product_info.php" class="button btn-1">Continue Shopping</a>
+                                    <a href="catalogue.php" class="button btn-1">Continue Shopping</a>
                                     <form action="checkout.php">
                                     <input type="submit" class="button btn-2" value="Proceed to Checkout"></input>
                                     </form>
