@@ -22,11 +22,11 @@
 </head>
 
 <body class="inactive">
-    <section class="background">
+    <!-- <section class="background">
         <h1 class="bg-title">#TGRWIN</h1>
-    </section> -->
+    </section> 
      <section class="bg-1"></section>
-    <section class="bg-2"></section>
+    <section class="bg-2"></section> -->
 
     <section class="main-container">
         <!-- HEADER -->
@@ -155,25 +155,23 @@
                                 </div>
 
                                 <?php 
-                                    $productName = $row['MerchType'];
-                                    $image = $pdo->query("SELECT ProductImage from products WHERE ProductName='$productName'");
-
+                                    $productName = $row["MerchType"];
                                 ?>
 
                                 <div class="product">
                                     <div class="product-image">
-                                        <img src="../styles/images/<?php echo $image?>_1.jpg">
+                                        <img src="../styles/images/<?php echo $row["MerchType"]?>_1.jpg">
                                     </div>
                                     <div class="product-details">
-                                        <div class="product-title"><?php $row['MerchType']?></div>
-                                        <p class="product-description"><?php $row['MerchSize']?></p>
+                                        <div class="product-title"><?php echo $row["MerchType"]?></div>
+                                        <p class="product-description"><?php echo $row["MerchSize"]?></p>
                                     </div>
-                                    <div class="product-price"><?php $row['MerchPrice']?></div>
-                                    <div class="product-quantity"><?php $row['MerchQuantity']?></div>
+                                    <div class="product-price"><?php echo $row["MerchPrice"]?></div>
+                                    <div class="product-quantity"><?php echo $row["MerchQuantity"]?></div>
                                 </div>
                                     <div class="totals-item">
                                         <label>TOTAL: </label>
-                                        <div class="totals-value" id="order-total">00.00</div>
+                                        <div class="totals-value" id="order-total"><?php echo $row["MerchQuantity"]*$row["MerchPrice"] ?></div>
                                     </div>
                                 </div>
                             </div>
