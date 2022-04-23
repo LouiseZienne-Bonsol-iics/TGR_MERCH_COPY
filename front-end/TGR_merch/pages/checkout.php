@@ -164,8 +164,8 @@
                         $random = bin2hex(random_bytes(6));
                         $OrderID = "TGR" . $random;
 
-                        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`,`MerchType`, `MerchPrice`,`MerchQuantity`, `MerchSize`, `OrderDate` , `CourierChoice`) 
-                                VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$MerchType', '$MerchPrice','$MerchQuantity', '$MerchSize','$OrderDate' ,'$CourierChoice')"; 
+                        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`,`MerchType`, `MerchPrice`,`MerchQuantity`, `MerchSize`, `OrderDate` , `CourierChoice`, `CourierNumber`, `OrderStatus`, `PaymentStatus`) 
+                                VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress', '$MerchType', '$MerchPrice','$MerchQuantity', '$MerchSize','$OrderDate' ,'$CourierChoice', 'Pending','Pending','Pending')"; 
 
                         $CustomerName = $FirstName . ' ' . $LastName;
                         $_SESSION['NameCustomer'] = $CustomerName;
