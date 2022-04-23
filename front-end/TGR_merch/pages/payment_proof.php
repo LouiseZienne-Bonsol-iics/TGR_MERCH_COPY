@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start();
-include('databaseConnect.php');
-$tableDB = "orders";
+<?php 
+    session_start();
+    include('databaseConnect.php');
+    $tableDB = "orders";
 ?>
 <head>
     <meta charset="UTF-8" />
