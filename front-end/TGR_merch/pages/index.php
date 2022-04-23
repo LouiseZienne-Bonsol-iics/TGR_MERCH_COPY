@@ -65,16 +65,16 @@
                 <input type="radio" name="radio-btn" id="radio3">
 
                 <div class="slide first">
-                    <a href="product_info.php">
+                    <a href="catalogue.php">
                     <img src="../styles/images/main_banner 1.png">
                     </a>
                 </div>
                 <div class="slide">
-                    <a href="product_info.php"></a>
+                    <a href="index.php"></a>
                     <img src="../styles/images/main_banner 2.png"> </a>
                 </div>
                 <div class="slide">
-                    <a href="product_info.php">
+                    <a href="index.php">
                     <img src="../styles/images/main_banner 3.jpg"> </a>
                     </div>
 
