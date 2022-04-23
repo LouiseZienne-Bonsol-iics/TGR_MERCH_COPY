@@ -99,20 +99,20 @@
             <div class="cont-restrict">
                 <div class="categories-row">
                     <div class="cat-tab"><img src="../styles/images/mini_banner_1.png" alt="">
-                        <a href="" class="cat-text">
-                            <h1>[[CATEGORY]]</h1>
+                        <a href="catalogue.php" class="cat-text">
+                            <h1>T-SHIRTS</h1>
                             <h3>SHOP NOW</h3>
                         </a>
                     </div>
                     <div class="cat-tab"><img src="../styles/images/mini_banner_2.png" alt="">
-                        <a href="" class="cat-text">
-                            <h1>[[CATEGORY]]</h1>
+                        <a href="catalogue.php" class="cat-text">
+                            <h1>JACKETS</h1>
                             <h3>SHOP NOW</h3>
                         </a>
                     </div>
                     <div class="cat-tab"><img src="../styles/images/mini_banner_3.png" alt="">
-                        <a href="" class="cat-text">
-                            <h1>[[CATEGORY]]</h1>
+                        <a href="catalogue.php" class="cat-text">
+                            <h1>MASKS</h1>
                             <h3>SHOP NOW</h3>
                         </a>
                     </div>
