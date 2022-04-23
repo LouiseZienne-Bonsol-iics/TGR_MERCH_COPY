@@ -85,8 +85,8 @@
         $OrderStatus = $_REQUEST['OrderStatus'];
         $PaymentImage = $_REQUEST['PaymentImage'];
         $PaymentStatus = $_REQUEST['PaymentStatus'];
-        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, 'OrderDate',`MerchType`, `MerchPrice`,`MerchQuantity`, `MerchSize`, `CourierChoice`, `CourierNumber`, `OrderStatus`, 'PaymentImage' ,`PaymentStatus`) 
-                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress','$OrderDate' , '$MerchType', '$MerchPrice',`$MerchType`, `$MerchPrice`, '$CourierChoice', '$CourierNumber', '$OrderStatus', '$PaymentImage','$PaymentStatus')";
+        $sql = "INSERT INTO $tableDB (`OrderID`, `LastName`, `FirstName`, `CustomerNumber`, `CustomerEmail`, `CustomerAddress`, `OrderDate`,`MerchType`, `MerchPrice`,`MerchQuantity`, `MerchSize`, `CourierChoice`, `CourierNumber`, `OrderStatus`, `PaymentImage` ,`PaymentStatus`) 
+                    VALUES ('$OrderID', '$LastName', '$FirstName', '$CustomerNumber', '$CustomerEmail', '$CustomerAddress','$OrderDate' , '$MerchType', '$MerchPrice', '$MerchQuantity', '$MerchSize', '$CourierChoice', '$CourierNumber', '$OrderStatus', '$PaymentImage','$PaymentStatus')";
         if ($pdo->query($sql)) {
             echo '<h3>Successful</h3>';
             header('Location:databaseControl.php?status=SUCCESS');
@@ -104,7 +104,7 @@
                         <h1>Customer Name</h1>
                         <h1>Contact Details</h1>
                         <h1>Address</h1>
-                        <h1>Merch</h1>
+                        <h1 style="margin-bottom: 3em;">Merch</h1>
                         <h1>Courier</h1>
                         <h1>Order Details</h1>
                         <h1>Payment </h1>
